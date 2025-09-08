@@ -100,3 +100,5 @@
 361	716	7790020865250080	stm32nucleo_test.elf	50dedfbd2185fa4d
 6	365	7790022152213580	CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj	c7eee0b060a50b7d
 365	737	7790022155842349	stm32nucleo_test.elf	50dedfbd2185fa4d
+6	460	7790023875470779	CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj	c7eee0b060a50b7d
+461	804	7790023878849451	stm32nucleo_test.elf	50dedfbd2185fa4d

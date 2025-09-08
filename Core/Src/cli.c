@@ -13,7 +13,7 @@ cli_command_t cli_cmd[CMD_IDX_MAX] =
     "help   : show command list\r\n",
     [CMD_HELP].name = "help",
     [CMD_HELP].func = cmd_help,
-    [CMD_HELP].opt = "h",
+    [CMD_HELP].opt = "",
     [CMD_HELP].opt_size = 0,
 
     /* echo */
@@ -22,7 +22,7 @@ cli_command_t cli_cmd[CMD_IDX_MAX] =
     "<use>  : echo [argument to print]\r\n",
     [CMD_ECHO].name = "echo",
     [CMD_ECHO].func = cmd_echo,
-    [CMD_ECHO].opt = "h",
+    [CMD_ECHO].opt = "",
     [CMD_ECHO].opt_size = 0,
 
     /* clean */
@@ -30,7 +30,7 @@ cli_command_t cli_cmd[CMD_IDX_MAX] =
     "clean  : clean the screen\r\n",
     [CMD_CLEAN].name = "clean",
     [CMD_CLEAN].func = cmd_clean,
-    [CMD_CLEAN].opt = "h",
+    [CMD_CLEAN].opt = "",
     [CMD_CLEAN].opt_size = 0,
 
     /* reboot */
@@ -38,7 +38,7 @@ cli_command_t cli_cmd[CMD_IDX_MAX] =
     "reboot  : restart the application\r\n",
     [CMD_REBOOT].name = "reboot",
     [CMD_REBOOT].func = cmd_reboot,
-    [CMD_REBOOT].opt = "h",
+    [CMD_REBOOT].opt = "",
     [CMD_REBOOT].opt_size = 0,
 };
 
