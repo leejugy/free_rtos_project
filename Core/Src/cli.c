@@ -195,7 +195,7 @@ static bool cmd_help(cli_data_t *cli_data)
 static int cli_parser(char *rx)
 {
     int idx = 0;
-    CLI_EXEC_RESULT exe_cmd = EXEC_RESULT_ERR;
+    CLI_EXEC_RESULT exe_cmd = EXEC_RESULT_NO_CMD;
     char pt_buf[CMD_MAX_LEN] = {0, }; 
     cli_data_t cli_data = {0, };
 
