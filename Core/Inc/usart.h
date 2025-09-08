@@ -83,6 +83,13 @@ typedef struct
 
 extern uart_t uart[UART_MAX_IDX];
 
+#define print_dmesg(fmt, ...)                                                  \
+do                                                                             \
+{                                                                              \
+    uint32_t tick = HAL_GetTick();                                             \
+    prints("[%6d.%03d] " fmt "\r\n", tick / 1000, tick % 1000, ##__VA_ARGS__); \
+} while (0)
+
 void uart_init();
 int uart_send(uart_t *ut, void *buf, size_t buf_size);
 int uart_read(uart_t *ut, void *buf, size_t buf_size);
