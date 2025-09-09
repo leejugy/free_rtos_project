@@ -121,7 +121,7 @@ void MX_FREERTOS_Init(void) {
 /* USER CODE END Header_console_thread */
 void console_thread(void *argument)
 {
-    /* USER CODE BEGIN console_thread */
+  /* USER CODE BEGIN console_thread */
     prints("~# ");
     /* Infinite loop */
     for(;;)
@@ -129,7 +129,7 @@ void console_thread(void *argument)
         cli_proc();
         osDelay(10);
     }
-    /* USER CODE END console_thread */
+  /* USER CODE END console_thread */
 }
 
 /* Private application code --------------------------------------------------*/

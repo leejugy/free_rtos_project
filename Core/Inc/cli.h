@@ -13,6 +13,7 @@ typedef enum
     CMD_ECHO,
     CMD_CLEAN,
     CMD_REBOOT,
+    CMD_DATE,
     CMD_IDX_MAX,
 }CLI_COMMAND_IDX;
 
@@ -22,6 +23,7 @@ typedef enum
     EXEC_RESULT_ERR = -1,
     EXEC_HELP = 0,
     EXEC_RESULT_OK = 1,
+    EXEC_NONE = 2,
 }CLI_EXEC_RESULT;
 
 typedef enum

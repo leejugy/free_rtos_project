@@ -1,10 +1,12 @@
 #include "cli.h"
+#include "rtc.h"
 #include "usart.h"
 
 static bool cmd_help(cli_data_t *cli_data);
 static bool cmd_echo(cli_data_t *cli_data);
 static bool cmd_clean(cli_data_t *cli_data);
 static bool cmd_reboot(cli_data_t *cli_data);
+static bool cmd_date(cli_data_t *cli_data);
 
 cli_command_t cli_cmd[CMD_IDX_MAX] = 
 {
@@ -40,6 +42,16 @@ cli_command_t cli_cmd[CMD_IDX_MAX] =
     [CMD_REBOOT].func = cmd_reboot,
     [CMD_REBOOT].opt = "",
     [CMD_REBOOT].opt_size = 0,
+
+    /* date */
+    [CMD_DATE].help = \
+    "date       : set or load date.\r\n" \
+    "<load use> : date\r\n",
+    "<set use>  : date -s yyyy-mm-dd hh:mm:ss\r\n",
+    [CMD_DATE].name = "reboot",
+    [CMD_DATE].func = cmd_date,
+    [CMD_DATE].opt = "s",
+    [CMD_DATE].opt_size = 1,
 };
 
 static int cli_get_opt(cli_data_t *cli_data, char opt, char *opt_str)
@@ -52,12 +64,12 @@ static int cli_get_opt(cli_data_t *cli_data, char opt, char *opt_str)
 
     if (str == NULL)
     {
-        return -1;
+        return -1; /* no option detected */
     }
 
     if (opt_str == NULL)
     {
-        return 1;
+        return 1; /* if you don't want to use argument, use this. String must have option string like "-h" */
     }
 
     if (str[opt_len] == ' ')
@@ -66,7 +78,7 @@ static int cli_get_opt(cli_data_t *cli_data, char opt, char *opt_str)
     }
     else
     {
-        return -1;
+        return -1; /* no argument input */
     }
 
     len = strlen(str);
@@ -83,20 +95,25 @@ static int cli_get_opt(cli_data_t *cli_data, char opt, char *opt_str)
             break;
         }
     }
-    return 1;
+    return 1; /* option detect and store option argument to opt_str */
 }
 
 static int cli_get_arg(cli_data_t *cli_data, int arg_num, char *arg)
 {
     char *str = strchr(cli_data->cmd_str, ' ');
     int idx = 0;
+
+    if (str == NULL)
+    {
+        return -1; /* Get argument failed, no argument after space */
+    }
     
     for (idx = 0; idx < arg_num; idx++)
     {
         str = strchr(&str[1], ' ');
         if (str == NULL)
         {
-            return -1;
+            return -1; /* Get arg_num argument failed */
         }
     }
     
@@ -116,7 +133,44 @@ static int cli_get_arg(cli_data_t *cli_data, int arg_num, char *arg)
             break;
         }
     }
-    return 1;
+    return 1; /* Get argument success and copy argument to arg */
+}
+
+static int cli_cmp_cmd(char *rx, char *cmd_name)
+{
+    int idx = 0;
+
+    for (idx = 0; idx < strlen(rx); idx++)
+    {
+        if (rx[idx] == 0 || rx [idx] == ' ')
+        {
+            break;
+        }
+        else if (rx[idx] != cmd_name[idx])
+        {
+            return -1; /* command is different */
+        }
+    }
+
+    if (idx == strlen(cmd_name))
+    {
+        return 1; /* command is same */
+    }
+
+    return -1; /* this case is not exist */
+}
+
+static bool cmd_date(cli_data_t *cli_data)
+{   
+    int idx = 0;
+    char arg[CMD_MAX_LEN] = {0, };
+    rtc_data_t rtc_data = {0, };
+
+    /* find 's' */
+    if (cli_get_opt(cli_data, cli_data->opt[idx], arg) > 0)
+    {
+        rtc_chk_valid_str(arg, &rtc_data);
+    }
 }
 
 static bool cmd_reboot(cli_data_t *cli_data)
@@ -199,9 +253,15 @@ static int cli_parser(char *rx)
     char pt_buf[CMD_MAX_LEN] = {0, }; 
     cli_data_t cli_data = {0, };
 
+    if (strlen(rx) == 0)
+    {
+        exe_cmd = EXEC_NONE;
+        goto result_out;
+    }
+    
     for (idx = 0; idx < CMD_IDX_MAX; idx++)
     {
-        if (strncmp(cli_cmd[idx].name, rx, strlen(cli_cmd[idx].name)) == 0)
+        if (cli_cmp_cmd(rx, cli_cmd[idx].name) > 0)
         {
             cli_data.cmd_str = rx;
             if (cli_get_opt(&cli_data, 'h', NULL) < 0)
@@ -221,6 +281,7 @@ static int cli_parser(char *rx)
         }
     }
 
+result_out:
     switch (exe_cmd)
     {
     case EXEC_RESULT_ERR:
@@ -236,6 +297,7 @@ static int cli_parser(char *rx)
         return 1;
     
     case EXEC_HELP:
+    case EXEC_NONE:
         return 1;
     }
 
