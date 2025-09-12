@@ -4,7 +4,7 @@
 
 static bool cmd_help(cli_data_t *cli_data);
 static bool cmd_echo(cli_data_t *cli_data);
-static bool cmd_clean(cli_data_t *cli_data);
+static bool cmd_clear(cli_data_t *cli_data);
 static bool cmd_reboot(cli_data_t *cli_data);
 static bool cmd_date(cli_data_t *cli_data);
 
@@ -28,12 +28,12 @@ cli_command_t cli_cmd[CMD_IDX_MAX] =
     [CMD_ECHO].opt_size = 0,
 
     /* clean */
-    [CMD_CLEAN].help = \
-    "clean  : clean the screen\r\n",
-    [CMD_CLEAN].name = "clean",
-    [CMD_CLEAN].func = cmd_clean,
-    [CMD_CLEAN].opt = "",
-    [CMD_CLEAN].opt_size = 0,
+    [CMD_CLEAR].help = \
+    "clear  : clean the screen\r\n",
+    [CMD_CLEAR].name = "clear",
+    [CMD_CLEAR].func = cmd_clear,
+    [CMD_CLEAR].opt = "",
+    [CMD_CLEAR].opt_size = 0,
 
     /* reboot */
     [CMD_REBOOT].help = \
@@ -48,7 +48,7 @@ cli_command_t cli_cmd[CMD_IDX_MAX] =
     "date       : set or load date.\r\n" \
     "<load use> : date\r\n",
     "<set use>  : date -s yyyy-mm-dd hh:mm:ss\r\n",
-    [CMD_DATE].name = "reboot",
+    [CMD_DATE].name = "date",
     [CMD_DATE].func = cmd_date,
     [CMD_DATE].opt = "s",
     [CMD_DATE].opt_size = 1,
@@ -69,7 +69,7 @@ static int cli_get_opt(cli_data_t *cli_data, char opt, char *opt_str)
 
     if (opt_str == NULL)
     {
-        return 1; /* if you don't want to use argument, use this. String must have option string like "-h" */
+        return 0; /* if you don't want to use argument, use this. String must have option string like "-h" */
     }
 
     if (str[opt_len] == ' ')
@@ -81,21 +81,53 @@ static int cli_get_opt(cli_data_t *cli_data, char opt, char *opt_str)
         return -1; /* no argument input */
     }
 
+    bool quotes = false;
+    int opt_str_len = 0;
+
+    str = str + opt_len;
     len = strlen(str);
+
+    if((str[idx] == '\'' || str[idx] == '\"') && (quotes == false))
+    {
+        quotes = true;
+        str++;
+    }
+
     for (idx = 0; idx < len; idx++)
     {
-        opt_str[idx] = str[opt_len + idx];
-        if (opt_str[idx] == '\0')
+        if (quotes)
         {
-            break;
+            if(str[idx] == '\'' || str[idx] == '\"')
+            {
+                break;
+            }
+            else if (str[idx] == '\0')
+            {
+                break;
+            }
+            else
+            {
+                opt_str[opt_str_len++] = str[idx];
+            }
         }
-        else if(opt_str[idx] == ' ')
+        else
         {
-            opt_str[idx] = 0;
-            break;
+            if (str[idx] == '\0')
+            {
+                break;
+            }
+            else if(str[idx] == ' ')
+            {
+                break;
+            }
+            else
+            {
+                opt_str[opt_str_len++] = str[idx];
+            }
         }
     }
-    return 1; /* option detect and store option argument to opt_str */
+    opt_str[opt_str_len] = 0;
+    return opt_str_len; /* option detect and store option argument to opt_str */
 }
 
 static int cli_get_arg(cli_data_t *cli_data, int arg_num, char *arg)
@@ -116,24 +148,58 @@ static int cli_get_arg(cli_data_t *cli_data, int arg_num, char *arg)
             return -1; /* Get arg_num argument failed */
         }
     }
+
+    if (arg == NULL)
+    {
+        return 0; /* just find argument */
+    }
     
-    str = &str[1];
+    str++;
+    bool quotes = false;
+    int arg_len = 0;
     int len = strlen(str);
+
+    if((str[idx] == '\'' || str[idx] == '\"') && (quotes == false))
+    {
+        quotes = true;
+        str++;
+    }
     
     for (idx = 0; idx < len; idx++)
     {
-        arg[idx] = str[idx];
-        if (arg[idx] == '\0')
+        if (quotes)
         {
-            break;
+            if(str[idx] == '\'' || str[idx] == '\"')
+            {
+                break;
+            }
+            else if (str[idx] == '\0')
+            {
+                break;
+            }
+            else
+            {
+                arg[arg_len++] = str[idx];
+            }
         }
-        else if(arg[idx] == ' ')
+        else
         {
-            arg[idx] = 0;
-            break;
+            if (str[idx] == '\0')
+            {
+                break;
+            }
+            else if(str[idx] == ' ')
+            {
+                break;
+            }
+            else
+            {
+                arg[arg_len++] = str[idx];
+            }
         }
     }
-    return 1; /* Get argument success and copy argument to arg */
+    arg[arg_len] = 0;
+    return arg_len; /* Get argument success and copy argument to arg */
 }
 
 static int cli_cmp_cmd(char *rx, char *cmd_name)
@@ -164,13 +230,36 @@ static bool cmd_date(cli_data_t *cli_data)
 {   
     int idx = 0;
     char arg[CMD_MAX_LEN] = {0, };
-    rtc_data_t rtc_data = {0, };
+    struct tm __tm = {0, };
 
     /* find 's' */
     if (cli_get_opt(cli_data, cli_data->opt[idx], arg) > 0)
     {
-        rtc_chk_valid_str(arg, &rtc_data);
+        if (rtc_string_to_tm(arg, &__tm) != RTC_OKAY)
+        {
+            printr("invalid cmd date : %s", arg);
+            return false;
+        }
+        rtc_set_time(&__tm);
     }
+    else if (cli_get_arg(cli_data, 1, NULL) != 0) /* no args */
+    {
+        if (rtc_get_time(&__tm) != RTC_OKAY)
+        {
+            printr("fail to get rtc data");
+            return false;
+        }
+
+        prints("date : %04d-%02d-%02d %02d:%02d:%02d\r\n", 
+            __tm.tm_year + 1900, __tm.tm_mon + 1, __tm.tm_mday,
+            __tm.tm_hour, __tm.tm_min, __tm.tm_sec);
+    }
+    else
+    {
+        printr("undefined command usage");
+        return false;
+    }
+    return true;
 }
 
 static bool cmd_reboot(cli_data_t *cli_data)
@@ -202,16 +291,22 @@ static bool cmd_reboot(cli_data_t *cli_data)
 static bool cmd_echo(cli_data_t *cli_data)
 {
     int idx = 0;
+    int len = 0;
     char arg[CMD_MAX_LEN] = {0, };
 
     while(1)
     {
-        if (cli_get_arg(cli_data, idx, arg) > 0)
+        len = cli_get_arg(cli_data, idx, arg);
+        if (len > 0)
         {
             prints("%s ", arg);
             memset(arg, 0, sizeof(arg));
         }
         else
+        {
+            break;
+        }
+        if (len < strlen(strchr(cli_data->cmd_str, ' ')))
         {
             break;
         }
@@ -222,7 +317,7 @@ static bool cmd_echo(cli_data_t *cli_data)
     return true;
 }
 
-static bool cmd_clean(cli_data_t *cli_data)
+static bool cmd_clear(cli_data_t *cli_data)
 {
     prints("\x1B[2J");
     return true;
@@ -264,7 +359,7 @@ static int cli_parser(char *rx)
         if (cli_cmp_cmd(rx, cli_cmd[idx].name) > 0)
         {
             cli_data.cmd_str = rx;
-            if (cli_get_opt(&cli_data, 'h', NULL) < 0)
+            if (cli_get_opt(&cli_data, 'h', NULL) != 0)
             {
                 cli_data.out_str = pt_buf;
                 cli_data.out_str_size = sizeof(pt_buf);

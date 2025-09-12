@@ -64,7 +64,20 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */
+static inline uint32_t hex_2_bcd(uint32_t hex)
+{
+    char conv[16] = {0, };
+    sprintf(conv, "%lx", hex);
+    return atoi(conv);
+}
 
+static inline uint32_t bcd_2_hex(uint32_t bcd)
+{
+    char conv[16] = {0, };
+    char *end_ptr = NULL;
+    sprintf(conv, "%ld", bcd);
+    return strtoul(conv, &end_ptr, 16);
+}
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

@@ -67,6 +67,14 @@ const osSemaphoreAttr_t uart1_sem_attributes = {
   .cb_mem = &uart1_sem_blk,
   .cb_size = sizeof(uart1_sem_blk),
 };
+/* Definitions for rtc_sem */
+osSemaphoreId_t rtc_semHandle;
+osStaticSemaphoreDef_t rtc_sem_blk;
+const osSemaphoreAttr_t rtc_sem_attributes = {
+  .name = "rtc_sem",
+  .cb_mem = &rtc_sem_blk,
+  .cb_size = sizeof(rtc_sem_blk),
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -88,6 +96,9 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_MUTEX */
   /* creation of uart1_sem */
   uart1_semHandle = osSemaphoreNew(1, 1, &uart1_sem_attributes);
+
+  /* creation of rtc_sem */
+  rtc_semHandle = osSemaphoreNew(1, 1, &rtc_sem_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */

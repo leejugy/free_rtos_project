@@ -64,6 +64,7 @@ static inline int sem_post(osSemaphoreId_t *sem)
 /* USER CODE END EM */
 extern osThreadId_t console_threadHandle;
 extern osSemaphoreId_t uart1_semHandle;
+extern osSemaphoreId_t rtc_semHandle;
 
 /* Exported function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */

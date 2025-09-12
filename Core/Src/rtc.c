@@ -83,7 +83,7 @@ void HAL_RTC_MspInit(RTC_HandleTypeDef* rtcHandle)
   /** Initializes the peripherals clock
   */
     PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_RTC;
-    PeriphClkInitStruct.RTCClockSelection = RCC_RTCCLKSOURCE_LSE;
+    PeriphClkInitStruct.RTCClockSelection = RCC_RTCCLKSOURCE_LSI;
     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
     {
       Error_Handler();
@@ -116,34 +116,41 @@ void HAL_RTC_MspDeInit(RTC_HandleTypeDef* rtcHandle)
 }
 
 /* USER CODE BEGIN 1 */
+rtc_t rtc = 
+{
+    .hrtc = &hrtc,
+    .sem = &rtc_semHandle
+};
+
+uint8_t mday[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
 static void rtc_tm_to_hal_st(RTC_TimeTypeDef *time, RTC_DateTypeDef *date, struct tm *__tm)
 {
-    char str[16] = {0, };
-    char *end_ptr = NULL;
+    date->Year = bcd_2_hex(__tm->tm_year - 100);
+    date->Month = bcd_2_hex(__tm->tm_mon + 1);
+    date->Date = bcd_2_hex(__tm->tm_mday);
+    date->WeekDay = bcd_2_hex(__tm->tm_wday + 1);
 
-    sprintf(str, "%d", __tm->tm_year - 1900);
-    date->Year = strtoul(str, &end_ptr, 16);
-    memset(str, 0, sizeof(str));
-
-    sprintf(str, "%d", __tm->tm_mon + 1);
-    date->Month = strtoul(str, &end_ptr, 16);
-    memset(str, 0, sizeof(str));
-
-    sprintf(str, "%d", __tm->tm_mday);
-    date->Date = strtoul(str, &end_ptr, 16);
-    memset(str, 0, sizeof(str));
-
-    date->WeekDay = __tm->tm_wday + 1;
-
-    time->Hours = __tm->tm_hour;
-    time->Minutes = __tm->tm_min;
-    time->Seconds = __tm->tm_sec % 60;
+    time->Hours = bcd_2_hex(__tm->tm_hour);
+    time->Minutes = bcd_2_hex(__tm->tm_min);
+    time->Seconds = bcd_2_hex(__tm->tm_sec % 60);
 }
 
-RTC_STATUS rtc_chk_valid_str(char *str, rtc_data_t *rtc_data)
+static void rtc_hal_st_to_tm(RTC_TimeTypeDef *time, RTC_DateTypeDef *date, struct tm *__tm)
+{
+    __tm->tm_year = hex_2_bcd(date->Year) + 100;
+    __tm->tm_mon = hex_2_bcd(date->Month) - 1;
+    __tm->tm_mday = hex_2_bcd(date->Date);
+    __tm->tm_wday = hex_2_bcd(date->WeekDay - 1);
+
+    __tm->tm_hour = hex_2_bcd(time->Hours);
+    __tm->tm_min = hex_2_bcd(time->Minutes);
+    __tm->tm_sec = hex_2_bcd(time->Seconds);
+}
+
+RTC_STATUS rtc_string_to_tm(char *str, struct tm *__tm)
 {
     rtc_str_t rtc_str = {0, };
-    uint8_t mday[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int time = 0;
     char *ptr = NULL;
 
@@ -163,7 +170,7 @@ RTC_STATUS rtc_chk_valid_str(char *str, rtc_data_t *rtc_data)
         return RTC_FORMAT_ERR;
     }
 
-    if (strtok_r(&rtc_str, "-: ", &ptr) == NULL)
+    if (strtok_r((char *)&rtc_str, "-: ", &ptr) == NULL)
     {
         return RTC_FORMAT_ERR;
     }
@@ -173,44 +180,113 @@ RTC_STATUS rtc_chk_valid_str(char *str, rtc_data_t *rtc_data)
     {
         return RTC_RANGE_ERR;
     }
-    rtc_data->tm.tm_year = time - 1900;
+    __tm->tm_year = time - 1900;
 
     time = atoi(rtc_str.month);
     if (time > 12 || time < 1)
     {
         return RTC_RANGE_ERR;
     }
-    rtc_data->tm.tm_mon = time - 1;
+    __tm->tm_mon = time - 1;
 
     time = atoi(rtc_str.day);
-    if (time > mday[rtc_data->date.Month - 1] || time < 1)
+    if (time > mday[__tm->tm_mon] || time < 1)
     {
         return RTC_RANGE_ERR;
     }
-    rtc_data->tm.tm_mday = time;
+    __tm->tm_mday = time;
 
     time = atoi(rtc_str.hour);
     if (time > 23 || time < 0)
     {
         return RTC_RANGE_ERR;
     }
-    rtc_data->tm.tm_hour = time;
+    __tm->tm_hour = time;
 
     time = atoi(rtc_str.minute);
     if (time > 59 || time < 0)
     {
         return RTC_RANGE_ERR;
     }
-    rtc_data->tm.tm_min = time;
+    __tm->tm_min = time;
 
     time = atoi(rtc_str.second);
     if (time > 59 || time < 0)
     {
         return RTC_RANGE_ERR;
     }
-    rtc_data->tm.tm_sec = time;
+    __tm->tm_sec = time;
+    return RTC_OKAY;
+}
 
-    rtc_tm_to_hal_st(&rtc_data->time, &rtc_data->date, &rtc_data->tm);
-    return 1;
+RTC_STATUS rtc_set_time(struct tm *__tm)
+{
+    RTC_STATUS ret = RTC_OKAY;
+    RTC_TimeTypeDef tim = {0, };
+    RTC_DateTypeDef date = {0, };
+
+    rtc_tm_to_hal_st(&tim, &date, __tm);
+    if (hex_2_bcd(date.Year) > 99)
+    {
+        return RTC_RANGE_ERR;
+    }
+    if (hex_2_bcd(date.Month) < 1 || hex_2_bcd(date.Month) > 12)
+    {
+        return RTC_RANGE_ERR;
+    }
+    if (hex_2_bcd(date.Date) < 1 || hex_2_bcd(date.Date) > mday[hex_2_bcd(date.Month) - 1])
+    {
+        return RTC_RANGE_ERR;
+    }
+    if (hex_2_bcd(tim.Hours) > 23 || hex_2_bcd(tim.Hours) < 0)
+    {
+        return RTC_RANGE_ERR;
+    }
+    if (hex_2_bcd(tim.Minutes) > 59 || hex_2_bcd(tim.Minutes) < 0)
+    {
+        return RTC_RANGE_ERR;
+    }
+    if (hex_2_bcd(tim.Seconds) > 59 || hex_2_bcd(tim.Seconds) < 0)
+    {
+        return RTC_RANGE_ERR;
+    }
+
+    sem_wait(rtc.sem);
+    if (HAL_RTC_SetDate(rtc.hrtc, &date, RTC_FORMAT_BCD) != HAL_OK)
+    {
+        ret = RTC_FUNC_ERR;
+        goto sem_out;
+    }
+    if (HAL_RTC_SetTime(rtc.hrtc, &tim, RTC_FORMAT_BCD) != HAL_OK)
+    {
+        ret = RTC_FUNC_ERR;
+        goto sem_out;
+    }   
+sem_out:
+    sem_post(rtc.sem);
+    return ret;
+}
+
+RTC_STATUS rtc_get_time(struct tm *__tm)
+{
+    RTC_STATUS ret = RTC_OKAY;
+    RTC_TimeTypeDef tim = {0, };
+    RTC_DateTypeDef date = {0, };
+
+    sem_wait(rtc.sem);
+    if (HAL_RTC_GetTime(rtc.hrtc, &tim, RTC_FORMAT_BCD) != HAL_OK)
+    {
+        ret = RTC_FUNC_ERR;
+        goto sem_out;
+    }
+    if (HAL_RTC_GetDate(rtc.hrtc, &date, RTC_FORMAT_BCD) != HAL_OK)
+    {
+        ret = RTC_FUNC_ERR;
+        goto sem_out;
+    }
+sem_out:
+    sem_post(rtc.sem);
+    rtc_hal_st_to_tm(&tim, &date, __tm);
+    return ret;
 }
 /* USER CODE END 1 */

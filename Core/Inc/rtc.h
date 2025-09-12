@@ -30,6 +30,7 @@ extern "C" {
 
 /* USER CODE BEGIN Includes */
 #include <time.h>
+#include "app_freertos.h"
 /* USER CODE END Includes */
 
 extern RTC_HandleTypeDef hrtc;
@@ -37,9 +38,10 @@ extern RTC_HandleTypeDef hrtc;
 /* USER CODE BEGIN Private defines */
 typedef enum
 {
-  RTC_RANGE_ERR = -1,
-  RTC_FORMAT_ERR = -2,
-  RTC_OKAY = 1,
+    RTC_RANGE_ERR = -1,
+    RTC_FORMAT_ERR = -2,
+    RTC_FUNC_ERR = -3,
+    RTC_OKAY = 1,
 }RTC_STATUS;
 
 
@@ -60,17 +62,18 @@ typedef struct
 
 typedef struct
 {
-    RTC_TimeTypeDef time;
-    RTC_DateTypeDef date;
-    struct tm tm;
-}rtc_data_t;
+    RTC_HandleTypeDef *hrtc;
+    osSemaphoreId_t *sem;
+}rtc_t;
 
 /* USER CODE END Private defines */
 
 void MX_RTC_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-RTC_STATUS rtc_chk_valid_str(char *str, rtc_data_t *rtc_data);
+RTC_STATUS rtc_string_to_tm(char *str, struct tm *__tm);
+RTC_STATUS rtc_set_time(struct tm *__tm);
+RTC_STATUS rtc_get_time(struct tm *__tm);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

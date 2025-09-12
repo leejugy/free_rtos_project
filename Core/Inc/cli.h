@@ -11,7 +11,7 @@ typedef enum
 {
     CMD_HELP,
     CMD_ECHO,
-    CMD_CLEAN,
+    CMD_CLEAR,
     CMD_REBOOT,
     CMD_DATE,
     CMD_IDX_MAX,
