@@ -139,6 +139,11 @@ static int cli_get_arg(cli_data_t *cli_data, cli_arg_t *cli_arg)
     {
         return -1; /* Get argument failed, no argument after space */
     }
+
+    if (!cli_arg->opt.get_ret)
+    {
+        return 0; /* just find argument */
+    }
     
     for (idx = 0; idx < cli_arg->cli_get.num; idx++)
     {
@@ -147,11 +152,6 @@ static int cli_get_arg(cli_data_t *cli_data, cli_arg_t *cli_arg)
         {
             return -1; /* Get arg_num argument failed */
         }
-    }
-
-    if (!cli_arg->opt.get_ret)
-    {
-        return 0; /* just find argument */
     }
     
     str++;
