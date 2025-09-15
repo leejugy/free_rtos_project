@@ -2,11 +2,11 @@
 #include "rtc.h"
 #include "usart.h"
 
-static bool cmd_help(cli_data_t *cli_data);
-static bool cmd_echo(cli_data_t *cli_data);
-static bool cmd_clear(cli_data_t *cli_data);
-static bool cmd_reboot(cli_data_t *cli_data);
-static bool cmd_date(cli_data_t *cli_data);
+static CLI_EXEC_RESULT cmd_help(cli_data_t *cli_data);
+static CLI_EXEC_RESULT cmd_echo(cli_data_t *cli_data);
+static CLI_EXEC_RESULT cmd_clear(cli_data_t *cli_data);
+static CLI_EXEC_RESULT cmd_reboot(cli_data_t *cli_data);
+static CLI_EXEC_RESULT cmd_date(cli_data_t *cli_data);
 
 cli_command_t cli_cmd[CMD_IDX_MAX] = 
 {
@@ -225,7 +225,7 @@ static int cli_cmp_cmd(char *rx, char *cmd_name)
     return -1; /* this case is not exist */
 }
 
-static bool cmd_date(cli_data_t *cli_data)
+static CLI_EXEC_RESULT cmd_date(cli_data_t *cli_data)
 {   
     cli_arg_t cli_arg = {0, };
     struct tm __tm = {0, };
@@ -239,13 +239,13 @@ static bool cmd_date(cli_data_t *cli_data)
         if (rtc_string_to_tm(cli_arg.arg, &__tm) != RTC_OKAY)
         {
             printr("invalid cmd date : %s", cli_arg.arg);
-            return false;
+            return EXEC_RESULT_ERR;
         }
         prints("set date : %04d-%02d-%02d %02d:%02d:%02d\r\n", 
             __tm.tm_year + 1900, __tm.tm_mon + 1, __tm.tm_mday,
             __tm.tm_hour, __tm.tm_min, __tm.tm_sec);
         rtc_set_time(&__tm);
-        return true;
+        return EXEC_NONE;
     }
 
     /* check argument exist */
@@ -255,23 +255,22 @@ static bool cmd_date(cli_data_t *cli_data)
         if (rtc_get_time(&__tm) != RTC_OKAY)
         {
             printr("fail to get rtc data");
-            return false;
+            return EXEC_RESULT_ERR;
         }
 
         prints("date : %04d-%02d-%02d %02d:%02d:%02d\r\n", 
             __tm.tm_year + 1900, __tm.tm_mon + 1, __tm.tm_mday,
             __tm.tm_hour, __tm.tm_min, __tm.tm_sec);
-        return true;
+        return EXEC_NONE;
     }
     else
     {
         printr("undefined command usage");
-        return false;
     }
-    return true;
+    return EXEC_RESULT_ERR;
 }
 
-static bool cmd_reboot(cli_data_t *cli_data)
+static CLI_EXEC_RESULT cmd_reboot(cli_data_t *cli_data)
 {
     /* address that pointing Reset_Handler function address's address */
     __IO void (**rst_func)() = (__IO void(**)())0x08000004;
@@ -288,16 +287,16 @@ static bool cmd_reboot(cli_data_t *cli_data)
         __set_MSP((__IO uint32_t)iap_add);
         __disable_irq();
         (*rst_func)();
-        return true;
+        return EXEC_NONE;
     }
     else
     {
         print_dmesg("Reboot : iap is not detected");
-        return false;
     }
+    return EXEC_RESULT_ERR;
 }
 
-static bool cmd_echo(cli_data_t *cli_data)
+static CLI_EXEC_RESULT cmd_echo(cli_data_t *cli_data)
 {
     int idx = 0;
     int len = 0;
@@ -325,16 +324,16 @@ static bool cmd_echo(cli_data_t *cli_data)
     }
     prints("\r\n");
 
-    return true;
+    return EXEC_NONE;
 }
 
-static bool cmd_clear(cli_data_t *cli_data)
+static CLI_EXEC_RESULT cmd_clear(cli_data_t *cli_data)
 {
     prints("\x1B[2J");
-    return true;
+    return EXEC_NONE;
 }
 
-static bool cmd_help(cli_data_t *cli_data)
+static CLI_EXEC_RESULT cmd_help(cli_data_t *cli_data)
 {
     int idx = 0;
     
@@ -349,7 +348,7 @@ static bool cmd_help(cli_data_t *cli_data)
     }
     prints("===================================================\r\n");
 
-    return true;
+    return EXEC_NONE;
 }
 
 static int cli_parser(char *rx)

@@ -73,3 +73,6 @@
 362	765	7796082803290005	stm32nucleo_test.elf	f45ab892949d5ac4
 7	418	7796088010730559	CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj	c7eee0b060a50b7d
 418	834	7796088014770546	stm32nucleo_test.elf	f45ab892949d5ac4
+10	382	7796139826366197	CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj	a4f29fc3dc5c9cc7
+14	433	7796139826900742	CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj	c7eee0b060a50b7d
+433	849	7796139830976150	stm32nucleo_test.elf	f45ab892949d5ac4

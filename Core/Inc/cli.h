@@ -69,7 +69,7 @@ typedef struct
     char *help;
     char opt[CLI_OPTION_MAX];
     int opt_size;
-    bool (*func)(cli_data_t *cli_data);
+    CLI_EXEC_RESULT (*func)(cli_data_t *cli_data);
 }cli_command_t;
 
 typedef struct __attribute__((__packed__))
