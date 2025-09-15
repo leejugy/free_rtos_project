@@ -72,6 +72,33 @@ typedef struct
     bool (*func)(cli_data_t *cli_data);
 }cli_command_t;
 
+typedef struct __attribute__((__packed__))
+{
+    uint8_t get_ret : 1;
+    uint8_t reserved0 :1;
+    uint8_t reserved1 :1;
+    uint8_t reserved2 :1;
+    uint8_t reserved3 :1;
+    uint8_t reserved4 :1;
+    uint8_t reserved5 :1;
+    uint8_t reserved6 :1;
+}cli_arg_opt_t;
+
+typedef union
+{
+    int num;
+    char opt;
+}cli_get_u;
+
+typedef struct __attribute__((__packed__))
+{
+    char arg[CMD_MAX_LEN];
+    cli_arg_opt_t opt;
+    bool quotes;
+    int len;
+    cli_get_u cli_get;
+}cli_arg_t;
+
 CLI_STATUS cli_work(char *rx);
 
 void cli_proc();

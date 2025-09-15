@@ -96,7 +96,6 @@ int main(void)
   MX_RTC_Init();
   /* USER CODE BEGIN 2 */
   uart_init();
-  printdepend("cli work depend");
   /* USER CODE END 2 */
 
   /* Init scheduler */
