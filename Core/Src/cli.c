@@ -1,5 +1,6 @@
 #include "cli.h"
 #include "rtc.h"
+#include "eth.h"
 #include "usart.h"
 
 static CLI_EXEC_RESULT cmd_help(cli_data_t *cli_data);
@@ -7,6 +8,7 @@ static CLI_EXEC_RESULT cmd_echo(cli_data_t *cli_data);
 static CLI_EXEC_RESULT cmd_clear(cli_data_t *cli_data);
 static CLI_EXEC_RESULT cmd_reboot(cli_data_t *cli_data);
 static CLI_EXEC_RESULT cmd_date(cli_data_t *cli_data);
+static CLI_EXEC_RESULT cmd_ping(cli_data_t *cli_data);
 
 cli_command_t cli_cmd[CMD_IDX_MAX] = 
 {
@@ -52,6 +54,16 @@ cli_command_t cli_cmd[CMD_IDX_MAX] =
     [CMD_DATE].func = cmd_date,
     [CMD_DATE].opt = "s",
     [CMD_DATE].opt_size = 1,
+
+    /* ping */
+    [CMD_PING].help = \
+    "ping       : send icmp packet to <ip> address\r\n" \
+    "             -c option set count to send, default : 5, max : 10"\
+    "<use> : ping <ip> -c <count>\r\n",
+    [CMD_PING].name = "ping",
+    [CMD_PING].func = cmd_ping,
+    [CMD_PING].opt = "c",
+    [CMD_PING].opt_size = 1,
 };
 
 static int cli_get_opt(cli_data_t *cli_data, cli_arg_t *cli_arg)
@@ -324,6 +336,77 @@ static CLI_EXEC_RESULT cmd_echo(cli_data_t *cli_data)
     }
     prints("\r\n");
 
+    return EXEC_NONE;
+}
+
+static CLI_EXEC_RESULT cmd_ping(cli_data_t *cli_data)
+{
+    int len = 0;
+    int idx = 0;
+    int opt_idx = 0;
+    int ping_cnt = 5;
+    int seq = 0;
+    int fail_cnt = 0;
+    uint32_t os_tick = 0;
+    uint32_t os_tick_tot = 0;
+    uint32_t net_add = 0;
+    char ip[IP_LEN] = {0, };
+    cli_arg_t cli_arg = {0, };
+
+    cli_arg.opt.get_ret = 1;
+    cli_arg.cli_get.num = 0;
+    len = cli_get_arg(cli_data, &cli_arg);
+    if (len < 0)
+    {
+        printr("fail to get argument");
+        return EXEC_RESULT_ERR;
+    }
+
+    if (check_valid_ip(cli_arg.arg) < 0)
+    {
+        printr("invalid ip address : %s", cli_arg.arg);
+        return EXEC_RESULT_ERR;
+    }
+
+    strcpy(ip, cli_arg.arg);
+    cli_arg.cli_get.opt = cli_cmd[CMD_PING].opt[opt_idx++];
+    if (cli_get_opt(cli_data, &cli_arg) > 0)
+    {
+        ping_cnt = atoi(cli_arg.arg);
+    }
+
+    if (ping_cnt <= 0 || ping_cnt > 10)
+    {
+        printr("invalid range arg input : %d", ping_cnt);
+        return EXEC_RESULT_ERR;
+    }
+
+    net_add = inet_addr(ip);
+    os_tick_tot = osKernelGetTickCount();
+    for (idx = 0; idx < ping_cnt; idx++)
+    {
+        os_tick = osKernelGetTickCount();
+        seq = FreeRTOS_SendPingRequest(net_add, 1, 1000);
+        if (seq == pdFAIL)
+        {
+            fail_cnt++;
+            printr("send fail icmp packet to : %s, %ldms", ip, osKernelGetTickCount() - os_tick);
+        }
+        else
+        {
+            prints("1 bytes to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, osKernelGetTickCount() - os_tick);
+        }
+
+        if (idx != ping_cnt - 1)
+        {
+            osDelay(1000);
+        }
+    }
+
+    prints("--- %s ping statistics ---\r\n", ip);
+    prints("%d packets transmitted, %d received, %d%% packet loss, time %ldms\r\n", 
+        ping_cnt, PING_RECV(ping_cnt, fail_cnt), PIGN_FAIL_PERCENT(ping_cnt, fail_cnt),
+        osKernelGetTickCount() - os_tick_tot);
     return EXEC_NONE;
 }
 

@@ -22,6 +22,7 @@
 #include "stm32h5xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "eth.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,6 +56,7 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
+extern ETH_HandleTypeDef heth;
 extern UART_HandleTypeDef huart1;
 extern TIM_HandleTypeDef htim1;
 
@@ -186,6 +188,34 @@ void USART1_IRQHandler(void)
   /* USER CODE BEGIN USART1_IRQn 1 */
 
   /* USER CODE END USART1_IRQn 1 */
+}
+
+/**
+  * @brief This function handles Ethernet global interrupt.
+  */
+void ETH_IRQHandler(void)
+{
+  /* USER CODE BEGIN ETH_IRQn 0 */
+  __ETH_IRQHandler();
+  /* USER CODE END ETH_IRQn 0 */
+  HAL_ETH_IRQHandler(&heth);
+  /* USER CODE BEGIN ETH_IRQn 1 */
+
+  /* USER CODE END ETH_IRQn 1 */
+}
+
+/**
+  * @brief This function handles Ethernet Wakeup global interrupt.
+  */
+void ETH_WKUP_IRQHandler(void)
+{
+  /* USER CODE BEGIN ETH_WKUP_IRQn 0 */
+
+  /* USER CODE END ETH_WKUP_IRQn 0 */
+  HAL_ETH_IRQHandler(&heth);
+  /* USER CODE BEGIN ETH_WKUP_IRQn 1 */
+
+  /* USER CODE END ETH_WKUP_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

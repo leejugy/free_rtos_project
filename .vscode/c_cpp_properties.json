@@ -10,7 +10,14 @@
              */
             "name": "STM32",
             "configurationProvider": "ms-vscode.cmake-tools",
-            "intelliSenseMode": "${default}"
+            "intelliSenseMode": "${default}",
+            "includePath": [
+                "FreeRTOS-Plus-TCP/source/include",
+                "FreeRTOS-Plus-TCP/source/portable/NetworkInterface/include",
+                "FreeRTOS-Plus-TCP/source/portable/Compiler/GCC",
+                "Middlewares/Third_Party/FreeRTOS/Source/include",
+                "Core/Inc"
+            ]
         }
     ]
 }

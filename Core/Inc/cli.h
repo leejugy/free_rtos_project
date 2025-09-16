@@ -6,6 +6,8 @@
 #define CLI_OPTION_MAX (1 << 6)
 #define CMD_MAX_LEN (1 << 9)
 #define CLI_HISTORY_NUM (1 << 2)
+#define PING_RECV(ping_cnt, fail_cnt) (ping_cnt - fail_cnt)
+#define PIGN_FAIL_PERCENT(ping_cnt, fail_cnt) (100 - (ping_cnt - fail_cnt) * 100 / ping_cnt)
 
 typedef enum
 {
@@ -14,6 +16,7 @@ typedef enum
     CMD_CLEAR,
     CMD_REBOOT,
     CMD_DATE,
+    CMD_PING,
     CMD_IDX_MAX,
 }CLI_COMMAND_IDX;
 
@@ -75,13 +78,7 @@ typedef struct
 typedef struct __attribute__((__packed__))
 {
     uint8_t get_ret : 1;
-    uint8_t reserved0 :1;
-    uint8_t reserved1 :1;
-    uint8_t reserved2 :1;
-    uint8_t reserved3 :1;
-    uint8_t reserved4 :1;
-    uint8_t reserved5 :1;
-    uint8_t reserved6 :1;
+    uint8_t reserved :7;
 }cli_arg_opt_t;
 
 typedef union

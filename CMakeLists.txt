@@ -46,11 +46,18 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
     Core/Src/cli.c
+    Core/Src/lan8742.c
 )
+
+file(GLOB_RECURSE FREERTOS_TCP_SOURCES "FreeRTOS-Plus-TCP/source/*.c")
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE ${FREERTOS_TCP_SOURCES})
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
+    FreeRTOS-Plus-TCP/source/include
+    FreeRTOS-Plus-TCP/source/portable/NetworkInterface/include
+    FreeRTOS-Plus-TCP/source/portable/Compiler/GCC
 )
 
 # Add project symbols (macros)

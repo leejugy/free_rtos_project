@@ -2,6 +2,20 @@
     "files.associations": {
         "main.h": "c",
         "sched.h": "c",
-        "cli.h": "c"
+        "cli.h": "c",
+        "freertos_arp.h": "c",
+        "freertos_routing.h": "c",
+        "freertosipconfigdefaults.h": "c",
+        "freertos.h": "c",
+        "freertosconfig.h": "c",
+        "queue.h": "c",
+        "task.h": "c",
+        "portable.h": "c",
+        "string.h": "c",
+        "eth.h": "c",
+        "freertos_ip.h": "c",
+        "usart.h": "c",
+        "phyhandling.h": "c",
+        "networkinterface.h": "c"
     }
 }

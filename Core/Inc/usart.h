@@ -96,9 +96,9 @@ int uart_read(uart_t *ut, void *buf, size_t buf_size);
 void prints(char *fmt, ...);
 void printu(char *fmt, ...);
 
-#define printok(fmt, ...)   printu("[\x1b[32m  OK  \x1b[0m] "fmt"\r\n", ##__VA_ARGS__)
-#define printfail(fmt, ...) printu("[\x1b[31m FAIL \x1b[0m] "fmt"\r\n", ##__VA_ARGS__)
-#define printdepend(fmt, ...) printu("[\x1b[33;5mDEPEND\x1b[0m] "fmt"\r\n", ##__VA_ARGS__)
+#define printok(fmt, ...)   printu("[\x1b[32m   OK   \x1b[0m] "fmt"\r\n", ##__VA_ARGS__)
+#define printfail(fmt, ...) printu("[\x1b[31m  FAIL  \x1b[0m] "fmt"\r\n", ##__VA_ARGS__)
+#define printdepend(fmt, ...) printu("[\x1b[33;5m DEPEND \x1b[0m] "fmt"\r\n", ##__VA_ARGS__)
 
 #define printr(fmt, ...) prints("[\x1b[31;1mERR, %s\x1b[0m]"fmt"\r\n", __FUNCTION__, ##__VA_ARGS__)
 #define printg(fmt, ...) prints("[\x1b[32;1mERR, %s\x1b[0m]"fmt"\r\n", __FUNCTION__, ##__VA_ARGS__)

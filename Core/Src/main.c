@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os2.h"
+#include "eth.h"
 #include "icache.h"
 #include "rtc.h"
 #include "usart.h"
@@ -94,8 +95,10 @@ int main(void)
   MX_ICACHE_Init();
   MX_USART1_UART_Init();
   MX_RTC_Init();
+  MX_ETH_Init();
   /* USER CODE BEGIN 2 */
   uart_init();
+  eth_init();
   /* USER CODE END 2 */
 
   /* Init scheduler */

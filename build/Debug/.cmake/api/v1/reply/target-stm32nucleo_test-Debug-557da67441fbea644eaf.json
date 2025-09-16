@@ -12,6 +12,7 @@
 		[
 			"add_executable",
 			"target_link_libraries",
+			"target_include_directories",
 			"target_sources"
 		],
 		"files" : 
@@ -36,19 +37,31 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 114,
-				"parent" : 2
-			},
-			{
-				"command" : 2,
-				"file" : 1,
-				"line" : 108,
+				"line" : 121,
 				"parent" : 2
 			},
 			{
 				"command" : 2,
 				"file" : 0,
+				"line" : 56,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 115,
+				"parent" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 0,
 				"line" : 46,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 53,
 				"parent" : 0
 			}
 		]
@@ -79,6 +92,18 @@
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 4,
+					"path" : "D:/lee/stm32hal_project/stm32nucleo_test/FreeRTOS-Plus-TCP/source/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "D:/lee/stm32hal_project/stm32nucleo_test/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "D:/lee/stm32hal_project/stm32nucleo_test/FreeRTOS-Plus-TCP/source/portable/Compiler/GCC"
+				},
 				{
 					"backtrace" : 3,
 					"path" : "D:/lee/stm32hal_project/stm32nucleo_test/cmake/stm32cubemx/../../Core/Inc"
@@ -138,7 +163,55 @@
 				8,
 				9,
 				10,
-				12
+				11,
+				12,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60
 			]
 		},
 		{
@@ -165,6 +238,18 @@
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 4,
+					"path" : "D:/lee/stm32hal_project/stm32nucleo_test/FreeRTOS-Plus-TCP/source/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "D:/lee/stm32hal_project/stm32nucleo_test/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "D:/lee/stm32hal_project/stm32nucleo_test/FreeRTOS-Plus-TCP/source/portable/Compiler/GCC"
+				},
 				{
 					"backtrace" : 3,
 					"path" : "D:/lee/stm32hal_project/stm32nucleo_test/cmake/stm32cubemx/../../Core/Inc"
@@ -205,7 +290,7 @@
 			"language" : "ASM",
 			"sourceIndexes" : 
 			[
-				11
+				13
 			]
 		}
 	],
@@ -265,21 +350,8 @@
 				8,
 				9,
 				10,
-				12
-			]
-		},
-		{
-			"name" : "",
-			"sourceIndexes" : 
-			[
-				11
-			]
-		},
-		{
-			"name" : "Object Libraries",
-			"sourceIndexes" : 
-			[
-				13,
+				11,
+				12,
 				14,
 				15,
 				16,
@@ -309,88 +381,442 @@
 				40,
 				41,
 				42,
-				43
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				13
+			]
+		},
+		{
+			"name" : "Object Libraries",
+			"sourceIndexes" : 
+			[
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96
 			]
 		}
 	],
 	"sources" : 
 	[
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/main.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/gpio.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/app_freertos.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "Core/Src/eth.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/icache.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "Core/Src/rng.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/rtc.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/usart.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/stm32h5xx_it.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/stm32h5xx_hal_msp.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/stm32h5xx_hal_timebase_tim.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/sysmem.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/syscalls.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 1,
 			"path" : "startup_stm32h563xx.s",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 5,
+			"backtrace" : 6,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/cli.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"compileGroupIndex" : 0,
+			"path" : "Core/Src/lan8742.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 0,
+			"path" : "FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -415,12 +841,6 @@
 			"backtrace" : 3,
 			"isGenerated" : true,
 			"path" : "build/Debug/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32H5xx_HAL_Driver/Src/stm32h5xx_hal_cortex.c.obj",
-			"sourceGroupIndex" : 2
-		},
-		{
-			"backtrace" : 3,
-			"isGenerated" : true,
-			"path" : "build/Debug/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32H5xx_HAL_Driver/Src/stm32h5xx_hal_icache.c.obj",
 			"sourceGroupIndex" : 2
 		},
 		{
@@ -487,6 +907,42 @@
 			"backtrace" : 3,
 			"isGenerated" : true,
 			"path" : "build/Debug/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32H5xx_HAL_Driver/Src/stm32h5xx_hal_exti.c.obj",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 3,
+			"isGenerated" : true,
+			"path" : "build/Debug/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32H5xx_HAL_Driver/Src/stm32h5xx_hal_eth.c.obj",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 3,
+			"isGenerated" : true,
+			"path" : "build/Debug/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32H5xx_HAL_Driver/Src/stm32h5xx_hal_eth_ex.c.obj",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 3,
+			"isGenerated" : true,
+			"path" : "build/Debug/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32H5xx_HAL_Driver/Src/stm32h5xx_hal_icache.c.obj",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 3,
+			"isGenerated" : true,
+			"path" : "build/Debug/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32H5xx_HAL_Driver/Src/stm32h5xx_hal_rng.c.obj",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 3,
+			"isGenerated" : true,
+			"path" : "build/Debug/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32H5xx_HAL_Driver/Src/stm32h5xx_hal_rng_ex.c.obj",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 3,
+			"isGenerated" : true,
+			"path" : "build/Debug/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32H5xx_HAL_Driver/Src/stm32h5xx_ll_rng.c.obj",
 			"sourceGroupIndex" : 2
 		},
 		{
