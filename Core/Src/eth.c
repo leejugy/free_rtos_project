@@ -403,7 +403,7 @@ BaseType_t eApplicationProcessCustomFrameHook( NetworkBufferDescriptor_t *pxNetw
 lan8742_Object_t lan_handle = {0, };
 lan8742_IOCtx_t  io_func = {0, };
 
-int ifconfig_link_up()
+int lan_link_up()
 {
     if (LAN8742_SetLinkState(&lan_handle, LAN8742_STATUS_100MBITS_FULLDUPLEX) != LAN8742_STATUS_OK)
     {
@@ -418,7 +418,7 @@ int ifconfig_link_up()
     return 0;
 }
 
-int ifconfig_link_down()
+int lan_link_down()
 {
     if (LAN8742_EnablePowerDownMode(&lan_handle) != LAN8742_STATUS_OK)
     {
@@ -452,7 +452,7 @@ BaseType_t xPhyConfigure( EthernetPhy_t * pxPhyObject,  const PhyProperties_t * 
     (void) pxPhyProperties; 
 
     /* up lan 8742 */
-    if (ifconfig_link_up() < 0)
+    if (lan_link_up() < 0)
     {
         FreeRTOS_printf(("Fail to up link"));
         return -1;

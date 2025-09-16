@@ -30,6 +30,9 @@
  * @brief Implements the Address Resolution Protocol for the FreeRTOS+TCP network stack.
  */
 
+/* usert includes - lee */
+#include "status.h"
+
 /* Standard includes. */
 #include <stdint.h>
 #include <stdio.h>
@@ -1026,6 +1029,17 @@
                                              ( unsigned ) FreeRTOS_ntohl( ulOriginal ),
                                              ( eReturn == eResolutionCacheHit ) ? "hit" : "miss",
                                              ( unsigned ) FreeRTOS_ntohl( ulAddressToLookup ) ) );
+                    /* set ping integer */
+                    if (status_get_int(STATUS_INTEGER_PING) == STATUS_PING_WAIT)
+                    {
+                        status_set_int(STATUS_INTEGER_PING, STATUS_PING_FAIL);
+                    }
+                }
+
+                if (status_get_int(STATUS_INTEGER_PING) == STATUS_PING_WAIT &&
+                    eReturn == eResolutionCacheHit)
+                {
+                    status_set_int(STATUS_INTEGER_PING, STATUS_PING_OK);
                 }
 
                 /* It might be that the ARP has to go to the gateway. */

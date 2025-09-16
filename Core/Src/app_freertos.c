@@ -75,6 +75,14 @@ const osSemaphoreAttr_t rtc_sem_attributes = {
   .cb_mem = &rtc_sem_blk,
   .cb_size = sizeof(rtc_sem_blk),
 };
+/* Definitions for status_sem */
+osSemaphoreId_t status_semHandle;
+osStaticSemaphoreDef_t status_sem_blk;
+const osSemaphoreAttr_t status_sem_attributes = {
+  .name = "status_sem",
+  .cb_mem = &status_sem_blk,
+  .cb_size = sizeof(status_sem_blk),
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -99,6 +107,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of rtc_sem */
   rtc_semHandle = osSemaphoreNew(1, 1, &rtc_sem_attributes);
+
+  /* creation of status_sem */
+  status_semHandle = osSemaphoreNew(1, 1, &status_sem_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */

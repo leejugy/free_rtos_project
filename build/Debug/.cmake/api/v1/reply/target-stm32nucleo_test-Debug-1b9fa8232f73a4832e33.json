@@ -43,7 +43,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 56,
+				"line" : 57,
 				"parent" : 0
 			},
 			{
@@ -61,7 +61,7 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 53,
+				"line" : 54,
 				"parent" : 0
 			}
 		]
@@ -211,7 +211,8 @@
 				57,
 				58,
 				59,
-				60
+				60,
+				61
 			]
 		},
 		{
@@ -398,7 +399,8 @@
 				57,
 				58,
 				59,
-				60
+				60,
+				61
 			]
 		},
 		{
@@ -412,7 +414,6 @@
 			"name" : "Object Libraries",
 			"sourceIndexes" : 
 			[
-				61,
 				62,
 				63,
 				64,
@@ -447,7 +448,8 @@
 				93,
 				94,
 				95,
-				96
+				96,
+				97
 			]
 		}
 	],
@@ -547,6 +549,12 @@
 			"backtrace" : 6,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/lan8742.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"compileGroupIndex" : 0,
+			"path" : "Core/Src/status.c",
 			"sourceGroupIndex" : 0
 		},
 		{

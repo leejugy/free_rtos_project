@@ -2,6 +2,7 @@
 #include "rtc.h"
 #include "eth.h"
 #include "usart.h"
+#include "status.h"
 
 static CLI_EXEC_RESULT cmd_help(cli_data_t *cli_data);
 static CLI_EXEC_RESULT cmd_echo(cli_data_t *cli_data);
@@ -383,23 +384,38 @@ static CLI_EXEC_RESULT cmd_ping(cli_data_t *cli_data)
 
     net_add = inet_addr(ip);
     os_tick_tot = osKernelGetTickCount();
-    for (idx = 0; idx < ping_cnt; idx++)
+    while(idx != ping_cnt)
     {
-        os_tick = osKernelGetTickCount();
-        seq = FreeRTOS_SendPingRequest(net_add, 1, 1000);
-        if (seq == pdFAIL)
+        switch (status_get_int(STATUS_INTEGER_PING))
         {
-            fail_cnt++;
-            printr("send fail icmp packet to : %s, %ldms", ip, osKernelGetTickCount() - os_tick);
-        }
-        else
-        {
-            prints("1 bytes to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, osKernelGetTickCount() - os_tick);
-        }
+        case STATUS_PING_NONE:
+            os_tick = osKernelGetTickCount();
+            status_set_int(STATUS_INTEGER_PING, STATUS_PING_WAIT);
+            seq = FreeRTOS_SendPingRequest(net_add, 1, 1000);
+            break;
 
-        if (idx != ping_cnt - 1)
-        {
-            osDelay(1000);
+        case STATUS_PING_FAIL:
+            printr("icmp fail to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, osKernelGetTickCount() - os_tick);
+            status_set_int(STATUS_INTEGER_PING, STATUS_PING_NONE);
+            fail_cnt++;
+            if (idx++ != ping_cnt)
+            {
+                osDelay(1000);
+            }
+            break;
+
+        case STATUS_PING_OK:
+            prints("1 bytes to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, osKernelGetTickCount() - os_tick);
+            status_set_int(STATUS_INTEGER_PING, STATUS_PING_NONE);
+            if (idx++ != ping_cnt)
+            {
+                osDelay(1000);
+            }
+            break;
+
+        case STATUS_PING_WAIT:
+        default:
+            break;
         }
     }
 

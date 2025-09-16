@@ -15,12 +15,14 @@
   *
   ******************************************************************************
   */
+#include "status.h"
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os2.h"
 #include "eth.h"
 #include "icache.h"
+#include "rng.h"
 #include "rtc.h"
 #include "usart.h"
 #include "gpio.h"
@@ -60,7 +62,15 @@ void MX_FREERTOS_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void main_init()
+{
+    printu("\n\n\n\r");
+    printu(",------. ,--------. ,-----.  ,---.   \n\r");
+    printu("|  .--. ''--.  .--''  .-.  ''   .-'  \n\r");
+    printu("|  '--'.'   |  |   |  | |  |`.  `-.  \n\r");
+    printu("|  |\\  \\    |  |   '  '-'  '.-'    | \n\r");
+    printu("`--' '--'   `--'    `-----' `-----'  \n\n\r");
+}
 /* USER CODE END 0 */
 
 /**
@@ -96,9 +106,12 @@ int main(void)
   MX_USART1_UART_Init();
   MX_RTC_Init();
   MX_ETH_Init();
+  MX_RNG_Init();
   /* USER CODE BEGIN 2 */
   uart_init();
   eth_init();
+  status_init();
+  main_init();
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -140,8 +153,10 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_CSI;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48|RCC_OSCILLATORTYPE_LSI
+                              |RCC_OSCILLATORTYPE_CSI;
   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
+  RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
   RCC_OscInitStruct.CSIState = RCC_CSI_ON;
   RCC_OscInitStruct.CSICalibrationValue = RCC_CSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;

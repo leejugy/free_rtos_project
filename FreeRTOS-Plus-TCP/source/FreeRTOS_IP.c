@@ -392,6 +392,7 @@ static void prvProcessIPEventsAndTimers( void )
              * pointer to the generated buffer is located in the pvData
              * member of the received event structure. */
             vProcessGeneratedUDPPacket( ( NetworkBufferDescriptor_t * ) xReceivedEvent.pvData );
+            /* lee - add ping check sequence */
             break;
 
         case eDHCPEvent:

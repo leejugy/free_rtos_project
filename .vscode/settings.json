@@ -16,6 +16,7 @@
         "freertos_ip.h": "c",
         "usart.h": "c",
         "phyhandling.h": "c",
-        "networkinterface.h": "c"
+        "networkinterface.h": "c",
+        "status.h": "c"
     }
 }
