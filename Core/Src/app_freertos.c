@@ -22,6 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "eth.h"
 #include "usart.h"
 #include "cli.h"
 /* USER CODE END Includes */
@@ -58,6 +59,18 @@ const osThreadAttr_t console_thread_attributes = {
   .cb_mem = &MycontrolBlocTask01,
   .cb_size = sizeof(MycontrolBlocTask01),
   .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for tcp_thread */
+osThreadId_t tcp_threadHandle;
+uint32_t MyBufferTask02[ 1024 ];
+osStaticThreadDef_t MycontrolBlocTask02;
+const osThreadAttr_t tcp_thread_attributes = {
+  .name = "tcp_thread",
+  .stack_mem = &MyBufferTask02[0],
+  .stack_size = sizeof(MyBufferTask02),
+  .cb_mem = &MycontrolBlocTask02,
+  .cb_size = sizeof(MycontrolBlocTask02),
+  .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for uart1_sem */
 osSemaphoreId_t uart1_semHandle;
@@ -125,6 +138,9 @@ void MX_FREERTOS_Init(void) {
   /* creation of console_thread */
   console_threadHandle = osThreadNew(console_thread, NULL, &console_thread_attributes);
 
+  /* creation of tcp_thread */
+  tcp_threadHandle = osThreadNew(tcp_thread, NULL, &tcp_thread_attributes);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -152,6 +168,26 @@ void console_thread(void *argument)
         osDelay(10);
     }
   /* USER CODE END console_thread */
+}
+
+/* USER CODE BEGIN Header_tcp_thread */
+/**
+* @brief Function implementing the tcp_thread thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_tcp_thread */
+void tcp_thread(void *argument)
+{
+  /* USER CODE BEGIN tcp_thread */
+    client_init();
+    /* Infinite loop */
+    for(;;)
+    {
+        eth_work();
+        osDelay(1);
+    }
+  /* USER CODE END tcp_thread */
 }
 
 /* Private application code --------------------------------------------------*/

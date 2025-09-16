@@ -21,6 +21,7 @@
 #include "lan8742.h"
 #include "phyHandling.h"
 #include "app_freertos.h"
+#include "status.h"
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "eth.h"
@@ -196,47 +197,79 @@ void HAL_ETH_MspDeInit(ETH_HandleTypeDef* ethHandle)
 /* USER CODE BEGIN 1 */
 client_t client[TCP_CLIENT_MAX] = {
     /* tcp client 1 */
-    [TCP_CLIENT1].connect = false,
     [TCP_CLIENT1].idx = TCP_CLIENT1,
     [TCP_CLIENT1].sv_port = 4096,
-    [TCP_CLIENT1].sv_add = "58.181.17.62"
+    [TCP_CLIENT1].sv_add = "58.181.17.62",
+    [TCP_CLIENT1].valid = false,
 };
+
+static int __client_init(client_t *cl)
+{
+    int ret = 0;
+    TickType_t timeo = 0;
+
+    cl->handle = socket(FREERTOS_AF_INET, FREERTOS_SOCK_STREAM, FREERTOS_IPPROTO_TCP);
+    if (cl->handle == NULL)
+    {
+        printfail("fail to socket init");
+        return -1;
+    }
+
+    timeo = pdMS_TO_TICKS(5000);
+    ret = setsockopt(cl->handle, 0, FREERTOS_SO_SNDTIMEO, &timeo, sizeof(timeo));
+    if (ret < 0)
+    {
+        printfail("fail to set opt");
+        return -1;
+    }
+
+    timeo = pdMS_TO_TICKS(10);
+    ret = setsockopt(cl->handle, 0, FREERTOS_SO_RCVTIMEO, &timeo, sizeof(timeo));
+    if (ret < 0)
+    {
+        printfail("fail to set opt");
+        return -1;
+    }
+
+    cl->valid = true;
+    return 1;
+}
 
 void client_init()
 {
     int idx = 0;
-    int ret = 0;
-    TickType_t timeo = 0;
 
     for (idx = 0; idx < TCP_CLIENT_MAX; idx++)
     {
-        client[idx].handle = socket(FREERTOS_AF_INET, FREERTOS_SOCK_STREAM, FREERTOS_IPPROTO_TCP);
-        if (client[idx].handle == NULL)
+        if (__client_init(&client[idx]) < 0)
         {
-            printfail("fail to socket init");
             return;
         }
-
-        timeo = pdMS_TO_TICKS(5000);
-        ret = setsockopt(client[idx].handle, 0, FREERTOS_SO_SNDTIMEO, &timeo, sizeof(timeo));
-        if (ret < 0)
-        {
-            printfail("fail to set opt");
-        }
-
-        timeo = pdMS_TO_TICKS(10);
-        ret = setsockopt(client[idx].handle, 0, FREERTOS_SO_RCVTIMEO, &timeo, sizeof(timeo));
-        if (ret < 0)
-        {
-            printfail("fail to set opt");
-        }
-
         printok("Init socket : %d", idx);
+    }
+}
+
+void client_deinit(client_t *cl)
+{
+    if (cl->valid)
+    {
+        shutdown(cl->handle);
+        close(cl->handle);
+        cl->valid = false;
     }
 }
 
 void client_connect(client_t *cl)
 {
+    if (!cl->valid)
+    {
+        __client_init(cl);
+    }
+    else if (client_get_status(cl) != eCLOSED)
+    {
+        return;
+    }
+
     struct freertos_sockaddr addr = {0, };
 
     addr.sin_address.ulIP_IPv4 = inet_addr(cl->sv_add);
@@ -248,32 +281,89 @@ void client_connect(client_t *cl)
     {
         printr("fail to connect : %s, port : %d", cl->sv_add, cl->sv_port);
     }
-    cl->connect = true;
+}
+
+void client_status(client_t *cl)
+{
+    static eIPTCPState_t old_stat = eCLOSED;
+
+    switch (client_get_status(cl))
+    {
+    case eESTABLISHED:
+        if (old_stat != eESTABLISHED)
+        {
+            printg("connect : %s, port : %d", cl->sv_add, cl->sv_port);
+        }
+        break;
+
+    case eLAST_ACK:
+    case eFIN_WAIT_1:
+    case eFIN_WAIT_2:
+    case eTIME_WAIT:
+        if (!cl->close_cnt_flag)
+        {
+           cl->close_cnt = osKernelGetTickCount();
+           cl->close_cnt_flag = true;
+        }
+        /* wait for three second to timeout */
+        if (osKernelGetTickCount() - cl->close_cnt > 3000 && cl->close_cnt_flag)
+        {
+            cl->close_cnt_flag = false;
+        }
+        else
+        {
+            break;
+        }
+    case eCLOSE_WAIT:
+        cl->close_cnt_flag = false;
+        client_deinit(cl);
+        break;
+    
+    case eCLOSED:
+    default:
+        break;
+    }
+    old_stat = client_get_status(cl);
 }
 
 int client_send(client_t *cl, uint8_t *sk_buf, size_t sk_buf_len)
 {
+    if (client_get_status(cl) != eESTABLISHED && !cl->valid)
+    {
+        return -1;
+    }
+
     int len = send(cl->handle, sk_buf, sk_buf_len, 0);
     if (len < 0)
     {
         printr("fail to send data : %d bytes", sk_buf_len);
         return len;
     }
-
-    printg("send data : %d bytes", len);
+    else if (len != 0)
+    {
+        printg("send data : %d bytes", len);
+    }
     return len;
 }
 
 int client_recv(client_t *cl, uint8_t *sk_buf, size_t sk_buf_len)
 {
-    int len = send(cl->handle, sk_buf, sk_buf_len, 0);
-    if (len < 0)
+    if (client_get_status(cl) != eESTABLISHED && !cl->valid)
     {
-        printr("fail to send data : %d bytes", sk_buf_len);
-        return len;
+        return -1;
     }
 
-    printg("send data : %d bytes", len);
+    int len = recv(cl->handle, sk_buf, sk_buf_len, 0);
+    if (len < 0)
+    {
+        printr("fail to recv data : %d bytes", sk_buf_len);
+        return len;
+    }
+    else if (len != 0)
+    {
+        printg("recv data : %d bytes", len);
+        printg("data : %s", sk_buf);
+    }
     return len;
 }
 
@@ -294,6 +384,50 @@ void eth_init()
         return;
     }
     printok("ETH : init end");
+}
+
+client_t *client_get_head()
+{
+    return client;
+}
+
+void eth_work()
+{
+    uint8_t recv[256] = {0, };
+    uint8_t send[256] = {0, };
+    client_t *cl = client_get_head();
+    int idx = 0;
+    int ret = 0;
+
+    switch (status_get_int(STATUS_INTEGER_TCP))
+    {
+    case STATUS_TCP_UP:
+        for (idx = 0; idx < TCP_CLIENT_MAX; idx++)
+        {
+            client_status(&cl[idx]);
+            client_connect(&cl[idx]);
+            ret = client_recv(&cl[idx], recv, sizeof(recv));
+            if (ret > 0)
+            {
+                strcpy((char *)send, (char *)recv);
+                ret = client_send(&cl[idx], send, strlen((char *)send));
+            }
+            if (ret < 0 && client_get_status(cl) == eESTABLISHED)
+            {
+                client_deinit(&cl[idx]);
+            }
+        }
+        break;
+        
+    case STATUS_TCP_DOWN:
+        for (idx = 0; idx < TCP_CLIENT_MAX; idx++)
+        {
+            client_deinit(&cl[idx]);
+        }
+    case STATUS_TCP_NONE:
+    default:
+        break;
+    }
 }
 
 int check_valid_ip(char *ip)
@@ -355,12 +489,12 @@ uint32_t ulApplicationGetNextSequenceNumber(uint32_t ulSourceAddress, uint16_t u
 #if ( ipconfigIPv4_BACKWARD_COMPATIBLE == 1 )
 void vApplicationIPNetworkEventHook(eIPCallbackEvent_t eNetworkEvent)
 {
-
+    status_set_int(STATUS_INTEGER_TCP, STATUS_TCP_UP);
 }
 #else
 void vApplicationIPNetworkEventHook_Multi(eIPCallbackEvent_t eNetworkEvent, struct xNetworkEndPoint *pxEndPoint)
 {
-
+    status_set_int(STATUS_INTEGER_TCP, STATUS_TCP_UP);
 }
 #endif
 
@@ -405,12 +539,12 @@ lan8742_IOCtx_t  io_func = {0, };
 
 int lan_link_up()
 {
-    if (LAN8742_SetLinkState(&lan_handle, LAN8742_STATUS_100MBITS_FULLDUPLEX) != LAN8742_STATUS_OK)
+    if (LAN8742_DisablePowerDownMode(&lan_handle) != LAN8742_STATUS_OK)
     {
         return -1;
     }
 
-    if (LAN8742_DisablePowerDownMode(&lan_handle) != LAN8742_STATUS_OK)
+    if (LAN8742_StartAutoNego(&lan_handle) != LAN8742_STATUS_OK)
     {
         return -1;
     }
@@ -425,6 +559,37 @@ int lan_link_down()
         return -1;
     }
 
+    return 0;
+}
+
+int ifconfig_up()
+{
+    if (lan_link_up() < 0)
+    {
+        return -1;
+    }
+
+    if (HAL_ETH_Init(&heth) != HAL_OK)
+    {
+        return -1;
+    }
+    return 0;
+}
+
+int ifconfig_down()
+{
+    if (lan_link_down() < 0)
+    {
+        return -1;
+    }
+
+    if (HAL_ETH_DeInit(&heth) != HAL_OK)
+    {
+        return -1;
+    }
+
+    NetworkEndPoint_t *ep = FreeRTOS_FirstEndPoint(NULL);
+    FreeRTOS_NetworkDown(ep->pxNetworkInterface);
     return 0;
 }
 
@@ -443,7 +608,7 @@ void vPhyInitialise(EthernetPhy_t * pxPhyObject, xApplicationPhyReadHook_t fnPhy
 
 BaseType_t xPhyDiscover( EthernetPhy_t * pxPhyObject )
 {
-    /* phy 수가 1개임 */
+    /* pyh chip 수가 1개임 */
     return 1;
 }
 
@@ -461,36 +626,30 @@ BaseType_t xPhyConfigure( EthernetPhy_t * pxPhyObject,  const PhyProperties_t * 
     return 0;
 }
 
-// PHY 링크 상태 확인 함수
+/* check pyh link status */
 BaseType_t xPhyCheckLinkStatus( EthernetPhy_t * pxPhyObject, BaseType_t xHadReception )
 {
-    static BaseType_t xLastLinkStatus = 0;
-    BaseType_t xCurrentLinkStatus = 0;
+    static BaseType_t old_status = 0;
+    BaseType_t cur_status = 0;
     int32_t ret = 0;
 
-    // PHY 리셋이 요청되면 Auto-Negotiation 재시작
-    if( xHadReception != pdFALSE )
-    {
-        LAN8742_StartAutoNego(&lan_handle);
-    }
-
     ret = LAN8742_GetLinkState(&lan_handle);
-    // LAN8742 드라이버를 통해 현재 링크 상태 가져오기
+    /* get link status */
     if (ret != LAN8742_STATUS_LINK_DOWN && ret != LAN8742_STATUS_AUTONEGO_NOTDONE &&
         ret != LAN8742_STATUS_READ_ERROR && ret != LAN8742_STATUS_WRITE_ERROR)
     {
-        xCurrentLinkStatus = pdTRUE;
+        cur_status = pdTRUE;
         pxPhyObject->ulLinkStatusMask = 1;
     }
     
-    // 링크 상태가 변경되었는지 확인
-    if( xLastLinkStatus != xCurrentLinkStatus )
+    /* check link status change */
+    if( old_status != cur_status )
     {
-        xLastLinkStatus = xCurrentLinkStatus;
-        FreeRTOS_printf( ( "Link status changed to %s\n", (xCurrentLinkStatus ? "UP" : "DOWN") ) );
+        old_status = cur_status;
+        FreeRTOS_printf( ( "Link status changed to %s\n", (cur_status ? "UP" : "DOWN") ) );
     }
 
-    return xCurrentLinkStatus;
+    return cur_status;
 }
 
 BaseType_t xPhyStartAutoNegotiation( EthernetPhy_t * pxPhyObject, uint32_t ulPhyMask )

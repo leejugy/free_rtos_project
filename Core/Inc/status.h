@@ -4,6 +4,8 @@
 #include "main.h"
 #include "app_freertos.h"
 
+void status_init();
+
 #define status_integer_use 1
 #define status_string_use 0
 
@@ -11,6 +13,7 @@
 typedef enum
 {
     STATUS_INTEGER_PING,
+    STATUS_INTEGER_TCP,
     STATUS_INTEGER_MAX
 }STATUS_INTEGER;
 
@@ -21,6 +24,13 @@ typedef enum
     STATUS_PING_WAIT,
     STATUS_PING_OK,
 }STATUS_PING;
+
+typedef enum
+{
+    STATUS_TCP_NONE = 0,
+    STATUS_TCP_UP,
+    STATUS_TCP_DOWN,
+}STATUS_TCP;
 
 typedef struct
 {

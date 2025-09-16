@@ -88,6 +88,8 @@ static inline int setsockopt(Socket_t handle, int32_t lv, int32_t opt, const voi
 /**
  * @brief Connect to a remote port.
  *
+ * @note it send remote connect request to task
+ * 
  * @param[in] handle The socket initiating the connection.
  * @param[in] sockaddr The address of the remote socket.
  * @param[in] addr_len This parameter is not used. It is kept in
@@ -306,8 +308,12 @@ typedef struct
     TCP_CLIENT_IDX idx;     /* index of client_t */
     char sv_add[IP_LEN];    /* server address */
     int sv_port;            /* server port */
-    bool connect;           /* is connected? */
+    bool valid;          /* connect try */
+    bool close_cnt_flag; /*close count flags*/
+    uint32_t close_cnt; /* close count */
 }client_t;
+
+#define client_get_status(cl) (((client_t *)cl)->handle->u.xTCP.eTCPState)
 
 void eth_init();
 void client_init();
@@ -316,6 +322,9 @@ int client_send(client_t *cl, uint8_t *sk_buf, size_t sk_buf_len);
 int client_recv(client_t *cl, uint8_t *sk_buf, size_t sk_buf_len);
 void __ETH_IRQHandler(void);
 int check_valid_ip(char *ip);
+client_t *client_get_head();
+void eth_work();
+
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

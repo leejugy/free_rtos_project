@@ -46,10 +46,10 @@
 #define ipconfigMASK4 0
 
 /* gateway address */
-#define ipconfigGATE1 58
-#define ipconfigGATE2 181
-#define ipconfigGATE3 17
-#define ipconfigGATE4 1
+#define ipconfigGATE1 0
+#define ipconfigGATE2 0
+#define ipconfigGATE3 0
+#define ipconfigGATE4 0
 
 /* dns address */
 #define ipconfigDNS1 0
