@@ -294,6 +294,15 @@ static CLI_EXEC_RESULT cmd_date(cli_data_t *cli_data)
     return EXEC_RESULT_ERR;
 }
 
+static void reboot_deinit_apps()
+{
+    status_set_int(STATUS_INTEGER_TCP, STATUS_TCP_DOWN);
+    while (status_get_int(STATUS_INTEGER_TCP) != STATUS_TCP_NONE)
+    {
+        osDelay(50);
+    }
+}
+
 static CLI_EXEC_RESULT cmd_reboot(cli_data_t *cli_data)
 {
     /* address that pointing Reset_Handler function address's address */
@@ -305,6 +314,8 @@ static CLI_EXEC_RESULT cmd_reboot(cli_data_t *cli_data)
     if ((*iap_add & 0x20000000) == 0x20000000)
     {
         print_dmesg("Reboot : iap is detected");
+        /* waiting deinit apps */
+        reboot_deinit_apps();
         HAL_RCC_DeInit();
         HAL_DeInit();
         HAL_ICACHE_DeInit();

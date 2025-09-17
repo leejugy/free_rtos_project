@@ -50,6 +50,11 @@ int client_init(client_t *cl)
     return 1;
 }
 
+/*
+ * graceful close client
+ * you must check null pointer that is handle of member of client_t.
+ * client_deinit makes cl->handle as null.
+*/
 void client_deinit(client_t *cl)
 {
     if (cl->handle)
@@ -70,6 +75,14 @@ void client_connect(client_t *cl)
     {
         return;
     }
+    /* check if connect timeout is expired */
+    if (osKernelGetTickCount() - cl->conn_intv < CLIENT_CONNECT_TIMEOUT)
+    {
+        return;
+    }
+
+    /* set connect timeout */
+    cl->conn_intv = osKernelGetTickCount();
 
     struct freertos_sockaddr addr = {0, };
 
@@ -213,6 +226,8 @@ void client_work()
         {
             client_deinit(&cl[idx]);
         }
+        status_set_int(STATUS_INTEGER_TCP, STATUS_TCP_NONE);
+        break;
     case STATUS_TCP_NONE:
     default:
         break;
