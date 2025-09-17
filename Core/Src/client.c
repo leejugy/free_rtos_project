@@ -16,7 +16,7 @@ client_t client[TCP_CLIENT_MAX] = {
 
 int client_init(client_t *cl)
 {
-    if (status_get_int(STATUS_INTEGER_TCP) != STATUS_TCP_UP)
+    if (status_get_int(STATUS_INTEGER_TCP_CLIENT) != STATUS_TCP_UP)
     {
         print_dmesg("network is down\r\n");
         return -1;
@@ -67,16 +67,17 @@ void client_deinit(client_t *cl)
 
 void client_connect(client_t *cl)
 {
+    /* check if connect timeout is expired */
+    if (osKernelGetTickCount() - cl->conn_intv < CLIENT_CONNECT_TIMEOUT)
+    {
+        return;
+    }
+
     if (!cl->handle)
     {
         client_init(cl);
     }
     else if (client_get_status(cl) != eCLOSED)
-    {
-        return;
-    }
-    /* check if connect timeout is expired */
-    if (osKernelGetTickCount() - cl->conn_intv < CLIENT_CONNECT_TIMEOUT)
     {
         return;
     }
@@ -200,7 +201,7 @@ void client_work()
     int idx = 0;
     int ret = 0;
 
-    switch (status_get_int(STATUS_INTEGER_TCP))
+    switch (status_get_int(STATUS_INTEGER_TCP_CLIENT))
     {
     case STATUS_TCP_UP:
         for (idx = 0; idx < TCP_CLIENT_MAX; idx++)
@@ -211,8 +212,8 @@ void client_work()
             if (ret > 0)
             {
                 print_dmesg("idx : %d\r\n", idx);
-                strcpy((char *)send, (char *)recv);
-                ret = client_send(&cl[idx], send, strlen((char *)send));
+                strncpy((char *)send, (char *)recv, sizeof(send));
+                ret = client_send(&cl[idx], send, (strnlen((char *)send, sizeof(send))));
             }
             if (ret < 0 && client_get_status(cl) == eESTABLISHED)
             {
@@ -226,7 +227,7 @@ void client_work()
         {
             client_deinit(&cl[idx]);
         }
-        status_set_int(STATUS_INTEGER_TCP, STATUS_TCP_NONE);
+        status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_NONE);
         break;
     case STATUS_TCP_NONE:
     default:

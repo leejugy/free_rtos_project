@@ -60,7 +60,7 @@ cli_command_t cli_cmd[CMD_IDX_MAX] =
     /* ping */
     [CMD_PING].help = \
     "ping       : send icmp packet to <ip> address\r\n" \
-    "             -c option set count to send, default : 5, max : 10"\
+    "             -c option set count to send, default : 5, max : 10\r\n"\
     "<use>      : ping <ip> -c <count>\r\n",
     [CMD_PING].name = "ping",
     [CMD_PING].func = cmd_ping,
@@ -296,25 +296,28 @@ static CLI_EXEC_RESULT cmd_date(cli_data_t *cli_data)
 
 static void reboot_deinit_apps()
 {
-    status_set_int(STATUS_INTEGER_TCP, STATUS_TCP_DOWN);
-    while (status_get_int(STATUS_INTEGER_TCP) != STATUS_TCP_NONE)
+    status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_DOWN);
+    while (status_get_int(STATUS_INTEGER_TCP_CLIENT) != STATUS_TCP_NONE)
     {
         osDelay(50);
     }
+    print_dmesg("Reboot : close client");
 }
 
 static CLI_EXEC_RESULT cmd_reboot(cli_data_t *cli_data)
 {
     /* address that pointing Reset_Handler function address's address */
-    __IO void (**rst_func)() = (__IO void(**)())0x08000004;
-    __IO uint32_t *iap_add = (__IO uint32_t *)0x08000000;
+    __IO void (**rst_func)() = (__IO void(**)())(BOOT_LOADER_ADD + 4);
+    __IO uint32_t *iap_add = (__IO uint32_t *)BOOT_LOADER_ADD;
 
     print_dmesg("Reboot : check iap is available");
 
+    /* check iap is valid */
     if ((*iap_add & 0x20000000) == 0x20000000)
     {
         print_dmesg("Reboot : iap is detected");
         /* waiting deinit apps */
+        SCB->VTOR = BOOT_LOADER_ADD;
         reboot_deinit_apps();
         HAL_RCC_DeInit();
         HAL_DeInit();
@@ -431,19 +434,19 @@ static CLI_EXEC_RESULT cmd_ping(cli_data_t *cli_data)
             break;
 
         case STATUS_PING_FAIL:
-            printr("icmp fail to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, osKernelGetTickCount() - os_tick);
+            printr("icmp fail to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, tick_cur_gap(os_tick));
             ping_result(STATUS_PING_FAIL, &idx, &ping_cnt, &fail_cnt);
             break;
 
         case STATUS_PING_OK:
-            prints("1 bytes to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, osKernelGetTickCount() - os_tick);
+            prints("1 bytes to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, tick_cur_gap(os_tick));
             ping_result(STATUS_PING_OK, &idx, &ping_cnt, &fail_cnt);
             break;
 
         case STATUS_PING_WAIT:
-            if (osKernelGetTickCount() - os_tick > PING_TIMEOUT)
+            if (tick_cur_gap(os_tick) > PING_TIMEOUT)
             {
-                printr("icmp fail to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, osKernelGetTickCount() - os_tick);
+                printr("icmp fail to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, tick_cur_gap(os_tick));
                 ping_result(STATUS_PING_FAIL, &idx, &ping_cnt, &fail_cnt);
             }
             break;
@@ -455,7 +458,7 @@ static CLI_EXEC_RESULT cmd_ping(cli_data_t *cli_data)
     prints("--- %s ping statistics ---\r\n", ip);
     prints("%d packets transmitted, %d received, %d%% packet loss, time %ldms\r\n", 
         ping_cnt, PING_RECV(ping_cnt, fail_cnt), PIGN_FAIL_PERCENT(ping_cnt, fail_cnt),
-        osKernelGetTickCount() - os_tick_tot);
+        tick_cur_gap(os_tick_tot));
     return EXEC_NONE;
 }
 

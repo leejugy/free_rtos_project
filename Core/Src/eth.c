@@ -276,12 +276,12 @@ uint32_t ulApplicationGetNextSequenceNumber(uint32_t ulSourceAddress, uint16_t u
 #if ( ipconfigIPv4_BACKWARD_COMPATIBLE == 1 )
 void vApplicationIPNetworkEventHook(eIPCallbackEvent_t eNetworkEvent)
 {
-    status_set_int(STATUS_INTEGER_TCP, STATUS_TCP_UP);
+
 }
 #else
 void vApplicationIPNetworkEventHook_Multi(eIPCallbackEvent_t eNetworkEvent, struct xNetworkEndPoint *pxEndPoint)
 {
-    status_set_int(STATUS_INTEGER_TCP, STATUS_TCP_UP);
+    status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_UP);
 }
 #endif
 
@@ -448,6 +448,16 @@ BaseType_t xPhyCheckLinkStatus( EthernetPhy_t * pxPhyObject, BaseType_t xHadRece
     if( old_status != cur_status )
     {
         old_status = cur_status;
+        switch (cur_status)
+        {
+        case pdTRUE:
+            status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_UP);
+            break;
+
+        case pdFALSE:
+            status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_DOWN);
+            break;
+        }
         FreeRTOS_printf( ( "Link status changed to %s\n", (cur_status ? "UP" : "DOWN") ) );
     }
 

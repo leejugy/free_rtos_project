@@ -56,6 +56,11 @@ static inline int sem_post(osSemaphoreId_t *sem)
 {
     return osSemaphoreRelease(*sem);
 }
+
+static inline uint32_t tick_cur_gap(uint32_t old_tick)
+{
+    return osKernelGetTickCount() - old_tick;
+}
 /* USER CODE END PD */
 
 /* Exported macro -------------------------------------------------------------*/
