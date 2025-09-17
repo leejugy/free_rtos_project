@@ -302,6 +302,13 @@ static void reboot_deinit_apps()
         osDelay(50);
     }
     print_dmesg("Reboot : close client");
+
+    status_set_int(STATUS_INTEGER_TCP_SERVER, STATUS_TCP_DOWN);
+    while (status_get_int(STATUS_INTEGER_TCP_SERVER) != STATUS_TCP_NONE)
+    {
+        osDelay(50);
+    }
+    print_dmesg("Reboot : close server");
 }
 
 static CLI_EXEC_RESULT cmd_reboot(cli_data_t *cli_data)
@@ -504,7 +511,7 @@ static CLI_EXEC_RESULT cmd_dmesg(cli_data_t *cli_data)
         }
     }
 
-    prints("debug message toggle : %s\r\n", msg);
+    prints("debug message : %s\r\n", msg);
     return EXEC_NONE;
 }
 

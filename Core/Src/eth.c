@@ -452,9 +452,11 @@ BaseType_t xPhyCheckLinkStatus( EthernetPhy_t * pxPhyObject, BaseType_t xHadRece
         {
         case pdTRUE:
             status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_UP);
+            status_set_int(STATUS_INTEGER_TCP_SERVER, STATUS_TCP_UP);
             break;
 
         case pdFALSE:
+            status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_DOWN);
             status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_DOWN);
             break;
         }

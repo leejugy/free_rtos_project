@@ -120,14 +120,48 @@ static inline int connect(Socket_t handle, const struct freertos_sockaddr *socka
  *         is in listen mode and receives a connection request. The new socket will
  *         be bound already to the same port number as the listening socket.
  */
-static inline int accept(Socket_t handle, struct freertos_sockaddr *sock_addr, uint32_t *addr_len)
+static inline Socket_t accept(Socket_t handle, struct freertos_sockaddr *sock_addr, uint32_t *addr_len)
 {
     Socket_t sk_handle = FreeRTOS_accept(handle, sock_addr, addr_len);
     if (sk_handle == FREERTOS_INVALID_SOCKET)
     {
-        return -1;
+        return NULL;
     }
-    return 1;
+    return sk_handle;
+}
+
+/**
+ * @brief The select() statement: wait for an event to occur on any of the sockets
+ *        included in a socket set and return its event bits when the event occurs.
+ *
+ * @param[in] xSocketSet The socket set including the sockets on which we are
+ *                        waiting for an event to occur.
+ * @param[in] xBlockTimeTicks Maximum time ticks to wait for an event to occur.
+ *                   If the value is 'portMAX_DELAY' then the function will wait
+ *                   indefinitely for an event to occur.
+ *
+ * @return The event bits (event flags) value for the socket set in which an
+ *          event occurred. If any socket is signalled during the call, using
+ *          FreeRTOS_SignalSocket() or FreeRTOS_SignalSocketFromISR(), then eSELECT_INTR
+ *          is returned.
+ *
+ */
+static inline BaseType_t select(SocketSet_t set, TickType_t timeo)
+{
+    return FreeRTOS_select(set, timeo);
+}
+
+/**
+ * @brief Add a socket to a set.
+ *
+ * @param[in] xSocket The socket being added.
+ * @param[in] xSocketSet The socket set being added to.
+ * @param[in] xBitsToSet The event bits to set, a combination of the values defined
+ *                        in 'eSelectEvent_t', for read, write, exception, etc.
+ */
+static inline void FD_SET(Socket_t sk, SocketSet_t set, EventBits_t bit)
+{
+    FreeRTOS_FD_SET(sk, set, bit);
 }
 
 /**
@@ -270,6 +304,11 @@ static inline int shutdown(Socket_t handle)
 static inline uint32_t inet_addr(char *addr)
 {
     return FreeRTOS_inet_addr(addr);
+}
+
+static inline const char *inet_ntoa(uint32_t addr, char *ptr)
+{
+    return FreeRTOS_inet_ntoa(addr, ptr);
 }
 
 static inline uint16_t htons(uint16_t val)

@@ -18,6 +18,8 @@
         "phyhandling.h": "c",
         "networkinterface.h": "c",
         "status.h": "c",
-        "app_freertos.h": "c"
+        "app_freertos.h": "c",
+        "server.h": "c",
+        "tcp_server.h": "c"
     }
 }

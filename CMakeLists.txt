@@ -48,7 +48,8 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Core/Src/cli.c
     Core/Src/lan8742.c
     Core/Src/status.c
-    Core/Src/client.c
+    Core/Src/tcp_client.c
+    Core/Src/tcp_server.c
 )
 
 file(GLOB_RECURSE FREERTOS_TCP_SOURCES "FreeRTOS-Plus-TCP/source/*.c")

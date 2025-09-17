@@ -25,7 +25,8 @@
 #include "eth.h"
 #include "usart.h"
 #include "cli.h"
-#include "client.h"
+#include "tcp_client.h"
+#include "tcp_server.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -61,16 +62,28 @@ const osThreadAttr_t console_thread_attributes = {
   .cb_size = sizeof(MycontrolBlocTask01),
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for tcp_thread */
-osThreadId_t tcp_threadHandle;
+/* Definitions for tcp_cilent_thread */
+osThreadId_t tcp_cilent_threadHandle;
 uint32_t MyBufferTask02[ 1024 ];
 osStaticThreadDef_t MycontrolBlocTask02;
-const osThreadAttr_t tcp_thread_attributes = {
-  .name = "tcp_thread",
+const osThreadAttr_t tcp_cilent_thread_attributes = {
+  .name = "tcp_cilent_thread",
   .stack_mem = &MyBufferTask02[0],
   .stack_size = sizeof(MyBufferTask02),
   .cb_mem = &MycontrolBlocTask02,
   .cb_size = sizeof(MycontrolBlocTask02),
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for tcp_server_thread */
+osThreadId_t tcp_server_threadHandle;
+uint32_t MyBufferTask03[ 1024 ];
+osStaticThreadDef_t MycontrolBlocTask03;
+const osThreadAttr_t tcp_server_thread_attributes = {
+  .name = "tcp_server_thread",
+  .stack_mem = &MyBufferTask03[0],
+  .stack_size = sizeof(MyBufferTask03),
+  .cb_mem = &MycontrolBlocTask03,
+  .cb_size = sizeof(MycontrolBlocTask03),
   .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for uart1_sem */
@@ -147,8 +160,11 @@ void MX_FREERTOS_Init(void) {
   /* creation of console_thread */
   console_threadHandle = osThreadNew(console_thread, NULL, &console_thread_attributes);
 
-  /* creation of tcp_thread */
-  tcp_threadHandle = osThreadNew(tcp_thread, NULL, &tcp_thread_attributes);
+  /* creation of tcp_cilent_thread */
+  tcp_cilent_threadHandle = osThreadNew(tcp_cilent_thread, NULL, &tcp_cilent_thread_attributes);
+
+  /* creation of tcp_server_thread */
+  tcp_server_threadHandle = osThreadNew(tcp_server_thread, NULL, &tcp_server_thread_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -183,23 +199,42 @@ void console_thread(void *argument)
   /* USER CODE END console_thread */
 }
 
-/* USER CODE BEGIN Header_tcp_thread */
+/* USER CODE BEGIN Header_tcp_cilent_thread */
 /**
-* @brief Function implementing the tcp_thread thread.
+* @brief Function implementing the tcp_cilent_thread thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_tcp_thread */
-void tcp_thread(void *argument)
+/* USER CODE END Header_tcp_cilent_thread */
+void tcp_cilent_thread(void *argument)
 {
-  /* USER CODE BEGIN tcp_thread */
-    /* Infinite loop */
-    for(;;)
-    {
-        client_work();
-        osDelay(1);
-    }
-  /* USER CODE END tcp_thread */
+  /* USER CODE BEGIN tcp_cilent_thread */
+  /* Infinite loop */
+  for(;;)
+  {
+    tcp_client_work();
+    osDelay(1);
+  }
+  /* USER CODE END tcp_cilent_thread */
+}
+
+/* USER CODE BEGIN Header_tcp_server_thread */
+/**
+* @brief Function implementing the tcp_server_thread thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_tcp_server_thread */
+void tcp_server_thread(void *argument)
+{
+  /* USER CODE BEGIN tcp_server_thread */
+  /* Infinite loop */
+  for(;;)
+  {
+    tcp_server_work();
+    osDelay(1);
+  }
+  /* USER CODE END tcp_server_thread */
 }
 
 /* Private application code --------------------------------------------------*/
