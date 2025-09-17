@@ -14,6 +14,7 @@ typedef enum
 {
     STATUS_INTEGER_PING,
     STATUS_INTEGER_TCP,
+    STATUS_INTEGER_DMESG,
     STATUS_INTEGER_MAX
 }STATUS_INTEGER;
 
@@ -31,6 +32,12 @@ typedef enum
     STATUS_TCP_UP,
     STATUS_TCP_DOWN,
 }STATUS_TCP;
+
+typedef enum
+{
+    STATUS_DMESG_OFF,
+    STATUS_DMESG_ON,
+}STATUS_DMESG;
 
 typedef struct
 {

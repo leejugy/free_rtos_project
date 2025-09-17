@@ -3,6 +3,7 @@
 
 #include "main.h"
 
+#define PING_TIMEOUT 5000
 #define CLI_OPTION_MAX (1 << 6)
 #define CMD_MAX_LEN (1 << 9)
 #define CLI_HISTORY_NUM (1 << 2)
@@ -17,6 +18,7 @@ typedef enum
     CMD_REBOOT,
     CMD_DATE,
     CMD_PING,
+    CMD_DMESG,
     CMD_IDX_MAX,
 }CLI_COMMAND_IDX;
 

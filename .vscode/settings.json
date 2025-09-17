@@ -17,6 +17,7 @@
         "usart.h": "c",
         "phyhandling.h": "c",
         "networkinterface.h": "c",
-        "status.h": "c"
+        "status.h": "c",
+        "app_freertos.h": "c"
     }
 }

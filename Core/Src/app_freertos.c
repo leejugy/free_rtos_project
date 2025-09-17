@@ -25,6 +25,7 @@
 #include "eth.h"
 #include "usart.h"
 #include "cli.h"
+#include "client.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,7 +100,15 @@ const osSemaphoreAttr_t status_sem_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-
+void main_init()
+{
+    printu("\n\n\r\n");
+    printu(",------. ,--------. ,-----.  ,---.   \r\n");
+    printu("|  .--. ''--.  .--''  .-.  ''   .-'  \r\n");
+    printu("|  '--'.'   |  |   |  | |  |`.  `-.  \r\n");
+    printu("|  |\\  \\    |  |   '  '-'  '.-'    | \r\n");
+    printu("`--' '--'   `--'    `-----' `-----'  \n\r\n");
+}
 /* USER CODE END FunctionPrototypes */
 
 /**
@@ -146,6 +155,10 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
+  uart_init();
+  status_init();
+  eth_init();
+  main_init();
   /* add events, ... */
   /* USER CODE END RTOS_EVENTS */
 
@@ -180,11 +193,10 @@ void console_thread(void *argument)
 void tcp_thread(void *argument)
 {
   /* USER CODE BEGIN tcp_thread */
-    client_init();
     /* Infinite loop */
     for(;;)
     {
-        eth_work();
+        client_work();
         osDelay(1);
     }
   /* USER CODE END tcp_thread */

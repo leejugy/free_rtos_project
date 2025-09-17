@@ -10,6 +10,7 @@ static CLI_EXEC_RESULT cmd_clear(cli_data_t *cli_data);
 static CLI_EXEC_RESULT cmd_reboot(cli_data_t *cli_data);
 static CLI_EXEC_RESULT cmd_date(cli_data_t *cli_data);
 static CLI_EXEC_RESULT cmd_ping(cli_data_t *cli_data);
+static CLI_EXEC_RESULT cmd_dmesg(cli_data_t *cli_data);
 
 cli_command_t cli_cmd[CMD_IDX_MAX] = 
 {
@@ -60,11 +61,21 @@ cli_command_t cli_cmd[CMD_IDX_MAX] =
     [CMD_PING].help = \
     "ping       : send icmp packet to <ip> address\r\n" \
     "             -c option set count to send, default : 5, max : 10"\
-    "<use> : ping <ip> -c <count>\r\n",
+    "<use>      : ping <ip> -c <count>\r\n",
     [CMD_PING].name = "ping",
     [CMD_PING].func = cmd_ping,
     [CMD_PING].opt = "c",
     [CMD_PING].opt_size = 1,
+
+    /* dmesg */
+    [CMD_DMESG].help = \
+    "dmesg      : turn on or off debug message\r\n" \
+    "<use>      : dmesg <on/off>\r\n" \
+    "<toggle>   : dmesg\r\n",
+    [CMD_DMESG].name = "dmesg",
+    [CMD_DMESG].func = cmd_dmesg,
+    [CMD_DMESG].opt = "",
+    [CMD_DMESG].opt_size = 0,
 };
 
 static int cli_get_opt(cli_data_t *cli_data, cli_arg_t *cli_arg)
@@ -340,6 +351,20 @@ static CLI_EXEC_RESULT cmd_echo(cli_data_t *cli_data)
     return EXEC_NONE;
 }
 
+static void ping_result(STATUS_PING status, int *idx, int *ping_cnt, int *fail_cnt)
+{
+    status_set_int(STATUS_INTEGER_PING, STATUS_PING_NONE);
+    if (status == STATUS_PING_FAIL)
+    {
+        (*fail_cnt)++;
+    }
+
+    if ((*idx)++ != *ping_cnt)
+    {
+        osDelay(1000);
+    }
+}
+
 static CLI_EXEC_RESULT cmd_ping(cli_data_t *cli_data)
 {
     int len = 0;
@@ -391,29 +416,26 @@ static CLI_EXEC_RESULT cmd_ping(cli_data_t *cli_data)
         case STATUS_PING_NONE:
             os_tick = osKernelGetTickCount();
             status_set_int(STATUS_INTEGER_PING, STATUS_PING_WAIT);
-            seq = FreeRTOS_SendPingRequest(net_add, 1, 1000);
+            seq = FreeRTOS_SendPingRequest(net_add, 1, PING_TIMEOUT);
             break;
 
         case STATUS_PING_FAIL:
             printr("icmp fail to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, osKernelGetTickCount() - os_tick);
-            status_set_int(STATUS_INTEGER_PING, STATUS_PING_NONE);
-            fail_cnt++;
-            if (idx++ != ping_cnt)
-            {
-                osDelay(1000);
-            }
+            ping_result(STATUS_PING_FAIL, &idx, &ping_cnt, &fail_cnt);
             break;
 
         case STATUS_PING_OK:
             prints("1 bytes to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, osKernelGetTickCount() - os_tick);
-            status_set_int(STATUS_INTEGER_PING, STATUS_PING_NONE);
-            if (idx++ != ping_cnt)
-            {
-                osDelay(1000);
-            }
+            ping_result(STATUS_PING_OK, &idx, &ping_cnt, &fail_cnt);
             break;
 
         case STATUS_PING_WAIT:
+            if (osKernelGetTickCount() - os_tick > PING_TIMEOUT)
+            {
+                printr("icmp fail to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, osKernelGetTickCount() - os_tick);
+                ping_result(STATUS_PING_FAIL, &idx, &ping_cnt, &fail_cnt);
+            }
+            break;
         default:
             break;
         }
@@ -423,6 +445,52 @@ static CLI_EXEC_RESULT cmd_ping(cli_data_t *cli_data)
     prints("%d packets transmitted, %d received, %d%% packet loss, time %ldms\r\n", 
         ping_cnt, PING_RECV(ping_cnt, fail_cnt), PIGN_FAIL_PERCENT(ping_cnt, fail_cnt),
         osKernelGetTickCount() - os_tick_tot);
+    return EXEC_NONE;
+}
+
+static CLI_EXEC_RESULT cmd_dmesg(cli_data_t *cli_data)
+{
+    cli_arg_t cli_arg = {0, };
+    char *msg = NULL;
+
+    cli_arg.cli_get.num = 0;
+    cli_arg.opt.get_ret = 1;
+
+    if (cli_get_arg(cli_data, &cli_arg) < 0) /* toggle */
+    {
+        switch(status_get_int(STATUS_INTEGER_DMESG))
+        {
+            case STATUS_DMESG_ON:
+                status_set_int(STATUS_INTEGER_DMESG, STATUS_DMESG_OFF);
+                msg = "OFF";
+                break;
+
+            case STATUS_DMESG_OFF:
+                status_set_int(STATUS_INTEGER_DMESG, STATUS_DMESG_ON);
+                msg = "ON";
+                break;
+        }
+    }
+    else
+    {
+        if (strcmp(cli_arg.arg, "on") == 0)
+        {
+            status_set_int(STATUS_INTEGER_DMESG, STATUS_DMESG_ON);
+            msg = "ON";
+        }
+        else if (strcmp(cli_arg.arg, "off") == 0)
+        {
+            status_set_int(STATUS_INTEGER_DMESG, STATUS_DMESG_OFF);
+            msg = "OFF";
+        }
+        else
+        {
+            printr("unkown argument : %s", cli_arg.arg);
+            return EXEC_RESULT_ERR;
+        }
+    }
+
+    prints("debug message toggle : %s\r\n", msg);
     return EXEC_NONE;
 }
 

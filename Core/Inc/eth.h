@@ -293,37 +293,11 @@ static inline uint32_t ntohl(uint32_t val)
 }
 
 #define chk_valid_ip(ip) (0 <= (ip) && (ip) <= 255)
-
-typedef enum
-{
-    TCP_CLIENT1,
-    TCP_CLIENT_MAX,
-}TCP_CLIENT_IDX;
-
 #define IP_LEN 32
 
-typedef struct
-{
-    Socket_t handle;        /* free rtos server handle */
-    TCP_CLIENT_IDX idx;     /* index of client_t */
-    char sv_add[IP_LEN];    /* server address */
-    int sv_port;            /* server port */
-    bool valid;          /* connect try */
-    bool close_cnt_flag; /*close count flags*/
-    uint32_t close_cnt; /* close count */
-}client_t;
-
-#define client_get_status(cl) (((client_t *)cl)->handle->u.xTCP.eTCPState)
-
 void eth_init();
-void client_init();
-void client_connect(client_t *cl);
-int client_send(client_t *cl, uint8_t *sk_buf, size_t sk_buf_len);
-int client_recv(client_t *cl, uint8_t *sk_buf, size_t sk_buf_len);
 void __ETH_IRQHandler(void);
 int check_valid_ip(char *ip);
-client_t *client_get_head();
-void eth_work();
 
 /* USER CODE END Prototypes */
 

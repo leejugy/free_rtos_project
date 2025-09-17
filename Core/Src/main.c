@@ -62,15 +62,7 @@ void MX_FREERTOS_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void main_init()
-{
-    printu("\n\n\n\r");
-    printu(",------. ,--------. ,-----.  ,---.   \n\r");
-    printu("|  .--. ''--.  .--''  .-.  ''   .-'  \n\r");
-    printu("|  '--'.'   |  |   |  | |  |`.  `-.  \n\r");
-    printu("|  |\\  \\    |  |   '  '-'  '.-'    | \n\r");
-    printu("`--' '--'   `--'    `-----' `-----'  \n\n\r");
-}
+
 /* USER CODE END 0 */
 
 /**
@@ -108,10 +100,7 @@ int main(void)
   MX_ETH_Init();
   MX_RNG_Init();
   /* USER CODE BEGIN 2 */
-  uart_init();
-  eth_init();
-  status_init();
-  main_init();
+
   /* USER CODE END 2 */
 
   /* Init scheduler */

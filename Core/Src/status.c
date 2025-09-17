@@ -1,7 +1,11 @@
 #include "status.h"
 #include "usart.h"
 #if (status_integer_use)
-int_status_t int_status = {0, };
+int_status_t int_status = {
+    .status[STATUS_INTEGER_PING] = STATUS_PING_NONE,
+    .status[STATUS_INTEGER_TCP] = STATUS_TCP_NONE,
+    .status[STATUS_INTEGER_DMESG] = STATUS_DMESG_ON,
+};
 #endif
 #if (status_string_use)
 string_status_t string_status = {0, };

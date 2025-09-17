@@ -195,177 +195,6 @@ void HAL_ETH_MspDeInit(ETH_HandleTypeDef* ethHandle)
 }
 
 /* USER CODE BEGIN 1 */
-client_t client[TCP_CLIENT_MAX] = {
-    /* tcp client 1 */
-    [TCP_CLIENT1].idx = TCP_CLIENT1,
-    [TCP_CLIENT1].sv_port = 4096,
-    [TCP_CLIENT1].sv_add = "58.181.17.62",
-    [TCP_CLIENT1].valid = false,
-};
-
-static int __client_init(client_t *cl)
-{
-    int ret = 0;
-    TickType_t timeo = 0;
-
-    cl->handle = socket(FREERTOS_AF_INET, FREERTOS_SOCK_STREAM, FREERTOS_IPPROTO_TCP);
-    if (cl->handle == NULL)
-    {
-        printfail("fail to socket init");
-        return -1;
-    }
-
-    timeo = pdMS_TO_TICKS(5000);
-    ret = setsockopt(cl->handle, 0, FREERTOS_SO_SNDTIMEO, &timeo, sizeof(timeo));
-    if (ret < 0)
-    {
-        printfail("fail to set opt");
-        return -1;
-    }
-
-    timeo = pdMS_TO_TICKS(10);
-    ret = setsockopt(cl->handle, 0, FREERTOS_SO_RCVTIMEO, &timeo, sizeof(timeo));
-    if (ret < 0)
-    {
-        printfail("fail to set opt");
-        return -1;
-    }
-
-    cl->valid = true;
-    return 1;
-}
-
-void client_init()
-{
-    int idx = 0;
-
-    for (idx = 0; idx < TCP_CLIENT_MAX; idx++)
-    {
-        if (__client_init(&client[idx]) < 0)
-        {
-            return;
-        }
-        printok("Init socket : %d", idx);
-    }
-}
-
-void client_deinit(client_t *cl)
-{
-    if (cl->valid)
-    {
-        shutdown(cl->handle);
-        close(cl->handle);
-        cl->valid = false;
-    }
-}
-
-void client_connect(client_t *cl)
-{
-    if (!cl->valid)
-    {
-        __client_init(cl);
-    }
-    else if (client_get_status(cl) != eCLOSED)
-    {
-        return;
-    }
-
-    struct freertos_sockaddr addr = {0, };
-
-    addr.sin_address.ulIP_IPv4 = inet_addr(cl->sv_add);
-    addr.sin_port = htons(cl->sv_port);
-    addr.sin_family = FREERTOS_AF_INET;
-    addr.sin_len = sizeof(addr);
-
-    if (connect(cl->handle, &addr, sizeof(addr)) < 0)
-    {
-        printr("fail to connect : %s, port : %d", cl->sv_add, cl->sv_port);
-    }
-}
-
-void client_status(client_t *cl)
-{
-    static eIPTCPState_t old_stat = eCLOSED;
-
-    switch (client_get_status(cl))
-    {
-    case eESTABLISHED:
-        if (old_stat != eESTABLISHED)
-        {
-            printg("connect : %s, port : %d", cl->sv_add, cl->sv_port);
-        }
-        break;
-
-    case eLAST_ACK:
-    case eFIN_WAIT_1:
-    case eFIN_WAIT_2:
-    case eTIME_WAIT:
-        if (!cl->close_cnt_flag)
-        {
-           cl->close_cnt = osKernelGetTickCount();
-           cl->close_cnt_flag = true;
-        }
-        /* wait for three second to timeout */
-        if (osKernelGetTickCount() - cl->close_cnt > 3000 && cl->close_cnt_flag)
-        {
-            cl->close_cnt_flag = false;
-        }
-        else
-        {
-            break;
-        }
-    case eCLOSE_WAIT:
-        cl->close_cnt_flag = false;
-        client_deinit(cl);
-        break;
-    
-    case eCLOSED:
-    default:
-        break;
-    }
-    old_stat = client_get_status(cl);
-}
-
-int client_send(client_t *cl, uint8_t *sk_buf, size_t sk_buf_len)
-{
-    if (client_get_status(cl) != eESTABLISHED && !cl->valid)
-    {
-        return -1;
-    }
-
-    int len = send(cl->handle, sk_buf, sk_buf_len, 0);
-    if (len < 0)
-    {
-        printr("fail to send data : %d bytes", sk_buf_len);
-        return len;
-    }
-    else if (len != 0)
-    {
-        printg("send data : %d bytes", len);
-    }
-    return len;
-}
-
-int client_recv(client_t *cl, uint8_t *sk_buf, size_t sk_buf_len)
-{
-    if (client_get_status(cl) != eESTABLISHED && !cl->valid)
-    {
-        return -1;
-    }
-
-    int len = recv(cl->handle, sk_buf, sk_buf_len, 0);
-    if (len < 0)
-    {
-        printr("fail to recv data : %d bytes", sk_buf_len);
-        return len;
-    }
-    else if (len != 0)
-    {
-        printg("recv data : %d bytes", len);
-        printg("data : %s", sk_buf);
-    }
-    return len;
-}
 
 void eth_init()
 {
@@ -386,49 +215,7 @@ void eth_init()
     printok("ETH : init end");
 }
 
-client_t *client_get_head()
-{
-    return client;
-}
 
-void eth_work()
-{
-    uint8_t recv[256] = {0, };
-    uint8_t send[256] = {0, };
-    client_t *cl = client_get_head();
-    int idx = 0;
-    int ret = 0;
-
-    switch (status_get_int(STATUS_INTEGER_TCP))
-    {
-    case STATUS_TCP_UP:
-        for (idx = 0; idx < TCP_CLIENT_MAX; idx++)
-        {
-            client_status(&cl[idx]);
-            client_connect(&cl[idx]);
-            ret = client_recv(&cl[idx], recv, sizeof(recv));
-            if (ret > 0)
-            {
-                strcpy((char *)send, (char *)recv);
-                ret = client_send(&cl[idx], send, strlen((char *)send));
-            }
-            if (ret < 0 && client_get_status(cl) == eESTABLISHED)
-            {
-                client_deinit(&cl[idx]);
-            }
-        }
-        break;
-        
-    case STATUS_TCP_DOWN:
-        for (idx = 0; idx < TCP_CLIENT_MAX; idx++)
-        {
-            client_deinit(&cl[idx]);
-        }
-    case STATUS_TCP_NONE:
-    default:
-        break;
-    }
-}
 
 int check_valid_ip(char *ip)
 {
@@ -509,7 +296,22 @@ eDHCPCallbackAnswer_t xApplicationDHCPHook(eDHCPCallbackPhase_t eDHCPPhase, uint
 #if (ipconfigSUPPORT_OUTGOING_PINGS == 1)
 void vApplicationPingReplyHook( ePingReplyStatus_t eStatus, uint16_t usIdentifier )
 {
+    if (status_get_int(STATUS_INTEGER_PING) != STATUS_PING_WAIT)
+    {
+        return;
+    }
 
+    switch (eStatus)
+    {
+    case eInvalidData:
+    case eInvalidChecksum:
+        status_set_int(STATUS_INTEGER_PING, STATUS_PING_FAIL);
+        break;
+    
+    case eSuccess:
+        status_set_int(STATUS_INTEGER_PING, STATUS_PING_OK);
+        break;
+    }
 }
 #endif
 
