@@ -128,7 +128,10 @@ static void tcp_server_deinit(tcp_server_t *sv)
     {
         shutdown(sv->sk);
         close(sv->sk);
-        FreeRTOS_FD_CLR(sv->sk, sv->sel, eSELECT_ALL);
+        if (sv->sel)
+        {
+            FreeRTOS_FD_CLR(sv->sk, sv->sel, eSELECT_ALL);
+        }
         sv->sk = NULL;
     }
 }
@@ -139,7 +142,10 @@ static void tcp_server_client_deinit(tcp_server_client_t *cl)
     {
         shutdown(cl->sk);
         close(cl->sk);
-        FreeRTOS_FD_CLR(cl->sk, cl->sel, eSELECT_ALL);
+        if (cl->sel)
+        {
+            FreeRTOS_FD_CLR(cl->sk, cl->sel, eSELECT_ALL);
+        }
         cl->sk = NULL;
     }
 }
