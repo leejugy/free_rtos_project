@@ -99,7 +99,7 @@ static inline void print_dmesg(char *fmt, ...)
     if (status_get_int(STATUS_INTEGER_DMESG))                                      
     {                                                                              
         uint32_t tick = HAL_GetTick();                                             
-        prints("[%6d.%03d] %s\r\n", tick / 1000, tick % 1000, buf); 
+        prints("[%8d.%03d] %s\r\n", tick / 1000, tick % 1000, buf); 
     }
     va_end(va);                                                             
 }

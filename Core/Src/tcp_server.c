@@ -5,20 +5,63 @@ tcp_server_t tcp_server[TCP_SERVER_MAX] =
 {
     /* tcp server 1 */
     [TCP_SERVER1].cl = {{0, }},
-    [TCP_SERVER1].handle = NULL,
+    [TCP_SERVER1].sk = NULL,
     [TCP_SERVER1].accept_intv = 0,
     [TCP_SERVER1].port = 4096  
 };
 
+/**
+ * @note :eSELECT_READ will be set when current socket status is eTCP_LISTEN.
+ * If peer socket was is null or socket has received data (it's likely SYN)
+ * from client, eSELECT_READ bit is returned by FreeRTOS_select.
+ * If you want to get client socket accepted with 3 way handshake,
+ * use accept function after you get eSELECT_READ from select.
+ *
+ * 3 way handshake
+ * (client) SYN -> (server)
+ * (server) SYN-ACK -> (client)
+ * (client) ACK -> (server)
+ * */
+static int tcp_server_select_init(tcp_server_t *sv)
+{
+    if (!sv->sel)
+    {
+        sv->sel = FreeRTOS_CreateSocketSet();
+        if (sv->sel == NULL)
+        {
+            printr("fail to create socket set");
+            return -1;
+        }
+    }
+    FreeRTOS_FD_SET(sv->sk, sv->sel, eSELECT_READ);
+    return 1;
+}
+
+static int tcp_server_client_select_init(tcp_server_client_t *cl)
+{
+    if (!cl->sel)
+    {
+        cl->sel = FreeRTOS_CreateSocketSet();
+        if (cl->sel == NULL)
+        {
+            printr("fail to create socket set");
+            return -1;
+        }
+    }
+    /* note : eCLOSE_WAIT or eCLOSE status bit set eSELECT_EXCEPT will be returned at FreeRTOS_select */
+    FreeRTOS_FD_SET(cl->sk, cl->sel, eSELECT_READ | eSELECT_WRITE | eSELECT_EXCEPT);
+    return 1;
+}
+
 static int tcp_server_init(tcp_server_t *sv)
 {
-    if (sv->handle)
+    if (sv->sk)
     {
         return -1;
     }
 
-    sv->handle = socket(FREERTOS_AF_INET, FREERTOS_SOCK_STREAM, FREERTOS_IPPROTO_TCP);
-    if (sv->handle == NULL)
+    sv->sk = socket(FREERTOS_AF_INET, FREERTOS_SOCK_STREAM, FREERTOS_IPPROTO_TCP);
+    if (sv->sk == NULL)
     {
         printr("fail to init socket");
         return -1;
@@ -28,7 +71,7 @@ static int tcp_server_init(tcp_server_t *sv)
     int ret = 0;
 
     timeo = pdMS_TO_TICKS(SERVER_SEND_RECV_TIMEO);
-    ret = setsockopt(sv->handle, 0, FREERTOS_SO_SNDTIMEO, &timeo, sizeof(timeo));
+    ret = setsockopt(sv->sk, 0, FREERTOS_SO_SNDTIMEO, &timeo, sizeof(timeo));
     if (ret < 0)
     {
         printr("fail to set opt\r\n");
@@ -36,7 +79,7 @@ static int tcp_server_init(tcp_server_t *sv)
     }
 
     timeo = pdMS_TO_TICKS(SERVER_SEND_RECV_TIMEO);
-    ret = setsockopt(sv->handle, 0, FREERTOS_SO_RCVTIMEO, &timeo, sizeof(timeo));
+    ret = setsockopt(sv->sk, 0, FREERTOS_SO_RCVTIMEO, &timeo, sizeof(timeo));
     if (ret < 0)
     {
         printr("fail to set opt\r\n");
@@ -50,16 +93,24 @@ static int tcp_server_init(tcp_server_t *sv)
     addr.sin_family = FREERTOS_AF_INET;
     addr.sin_len = sizeof(addr);
 
-    if (bind(sv->handle, &addr, sizeof(addr)) < 0)
+    if (bind(sv->sk, &addr, sizeof(addr)) < 0)
     {
         printr("fail to bind socket");
         return -1;
     }
 
-    if (listen(sv->handle, 10) < 0)
+    if (listen(sv->sk, 10) < 0)
     {
         printr("fail to listen socket");
         return -1;
+    }
+
+    if (!sv->sel)
+    {
+        if (tcp_server_select_init(sv) < 0)
+        {
+            return -1;
+        }
     }
 
     int idx = 0;
@@ -73,27 +124,43 @@ static int tcp_server_init(tcp_server_t *sv)
 
 static void tcp_server_deinit(tcp_server_t *sv)
 {
-    if (sv->handle)
+    if (sv->sk)
     {
-        shutdown(sv->handle);
-        close(sv->handle);
-        sv->handle = NULL;
+        shutdown(sv->sk);
+        close(sv->sk);
+        FreeRTOS_FD_CLR(sv->sk, sv->sel, eSELECT_ALL);
+        sv->sk = NULL;
     }
 }
 
 static void tcp_server_client_deinit(tcp_server_client_t *cl)
 {
-    if (cl->handle)
+    if (cl->sk)
     {
-        shutdown(cl->handle);
-        close(cl->handle);
-        cl->handle = NULL;
+        shutdown(cl->sk);
+        close(cl->sk);
+        FreeRTOS_FD_CLR(cl->sk, cl->sel, eSELECT_ALL);
+        cl->sk = NULL;
     }
 }
 
 static int __tcp_server_accept(tcp_server_t *sv, tcp_server_client_t *cl)
 {
-    if (cl->handle)
+    if (cl->sk)
+    {
+        return -1;
+    }
+
+    if (!sv->sel)
+    {
+        if (tcp_server_select_init(sv) < 0)
+        {
+            return -1;
+        }
+    }
+
+    int ret = FreeRTOS_select(sv->sel, SERVER_SELECT_TIMEO);
+    if (!(ret & eSELECT_READ))
     {
         return -1;
     }
@@ -101,19 +168,23 @@ static int __tcp_server_accept(tcp_server_t *sv, tcp_server_client_t *cl)
     uint32_t addr_len = sizeof(struct freertos_sockaddr);
     char ip[IP_LEN] = {0, };
 
-    cl->handle = accept(sv->handle, &cl->addr, &addr_len);
-    if (cl->handle == NULL)
+    cl->sk = accept(sv->sk, &cl->addr, &addr_len);
+    if (cl->sk == NULL)
     {
         return -1;
     }
     inet_ntoa(cl->addr.sin_address.ulIP_IPv4, ip);
-    print_dmesg(pbold("accept") " ip : %s, port : %d\r\n", ip, cl->addr.sin_port);
+    print_dmesg(pbold("accept") " ip : %s, port : %d\r\n", ip, ntohs(cl->addr.sin_port));
+    if (tcp_server_client_select_init(cl) < 0)
+    {
+        return -1;
+    }
     return 1;
 }
 
 static int tcp_server_accept(tcp_server_t *sv)
 {
-    if (!sv->handle)
+    if (!sv->sk)
     {
         tcp_server_init(sv);
     }
@@ -130,7 +201,7 @@ static int tcp_server_accept(tcp_server_t *sv)
     for (idx = 0; idx < SERVER_CLIENT_MAX; idx++)
     {
         cl = &sv->cl[idx];
-        if (cl->handle == NULL)
+        if (cl->sk == NULL)
         {
             reject = false;
             break;
@@ -154,12 +225,30 @@ static int tcp_server_accept(tcp_server_t *sv)
 
 static int tcp_server_client_send(tcp_server_client_t *cl, uint8_t *sk_buf, size_t sk_buf_len)
 {
-    if (!cl->handle)
+    if (!cl->sk)
     {
         return -1;
     }
 
-    int len = send(cl->handle, sk_buf, sk_buf_len, 0);
+    if (!cl->sel)
+    {
+        if (tcp_server_client_select_init(cl) < 0)
+        {
+            return -1;
+        }
+    }
+
+    int ret = FreeRTOS_select(cl->sel, SERVER_SELECT_TIMEO);
+    if (ret & eSELECT_EXCEPT)
+    {
+        return -1;
+    }
+    else if (!(ret & eSELECT_WRITE))
+    {
+        return 0;
+    }
+
+    int len = send(cl->sk, sk_buf, sk_buf_len, 0);
     if (len < 0)
     {
         printr("fail to send data : %d bytes\r\n", sk_buf_len);
@@ -174,12 +263,30 @@ static int tcp_server_client_send(tcp_server_client_t *cl, uint8_t *sk_buf, size
 
 static int tcp_server_client_recv(tcp_server_client_t *cl, uint8_t *sk_buf, size_t sk_buf_len)
 {
-    if (!cl->handle)
+    if (!cl->sk)
     {
         return -1;
     }
 
-    int len = recv(cl->handle, sk_buf, sk_buf_len, 0);
+    if (!cl->sel)
+    {
+        if (tcp_server_client_select_init(cl) < 0)
+        {
+            return -1;
+        }
+    }
+
+    int ret = FreeRTOS_select(cl->sel, SERVER_SELECT_TIMEO);
+    if (ret & eSELECT_EXCEPT)
+    {
+        return -1;
+    }
+    else if (!(ret & eSELECT_READ))
+    {
+        return 0;
+    }
+
+    int len = recv(cl->sk, sk_buf, sk_buf_len, 0);
     if (len < 0)
     {
         printr("fail to recv data : %d bytes\r\n", sk_buf_len);

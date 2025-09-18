@@ -131,40 +131,6 @@ static inline Socket_t accept(Socket_t handle, struct freertos_sockaddr *sock_ad
 }
 
 /**
- * @brief The select() statement: wait for an event to occur on any of the sockets
- *        included in a socket set and return its event bits when the event occurs.
- *
- * @param[in] xSocketSet The socket set including the sockets on which we are
- *                        waiting for an event to occur.
- * @param[in] xBlockTimeTicks Maximum time ticks to wait for an event to occur.
- *                   If the value is 'portMAX_DELAY' then the function will wait
- *                   indefinitely for an event to occur.
- *
- * @return The event bits (event flags) value for the socket set in which an
- *          event occurred. If any socket is signalled during the call, using
- *          FreeRTOS_SignalSocket() or FreeRTOS_SignalSocketFromISR(), then eSELECT_INTR
- *          is returned.
- *
- */
-static inline BaseType_t select(SocketSet_t set, TickType_t timeo)
-{
-    return FreeRTOS_select(set, timeo);
-}
-
-/**
- * @brief Add a socket to a set.
- *
- * @param[in] xSocket The socket being added.
- * @param[in] xSocketSet The socket set being added to.
- * @param[in] xBitsToSet The event bits to set, a combination of the values defined
- *                        in 'eSelectEvent_t', for read, write, exception, etc.
- */
-static inline void FD_SET(Socket_t sk, SocketSet_t set, EventBits_t bit)
-{
-    FreeRTOS_FD_SET(sk, set, bit);
-}
-
-/**
  * @brief binds a socket to a local port number. If port 0 is provided,
  *        a system provided port number will be assigned. This function
  *        can be used for both UDP and TCP sockets. The actual binding

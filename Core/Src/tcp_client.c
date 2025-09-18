@@ -14,6 +14,22 @@ tcp_client_t tcp_client[TCP_CLIENT_MAX] = {
     [TCP_CLIENT2].sv_add = "58.181.17.62",
 };
 
+static int tcp_client_select_init(tcp_client_t *cl)
+{
+    if (!cl->sel)
+    {
+        cl->sel = FreeRTOS_CreateSocketSet();
+        if (cl->sel == NULL)
+        {
+            printr("fail to creaet select");
+            return -1;
+        }
+    }
+    /* note : eCLOSE_WAIT or eCLOSE status bit set eSELECT_EXCEPT will be returned at FreeRTOS_select */
+    FreeRTOS_FD_SET(cl->sk, cl->sel, eSELECT_EXCEPT | eSELECT_READ | eSELECT_WRITE);
+    return 1;
+}
+
 static int tcp_client_init(tcp_client_t *cl)
 {
     if (status_get_int(STATUS_INTEGER_TCP_CLIENT) != STATUS_TCP_UP)
@@ -25,15 +41,15 @@ static int tcp_client_init(tcp_client_t *cl)
     int ret = 0;
     TickType_t timeo = 0;
 
-    cl->handle = socket(FREERTOS_AF_INET, FREERTOS_SOCK_STREAM, FREERTOS_IPPROTO_TCP);
-    if (cl->handle == NULL)
+    cl->sk = socket(FREERTOS_AF_INET, FREERTOS_SOCK_STREAM, FREERTOS_IPPROTO_TCP);
+    if (cl->sk == NULL)
     {
         printr("fail to socket init\r\n");
         return -1;
     }
 
     timeo = pdMS_TO_TICKS(CLIENT_SEND_RECV_TIMEO);
-    ret = setsockopt(cl->handle, 0, FREERTOS_SO_SNDTIMEO, &timeo, sizeof(timeo));
+    ret = setsockopt(cl->sk, 0, FREERTOS_SO_SNDTIMEO, &timeo, sizeof(timeo));
     if (ret < 0)
     {
         printr("fail to set opt\r\n");
@@ -41,10 +57,15 @@ static int tcp_client_init(tcp_client_t *cl)
     }
 
     timeo = pdMS_TO_TICKS(CLIENT_SEND_RECV_TIMEO);
-    ret = setsockopt(cl->handle, 0, FREERTOS_SO_RCVTIMEO, &timeo, sizeof(timeo));
+    ret = setsockopt(cl->sk, 0, FREERTOS_SO_RCVTIMEO, &timeo, sizeof(timeo));
     if (ret < 0)
     {
         printr("fail to set opt\r\n");
+        return -1;
+    }
+
+    if (tcp_client_select_init(cl) < 0)
+    {
         return -1;
     }
     return 1;
@@ -52,28 +73,32 @@ static int tcp_client_init(tcp_client_t *cl)
 
 /*
  * graceful close tcp_client
- * you must check null pointer that is handle of member of tcp_client_t.
- * tcp_client_deinit makes cl->handle as null.
+ * you must check null pointer that is sk of member of tcp_client_t.
+ * tcp_client_deinit makes cl->sk as null.
 */
 static void tcp_client_deinit(tcp_client_t *cl)
 {
-    if (cl->handle)
+    if (cl->sk)
     {
-        shutdown(cl->handle);
-        close(cl->handle);
-        cl->handle = NULL;
+        if (cl->sel)
+        {
+            FreeRTOS_FD_CLR(cl->sk, cl->sel, eSELECT_ALL);
+        }
+        shutdown(cl->sk);
+        close(cl->sk);
+        cl->sk = NULL;
         cl->connected = false;
     }
 }
 
 static void tcp_client_check_connect(tcp_client_t *cl)
 {
-    if (!cl->handle)
+    if (!cl->sk)
     {
         return;
     }
     /* check if connect is done */
-    if (cl->handle->u.xTCP.eTCPState == eESTABLISHED && !cl->connected)
+    if (cl->sk->u.xTCP.eTCPState == eESTABLISHED && !cl->connected)
     {
         print_dmesg(pbold("connect") " ip[%d] : %s, port : %d\r\n",
                     cl->idx, cl->sv_add, cl->sv_port);
@@ -89,7 +114,7 @@ static void tcp_client_connect(tcp_client_t *cl)
         return;
     }
 
-    if (!cl->handle)
+    if (!cl->sk)
     {
         tcp_client_init(cl);
     }
@@ -108,7 +133,7 @@ static void tcp_client_connect(tcp_client_t *cl)
     addr.sin_family = FREERTOS_AF_INET;
     addr.sin_len = sizeof(addr);
 
-    if (connect(cl->handle, &addr, sizeof(addr)) < 0)
+    if (connect(cl->sk, &addr, sizeof(addr)) < 0)
     {
         printr("fail to connect : %s, port : %d", cl->sv_add, cl->sv_port);
         return;
@@ -117,12 +142,30 @@ static void tcp_client_connect(tcp_client_t *cl)
 
 static int tcp_client_send(tcp_client_t *cl, uint8_t *sk_buf, size_t sk_buf_len)
 {
-    if (!cl->handle)
+    if (!cl->sk)
     {
         return -1;
     }
 
-    int len = send(cl->handle, sk_buf, sk_buf_len, 0);
+    if (!cl->sel)
+    {
+        if (tcp_client_select_init(cl) < 0)
+        {
+            return -1;
+        }
+    }
+
+    int set = FreeRTOS_select(cl->sel, CLIENT_SELECT_TIMEO);
+    if (set & eSELECT_EXCEPT)
+    {
+        return -1;
+    }
+    else if (!(set & eSELECT_WRITE))
+    {
+        return 0;
+    }
+
+    int len = send(cl->sk, sk_buf, sk_buf_len, 0);
     if (len < 0)
     {
         printr("fail to send data : %d bytes", sk_buf_len);
@@ -137,12 +180,30 @@ static int tcp_client_send(tcp_client_t *cl, uint8_t *sk_buf, size_t sk_buf_len)
 
 static int tcp_client_recv(tcp_client_t *cl, uint8_t *sk_buf, size_t sk_buf_len)
 {
-    if (!cl->handle)
+    if (!cl->sk)
     {
         return -1;
     }
 
-    int len = recv(cl->handle, sk_buf, sk_buf_len, 0);
+    if (!cl->sel)
+    {
+        if (tcp_client_select_init(cl) < 0)
+        {
+            return -1;
+        }
+    }
+
+    int set = FreeRTOS_select(cl->sel, CLIENT_SELECT_TIMEO);
+    if (set & eSELECT_EXCEPT)
+    {
+        return -1;
+    }
+    else if (!(set & eSELECT_READ))
+    {
+        return 0;
+    }
+
+    int len = recv(cl->sk, sk_buf, sk_buf_len, 0);
     if (len < 0)
     {
         printr("fail to recv data : %d bytes\r\n", sk_buf_len);
