@@ -356,6 +356,7 @@ int lan_link_up()
 
 int lan_link_down()
 {
+    /* if we set power down bit at BCR, it will automatically reset when power on */
     if (LAN8742_EnablePowerDownMode(&lan_handle) != LAN8742_STATUS_OK)
     {
         return -1;
@@ -428,20 +429,29 @@ BaseType_t xPhyConfigure( EthernetPhy_t * pxPhyObject,  const PhyProperties_t * 
     return 0;
 }
 
-/* check pyh link status */
+/**
+ * @brief check the phy link status
+ * @note prvEMACHandlerTask will call this function continuosly 
+ * 100ms wait for task wake up from HAL_ETH_RxCpltCallback
+ * @param pxPhyObject ethernet phy object
+ * @param xHadReception pdTRUE : packet has been received since the 
+ * last call to this function
+ * @return link status is poor it will be retured pdFALSE else pdTRUE
+ */
 BaseType_t xPhyCheckLinkStatus( EthernetPhy_t * pxPhyObject, BaseType_t xHadReception )
 {
     static BaseType_t old_status = 0;
     BaseType_t cur_status = 0;
     int32_t ret = 0;
 
-    ret = LAN8742_GetLinkState(&lan_handle);
     /* get link status */
+    ret = LAN8742_GetLinkState(&lan_handle);
+    
+    /* LAN8742_STATUS_LINK_DOWN is set when network connection is physically disconnected. */
     if (ret != LAN8742_STATUS_LINK_DOWN && ret != LAN8742_STATUS_AUTONEGO_NOTDONE &&
         ret != LAN8742_STATUS_READ_ERROR && ret != LAN8742_STATUS_WRITE_ERROR)
     {
         cur_status = pdTRUE;
-        pxPhyObject->ulLinkStatusMask = 1;
     }
     
     /* check link status change */
@@ -451,11 +461,19 @@ BaseType_t xPhyCheckLinkStatus( EthernetPhy_t * pxPhyObject, BaseType_t xHadRece
         switch (cur_status)
         {
         case pdTRUE:
+            /* this will make initialize heth intterupt and recover from critical error */
+            pxPhyObject->ulLinkStatusMask = 1; 
+            /* close all remaining socket */
             status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_UP);
             status_set_int(STATUS_INTEGER_TCP_SERVER, STATUS_TCP_UP);
             break;
 
         case pdFALSE:
+            /* this will make deinitialize heth intterupt
+             * and eEventType is set eNetworkDownEvent
+             */
+            pxPhyObject->ulLinkStatusMask = 0;
+            /* close all remaining socket */
             status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_DOWN);
             status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_DOWN);
             break;

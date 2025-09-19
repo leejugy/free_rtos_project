@@ -88,7 +88,7 @@ static int tcp_server_init(tcp_server_t *sv)
 
     struct freertos_sockaddr addr = {0, };
 
-    addr.sin_address.ulIP_IPv4 = htons(INADDR_ANY);
+    addr.sin_address.ulIP_IPv4 = htonl(INADDR_ANY);
     addr.sin_port = htons(sv->port);
     addr.sin_family = FREERTOS_AF_INET;
     addr.sin_len = sizeof(addr);

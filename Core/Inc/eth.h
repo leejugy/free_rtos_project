@@ -282,7 +282,7 @@ static inline uint16_t htons(uint16_t val)
     return FreeRTOS_htons(val);
 }
 
-static inline uint32_t htosl(uint32_t val)
+static inline uint32_t htonl(uint32_t val)
 {
     return FreeRTOS_htonl(val);
 }

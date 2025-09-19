@@ -21,7 +21,7 @@ static int tcp_client_select_init(tcp_client_t *cl)
         cl->sel = FreeRTOS_CreateSocketSet();
         if (cl->sel == NULL)
         {
-            printr("fail to creaet select");
+            printr("fail to create select");
             return -1;
         }
     }

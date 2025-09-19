@@ -20,6 +20,7 @@
         "status.h": "c",
         "app_freertos.h": "c",
         "server.h": "c",
-        "tcp_server.h": "c"
+        "tcp_server.h": "c",
+        "pack_struct_end.h": "c"
     }
 }
