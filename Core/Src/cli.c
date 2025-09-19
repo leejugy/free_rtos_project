@@ -491,7 +491,7 @@ static void cmd_ping_req(cli_data_t *cli_data, cmd_ping_t *cmd_ping)
     /* wait to receive icmp packet */
     case STATUS_PING_WAIT:
         /* icmp packet received timeout */
-        if (check_expired(cmd_ping->os_tick,PING_TIMEOUT))
+        if (check_expired(cmd_ping->os_tick, PING_TIMEOUT))
         {
             ping_result(STATUS_PING_FAIL, cmd_ping);
             printr("icmp fail to %s: icmp_seq=%d time=%d ms\r\n", 
