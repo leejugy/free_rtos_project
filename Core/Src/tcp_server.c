@@ -306,69 +306,64 @@ static int tcp_server_client_recv(tcp_server_client_t *cl, uint8_t *sk_buf, size
     return len;
 }
 
-static void tcp_server_work_up()
+static void tcp_server_work_up(tcp_server_t *sv)
 {
     uint8_t recv_buf[256] = {0, };
     uint8_t send_buf[256] = {0, };
-    tcp_server_t *sv = tcp_server;
     tcp_server_client_t *cl = NULL;
-    int sv_idx = 0;
     int cl_idx = 0;
     int ret = 0;
 
-    for (sv_idx = 0; sv_idx < TCP_SERVER_MAX; sv_idx++)
+    tcp_server_accept(sv);
+    for (cl_idx = 0; cl_idx < SERVER_CLIENT_MAX; cl_idx++)
     {
-        tcp_server_accept(&sv[sv_idx]);
-        for (cl_idx = 0; cl_idx < SERVER_CLIENT_MAX; cl_idx++)
+        cl = &sv->cl[cl_idx];
+        ret = tcp_server_client_recv(cl, recv_buf, sizeof(recv_buf));
+        if (ret > 0)
         {
-            cl = &sv[sv_idx].cl[cl_idx];
-            ret = tcp_server_client_recv(cl, recv_buf, sizeof(recv_buf));
-            if (ret > 0)
-            {
-                print_dmesg("idx : %d\r\n", cl_idx);
-                strncpy((char *)send_buf, (char *)recv_buf, sizeof(send_buf));
-                ret = tcp_server_client_send(cl, send_buf, (strnlen((char *)send_buf, sizeof(send_buf))));
-            }
-            if (ret < 0)
-            {
-                tcp_server_client_deinit(cl);
-            }
+            print_dmesg("idx : %d\r\n", cl_idx);
+            strncpy((char *)send_buf, (char *)recv_buf, sizeof(send_buf));
+            ret = tcp_server_client_send(cl, send_buf, (strnlen((char *)send_buf, sizeof(send_buf))));
         }
-    }
-}
-
-static void tcp_server_work_down()
-{
-    int sv_idx = 0;
-    int cl_idx = 0;
-    tcp_server_t *sv = tcp_server;
-    tcp_server_client_t *cl = NULL;
-    for (sv_idx = 0; sv_idx < TCP_SERVER_MAX; sv_idx++)
-    {
-        for (cl_idx = 0; cl_idx < SERVER_CLIENT_MAX; cl_idx++)
+        if (ret < 0)
         {
-            cl = &sv[sv_idx].cl[cl_idx];
             tcp_server_client_deinit(cl);
         }
-        tcp_server_deinit(&sv[sv_idx]);
     }
-    status_set_int(STATUS_INTEGER_TCP_SERVER, STATUS_TCP_NONE);
 }
 
-void tcp_server_work()
+static void tcp_server_work_down(tcp_server_t *sv)
 {
-    switch (status_get_int(STATUS_INTEGER_TCP_SERVER))
+    int cl_idx = 0;
+    tcp_server_client_t *cl = NULL;
+    for (cl_idx = 0; cl_idx < SERVER_CLIENT_MAX; cl_idx++)
+    {
+        cl = &sv->cl[cl_idx];
+        tcp_server_client_deinit(cl);
+    }
+    tcp_server_deinit(sv);
+    status_set_int(STATUS_INTEGER_TCP_SERVER1, STATUS_TCP_NONE);
+}
+
+static void tcp_server_work(tcp_server_t *sv)
+{
+    switch (status_get_int(STATUS_INTEGER_TCP_SERVER1))
     {
     case STATUS_TCP_UP:
-        tcp_server_work_up();
+        tcp_server_work_up(sv);
         break;
 
     case STATUS_TCP_DOWN:
-        tcp_server_work_down();
+        tcp_server_work_down(sv);
         break;
 
     case STATUS_TCP_NONE:
     default:
         break;
     }
+}
+
+void tcp_server1_work()
+{
+    tcp_server_work(&tcp_server[TCP_SERVER1]);
 }

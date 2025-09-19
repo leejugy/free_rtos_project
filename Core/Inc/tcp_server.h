@@ -49,5 +49,5 @@ static inline eIPTCPState_t server_get_client_status(tcp_server_client_t *cl)
     return cl->old_stat;
 }
 
-void tcp_server_work();
+void tcp_server1_work();
 #endif

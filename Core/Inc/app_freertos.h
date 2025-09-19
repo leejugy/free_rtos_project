@@ -69,7 +69,7 @@ static inline uint32_t tick_cur_gap(uint32_t old_tick)
 /* USER CODE END EM */
 extern osThreadId_t console_threadHandle;
 extern osThreadId_t tcp_cilent_threadHandle;
-extern osThreadId_t tcp_server_threadHandle;
+extern osThreadId_t tcp_server1_threadHandle;
 extern osSemaphoreId_t uart1_semHandle;
 extern osSemaphoreId_t rtc_semHandle;
 extern osSemaphoreId_t status_semHandle;
@@ -81,7 +81,7 @@ extern osSemaphoreId_t status_semHandle;
 
 void console_thread(void *argument);
 void tcp_cilent_thread(void *argument);
-void tcp_server_thread(void *argument);
+void tcp_server1_thread(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 

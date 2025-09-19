@@ -74,12 +74,12 @@ const osThreadAttr_t tcp_cilent_thread_attributes = {
   .cb_size = sizeof(MycontrolBlocTask02),
   .priority = (osPriority_t) osPriorityLow,
 };
-/* Definitions for tcp_server_thread */
-osThreadId_t tcp_server_threadHandle;
+/* Definitions for tcp_server1_thread */
+osThreadId_t tcp_server1_threadHandle;
 uint32_t MyBufferTask03[ 1024 ];
 osStaticThreadDef_t MycontrolBlocTask03;
-const osThreadAttr_t tcp_server_thread_attributes = {
-  .name = "tcp_server_thread",
+const osThreadAttr_t tcp_server1_thread_attributes = {
+  .name = "tcp_server1_thread",
   .stack_mem = &MyBufferTask03[0],
   .stack_size = sizeof(MyBufferTask03),
   .cb_mem = &MycontrolBlocTask03,
@@ -163,8 +163,8 @@ void MX_FREERTOS_Init(void) {
   /* creation of tcp_cilent_thread */
   tcp_cilent_threadHandle = osThreadNew(tcp_cilent_thread, NULL, &tcp_cilent_thread_attributes);
 
-  /* creation of tcp_server_thread */
-  tcp_server_threadHandle = osThreadNew(tcp_server_thread, NULL, &tcp_server_thread_attributes);
+  /* creation of tcp_server1_thread */
+  tcp_server1_threadHandle = osThreadNew(tcp_server1_thread, NULL, &tcp_server1_thread_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -218,23 +218,23 @@ void tcp_cilent_thread(void *argument)
   /* USER CODE END tcp_cilent_thread */
 }
 
-/* USER CODE BEGIN Header_tcp_server_thread */
+/* USER CODE BEGIN Header_tcp_server1_thread */
 /**
-* @brief Function implementing the tcp_server_thread thread.
+* @brief Function implementing the tcp_server1_thread thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_tcp_server_thread */
-void tcp_server_thread(void *argument)
+/* USER CODE END Header_tcp_server1_thread */
+void tcp_server1_thread(void *argument)
 {
-  /* USER CODE BEGIN tcp_server_thread */
+  /* USER CODE BEGIN tcp_server1_thread */
   /* Infinite loop */
   for(;;)
   {
-    tcp_server_work();
+    tcp_server1_work();
     osDelay(1);
   }
-  /* USER CODE END tcp_server_thread */
+  /* USER CODE END tcp_server1_thread */
 }
 
 /* Private application code --------------------------------------------------*/

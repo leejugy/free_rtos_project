@@ -303,8 +303,8 @@ static void reboot_deinit_apps()
     }
     print_dmesg("Reboot : close client");
 
-    status_set_int(STATUS_INTEGER_TCP_SERVER, STATUS_TCP_DOWN);
-    while (status_get_int(STATUS_INTEGER_TCP_SERVER) != STATUS_TCP_NONE)
+    status_set_int(STATUS_INTEGER_TCP_SERVER1, STATUS_TCP_DOWN);
+    while (status_get_int(STATUS_INTEGER_TCP_SERVER1) != STATUS_TCP_NONE)
     {
         osDelay(50);
     }

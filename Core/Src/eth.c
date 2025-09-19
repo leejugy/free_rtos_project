@@ -465,7 +465,7 @@ BaseType_t xPhyCheckLinkStatus( EthernetPhy_t * pxPhyObject, BaseType_t xHadRece
             pxPhyObject->ulLinkStatusMask = 1; 
             /* close all remaining socket */
             status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_UP);
-            status_set_int(STATUS_INTEGER_TCP_SERVER, STATUS_TCP_UP);
+            status_set_int(STATUS_INTEGER_TCP_SERVER1, STATUS_TCP_UP);
             break;
 
         case pdFALSE:
