@@ -303,6 +303,8 @@ static inline uint32_t ntohl(uint32_t val)
 void eth_init();
 void __ETH_IRQHandler(void);
 int check_valid_ip(char *ip);
+int ifconfig_up();
+int ifconfig_down();
 
 /* USER CODE END Prototypes */
 

@@ -375,11 +375,6 @@ int ifconfig_up()
     {
         return -1;
     }
-
-    if (HAL_ETH_Init(&heth) != HAL_OK)
-    {
-        return -1;
-    }
     return 0;
 }
 
@@ -389,14 +384,6 @@ int ifconfig_down()
     {
         return -1;
     }
-
-    if (HAL_ETH_DeInit(&heth) != HAL_OK)
-    {
-        return -1;
-    }
-
-    NetworkEndPoint_t *ep = FreeRTOS_FirstEndPoint(NULL);
-    FreeRTOS_NetworkDown(ep->pxNetworkInterface);
     return 0;
 }
 
@@ -470,6 +457,7 @@ BaseType_t xPhyCheckLinkStatus( EthernetPhy_t * pxPhyObject, BaseType_t xHadRece
             /* close all remaining socket */
             status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_UP);
             status_set_int(STATUS_INTEGER_TCP_SERVER1, STATUS_TCP_UP);
+            status_set_int(STATUS_INTEGER_IFCONFIG, STATUS_IFCONFIG_UP);
             break;
 
         case pdFALSE:
@@ -480,6 +468,7 @@ BaseType_t xPhyCheckLinkStatus( EthernetPhy_t * pxPhyObject, BaseType_t xHadRece
             /* close all remaining socket */
             status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_DOWN);
             status_set_int(STATUS_INTEGER_TCP_CLIENT, STATUS_TCP_DOWN);
+            status_set_int(STATUS_INTEGER_IFCONFIG, STATUS_IFCONFIG_DOWN);
             break;
         }
         FreeRTOS_printf( ( "Link status changed to %s\n", (cur_status ? "UP" : "DOWN") ) );

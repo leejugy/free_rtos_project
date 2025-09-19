@@ -19,6 +19,7 @@ typedef enum
     CMD_DATE,
     CMD_PING,
     CMD_DMESG,
+    CMD_IFCONFIG,
     CMD_IDX_MAX,
 }CLI_COMMAND_IDX;
 

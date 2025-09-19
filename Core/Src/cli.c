@@ -11,6 +11,7 @@ static CLI_EXEC_RESULT cmd_reboot(cli_data_t *cli_data);
 static CLI_EXEC_RESULT cmd_date(cli_data_t *cli_data);
 static CLI_EXEC_RESULT cmd_ping(cli_data_t *cli_data);
 static CLI_EXEC_RESULT cmd_dmesg(cli_data_t *cli_data);
+static CLI_EXEC_RESULT cmd_ifconfig(cli_data_t *cli_data);
 
 cli_command_t cli_cmd[CMD_IDX_MAX] = 
 {
@@ -76,6 +77,22 @@ cli_command_t cli_cmd[CMD_IDX_MAX] =
     [CMD_DMESG].func = cmd_dmesg,
     [CMD_DMESG].opt = "",
     [CMD_DMESG].opt_size = 0,
+
+    /* ifconfig */
+    [CMD_IFCONFIG].help = \
+    "ifconfig   : turn on/off network interface\r\n" \
+    "             or printing network infomation.\r\n" \
+    "             it can set network addresses.\r\n" \
+    "<get info> : ifconfig\r\n"
+    "<on/off>   : ifconfig eth <up/down>\r\n" \
+    "<static ip>: ifconfig eth <ip>\r\n" \
+    "<netmask>  : ifconfig eth netmask <ip>\r\n" \
+    "<gateway>  : ifconfig eth gateway <ip>\r\n"
+    "<dns>      : ifconfig eth dns <ip>\r\n",
+    [CMD_IFCONFIG].name = "ifconfig",
+    [CMD_IFCONFIG].func = cmd_ifconfig,
+    [CMD_IFCONFIG].opt = "",
+    [CMD_IFCONFIG].opt_size = 0,
 };
 
 /**
@@ -613,6 +630,83 @@ static CLI_EXEC_RESULT cmd_help(cli_data_t *cli_data)
     return EXEC_RESULT_OK;
 }
 
+static void cmd_ifconfig_info()
+{
+    uint32_t ip = 0;
+    uint32_t nm = 0;
+    uint32_t dns = 0;
+    uint32_t gw = 0;
+    char ip_ntoa[4][IP_LEN] = {0, };
+
+    FreeRTOS_GetAddressConfiguration(&ip, &nm, &dns, &gw);
+    prints("eth:\t<%s>\t\tmtu %d\r\n", 
+        (status_get_int(STATUS_INTEGER_IFCONFIG)) ? "UP" : "DOWN", ipconfigNETWORK_MTU);
+    prints("\tip %s\t\tnetmask %s\r\n",
+            inet_ntoa(ip, ip_ntoa[0]), inet_ntoa(nm, ip_ntoa[1]));
+    prints("\tdns %s\t\tgateway %s\r\n",
+            inet_ntoa(dns, ip_ntoa[2]), inet_ntoa(gw, ip_ntoa[3]));
+}
+
+static int cmd_ifconfig_eth(cli_data_t *cli_data, cli_arg_t *cli_arg)
+{
+    cli_arg->cli_get.num = 1;
+    int ret = cli_get_arg(cli_data, cli_arg);
+    if (ret < 0)
+    {
+        return -1;
+    }
+    
+    if (!strcmp(cli_arg->arg, "down"))
+    {
+        ifconfig_down();
+    }
+    else if (!strcmp(cli_arg->arg, "up"))
+    {
+        ifconfig_up();
+    }
+    else
+    {
+        return -1;
+    }
+    return 1;
+}
+
+CLI_EXEC_RESULT cmd_ifconfig(cli_data_t *cli_data)
+{
+    cli_arg_t cli_arg = {0, };
+    int ret = 0;
+
+    cli_arg.opt.get_ret = 1;
+    cli_arg.cli_get.num = 0;
+    ret = cli_get_arg(cli_data, &cli_arg);
+    if (ret < 0)
+    {
+        cmd_ifconfig_info();
+    }
+    else if (ret > 0)
+    {
+        if (!strcmp(cli_arg.arg, "eth"))
+        {
+            if (cmd_ifconfig_eth(cli_data, &cli_arg) < 0)
+            {
+                printr("undefined argment : %s", cli_arg.arg);
+                return EXEC_RESULT_ERR;
+            }
+        }
+        else
+        {
+            printr("undefined argment : %s", cli_arg.arg);
+            return EXEC_RESULT_ERR;
+        }
+    }
+    else
+    {
+        printr("undefined behavior");
+        return EXEC_RESULT_ERR;
+    }
+    return EXEC_RESULT_OK;
+}
+
 static CLI_EXEC_RESULT __cli_work(char *rx, cli_data_t *cli_data)
 {
     static int idx = 0;
@@ -988,16 +1082,17 @@ exec_cmd:
     return ret;
 }
 
-void cli_proc()
+void __cli_proc(char *rx)
 {
-    uint8_t rx_buf[UART_TRX_SIZE] = {0, };
+    if (strlen(rx) == 0)
+    {
+        return;
+    }
 
-    uart_read(&uart[UART1_IDX], rx_buf, sizeof(rx_buf));
-    switch (cli_work((char *)rx_buf))
+    switch (cli_work((char *)rx))
     {
     /* command is executed */
     case CLI_EXEC_CMD:
-        uart_send(&uart[UART1_IDX], rx_buf, strlen((char *)rx_buf));
     /* only enter input */
     case CLI_ENTER:
     /* cancel command */
@@ -1011,5 +1106,32 @@ void cli_proc()
     case CLI_ERR:
     default:
         break;
+    }
+}
+
+static int system_read(char *buf, size_t buf_size)
+{
+    return 1;
+}
+
+int	system(const char *__string)
+{
+    /* TODO use list to find result of system command */
+    return 1;
+}
+
+void cli_proc()
+{
+    uint8_t rx_buf[UART_TRX_SIZE] = {0, };
+
+    if (uart_read(&uart[UART1_IDX], rx_buf, sizeof(rx_buf)) > 0)
+    {
+        __cli_proc((char *)rx_buf);
+    }
+
+    memset(rx_buf, 0, sizeof(rx_buf));
+    if (system_read((char *)rx_buf, sizeof(rx_buf)) > 0)
+    {
+        __cli_proc((char *)rx_buf);
     }
 }
