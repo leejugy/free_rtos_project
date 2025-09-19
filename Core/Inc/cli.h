@@ -40,7 +40,8 @@ typedef enum
     CLI_INPUT = 1,
     CLI_EXEC_CMD = 2,
     CLI_ENTER = 3, 
-    CLI_ESCAPE_SEQ = 4,
+    CLI_CANCEL = 4,
+    CLI_ESCAPE_SEQ = 5,
 }CLI_STATUS;
 
 typedef enum

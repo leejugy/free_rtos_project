@@ -527,7 +527,6 @@ static CLI_EXEC_RESULT cmd_ping(cli_data_t *cli_data)
             cli_data->work = CLI_WORK_END;
         }
         break;
-
     /* ping command end or receive CTRL + C */
     case CLI_WORK_END:
     case CLI_WORK_STOP: /* CTRL + C */
@@ -803,6 +802,12 @@ static void cli_history_insert(cli_work_t *cli_work)
 {
     int idx = (cli_work->history_cnt > CLI_HISTORY_NUM - 1) ? CLI_HISTORY_NUM - 1 : cli_work->history_cnt;
 
+    /* ignore case that enter only */
+    if (strlen(cli_work->rx) == 0)
+    {
+        return;
+    }
+
     for (; idx > 0 ; idx--)
     {
         strcpy(cli_work->history[idx], cli_work->history[idx - 1]);
@@ -835,13 +840,14 @@ CLI_STATUS cli_work(char *rx)
     /* command execution end */
     case CLI_WORK_END:
         goto exec_cmd;
-    /* command must need to be work continuously. */
+    /* command must need to be worked continuously. */
     case CLI_WORK_CONTINUE: 
         /* when CTRL + C input. */
         if (strchr(rx, 0x03))
         {
             /* set cli work stop it will make stop command execution */
             cli_data.work = CLI_WORK_STOP;
+            prints("^C\r\n");
         }
         goto exec_cmd;
     
@@ -903,6 +909,12 @@ CLI_STATUS cli_work(char *rx)
                 ret = CLI_ESCAPE_SEQ;
                 break;
             }
+        }
+        /* CTRL + C */
+        else if (rx[idx] == 0x03)
+        {
+            prints("^C\r\n");
+            ret = CLI_CANCEL;
         }
         /* enter -> command execute */
         else if (rx[idx] == '\n' || rx[idx] == '\r')
@@ -988,6 +1000,8 @@ void cli_proc()
         uart_send(&uart[UART1_IDX], rx_buf, strlen((char *)rx_buf));
     /* only enter input */
     case CLI_ENTER:
+    /* cancel command */
+    case CLI_CANCEL:
         prints("~# ");
         break;
 
