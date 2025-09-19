@@ -234,6 +234,10 @@ int check_valid_ip(char *ip)
 
     while(ptr != NULL)
     {
+        if (chk_ascii(ptr, strlen(ptr)) < 0)
+        {
+            return -1;
+        }
         ip_int = atoi(ptr);
         if (!chk_valid_ip(ip_int))
         {
@@ -276,7 +280,7 @@ uint32_t ulApplicationGetNextSequenceNumber(uint32_t ulSourceAddress, uint16_t u
 #if ( ipconfigIPv4_BACKWARD_COMPATIBLE == 1 )
 void vApplicationIPNetworkEventHook(eIPCallbackEvent_t eNetworkEvent)
 {
-
+    /* this hook will be invoked when freertos tcp/ip stack is aviliable */
 }
 #else
 void vApplicationIPNetworkEventHook_Multi(eIPCallbackEvent_t eNetworkEvent, struct xNetworkEndPoint *pxEndPoint)
@@ -411,7 +415,7 @@ void vPhyInitialise(EthernetPhy_t * pxPhyObject, xApplicationPhyReadHook_t fnPhy
 
 BaseType_t xPhyDiscover( EthernetPhy_t * pxPhyObject )
 {
-    /* pyh chip 수가 1개임 */
+    /* pyh chip number */
     return 1;
 }
 

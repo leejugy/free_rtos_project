@@ -2,14 +2,13 @@
 #define __CLI_H__
 
 #include "main.h"
+#include "eth.h"
 
 #define PING_TIMEOUT 5000
 #define BOOT_LOADER_ADD 0x08000000
 #define CLI_OPTION_MAX (1 << 6)
 #define CMD_MAX_LEN (1 << 9)
 #define CLI_HISTORY_NUM (1 << 2)
-#define PING_RECV(ping_cnt, fail_cnt) (ping_cnt - fail_cnt)
-#define PIGN_FAIL_PERCENT(ping_cnt, fail_cnt) (100 - (ping_cnt - fail_cnt) * 100 / ping_cnt)
 
 typedef enum
 {
@@ -25,19 +24,23 @@ typedef enum
 
 typedef enum
 {
+    EXEC_UNKOWN = -999,
     EXEC_RESULT_NO_CMD = -2,
     EXEC_RESULT_ERR = -1,
     EXEC_HELP = 0,
     EXEC_RESULT_OK = 1,
     EXEC_NONE = 2,
+    EXEC_WAIT = 3,
 }CLI_EXEC_RESULT;
 
 typedef enum
 {
     CLI_ERR = -1,
-    CLI_INPUT = 0,
-    CLI_EXEC_CMD = 1,
-    CLI_ESCAPE_SEQ = 2,
+    CLI_NONE = 0,
+    CLI_INPUT = 1,
+    CLI_EXEC_CMD = 2,
+    CLI_ENTER = 3, 
+    CLI_ESCAPE_SEQ = 4,
 }CLI_STATUS;
 
 typedef enum
@@ -49,13 +52,36 @@ typedef enum
     CLI_ESC_SPECIAL = '~'
 }CLI_ESC_TYPE;
 
+typedef enum
+{
+    CLI_WORK_NONE,
+    CLI_WORK_CONTINUE,
+    CLI_WORK_END,
+    CLI_WORK_STOP,
+}CLI_WORK;
+
+#define PING_RECV(cmd_ping) (((cmd_ping_t *)cmd_ping)->idx - ((cmd_ping_t *)cmd_ping)->fail_cnt)
+#define PIGN_FAIL_PERCENT(cmd_ping) (100 - (((cmd_ping_t *)cmd_ping)->idx - ((cmd_ping_t *)cmd_ping)->fail_cnt) * 100 / ((cmd_ping_t *)cmd_ping)->idx)
+
+typedef struct
+{
+    char ip[IP_LEN];
+    int ping_cnt;
+    int idx;
+    int seq;
+    int fail_cnt;
+    uint32_t os_tick_tot;
+    uint32_t net_add;
+    uint32_t os_tick;
+    uint32_t req_intv;
+}cmd_ping_t;
+
 typedef struct
 {
     char *cmd_str;
-    char *out_str;
-    size_t out_str_size;
     char opt[CLI_OPTION_MAX];
     int opt_size;
+    CLI_WORK work;
 }cli_data_t;
 
 typedef struct

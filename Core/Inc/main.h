@@ -78,6 +78,19 @@ static inline uint32_t bcd_2_hex(uint32_t bcd)
     sprintf(conv, "%ld", bcd);
     return strtoul(conv, &end_ptr, 16);
 }
+
+static inline int chk_ascii(char *buf, size_t buf_size)
+{
+    int idx = 0;
+    for (idx = 0; idx < buf_size; idx++)
+    {
+        if (buf[idx] < '0' || buf[idx] > '9')
+        {
+            return -1;
+        }
+    }
+    return 1;
+}
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

@@ -78,6 +78,22 @@ cli_command_t cli_cmd[CMD_IDX_MAX] =
     [CMD_DMESG].opt_size = 0,
 };
 
+/**
+ * @brief Get command option. The command option is meaning -[character]
+ * @note If you want to get argument you must set bit cli_arg->opt.get_ret
+ * then you can get argument at cli_arg->arg
+ * 
+ * But if you don't want to get argument and only want to get result that
+ * argument is exist, unset cli->opt.get_arg.
+ * 
+ * @param cli_data received command data
+ * @param cli_arg has argument to be stored, and settngs to get argument
+ * @return int 0 : argument exist (only retured at cli->opt.get_arg = 0)
+ * 
+ * int argument string length : when success to get argument
+ * 
+ * int -1 : fail to get argument
+ */
 static int cli_get_opt(cli_data_t *cli_data, cli_arg_t *cli_arg)
 {
     char opt_want[] = {'-', cli_arg->cli_get.opt, '\0'};
@@ -154,6 +170,22 @@ static int cli_get_opt(cli_data_t *cli_data, cli_arg_t *cli_arg)
     return cli_arg->len; /* option detect and store option argument to opt_str */
 }
 
+/**
+ * @brief Get command arugment. The command arugment is next to the space character
+ * @note If you want to get argument you must set bit cli_arg->opt.get_ret
+ * then you can get argument at cli_arg->arg
+ * 
+ * But if you don't want to get argument and only want to get result that
+ * argument is exist, unset cli->opt.get_arg.
+ * 
+ * @param cli_data received command data
+ * @param cli_arg has argument to be stored, and settngs to get argument
+ * @return int 0 : argument exist (only retured at cli->opt.get_arg = 0)
+ * 
+ * int argument string length : when success to get argument
+ * 
+ * int -1 : fail to get argument
+ */
 static int cli_get_arg(cli_data_t *cli_data, cli_arg_t *cli_arg)
 {
     char *str = strchr(cli_data->cmd_str, ' ');
@@ -269,7 +301,7 @@ static CLI_EXEC_RESULT cmd_date(cli_data_t *cli_data)
             __tm.tm_year + 1900, __tm.tm_mon + 1, __tm.tm_mday,
             __tm.tm_hour, __tm.tm_min, __tm.tm_sec);
         rtc_set_time(&__tm);
-        return EXEC_NONE;
+        return EXEC_RESULT_OK;
     }
 
     /* check argument exist */
@@ -285,7 +317,7 @@ static CLI_EXEC_RESULT cmd_date(cli_data_t *cli_data)
         prints("date : %04d-%02d-%02d %02d:%02d:%02d\r\n", 
             __tm.tm_year + 1900, __tm.tm_mon + 1, __tm.tm_mday,
             __tm.tm_hour, __tm.tm_min, __tm.tm_sec);
-        return EXEC_NONE;
+        return EXEC_RESULT_OK;
     }
     else
     {
@@ -324,15 +356,18 @@ static CLI_EXEC_RESULT cmd_reboot(cli_data_t *cli_data)
     {
         print_dmesg("Reboot : iap is detected");
         /* waiting deinit apps */
-        SCB->VTOR = BOOT_LOADER_ADD;
         reboot_deinit_apps();
+        /* set vector table to boot loader */
+        SCB->VTOR = BOOT_LOADER_ADD;
+        /* deinit all */
         HAL_RCC_DeInit();
         HAL_DeInit();
         HAL_ICACHE_DeInit();
         __set_MSP((__IO uint32_t)iap_add);
         __disable_irq();
+        /* jump to bootloader's reset handler */
         (*rst_func)();
-        return EXEC_NONE;
+        return EXEC_RESULT_OK;
     }
     else
     {
@@ -369,35 +404,26 @@ static CLI_EXEC_RESULT cmd_echo(cli_data_t *cli_data)
     }
     prints("\r\n");
 
-    return EXEC_NONE;
+    return EXEC_RESULT_OK;
 }
 
-static void ping_result(STATUS_PING status, int *idx, int *ping_cnt, int *fail_cnt)
+static void ping_result(STATUS_PING status, cmd_ping_t *cmd_ping)
 {
     status_set_int(STATUS_INTEGER_PING, STATUS_PING_NONE);
     if (status == STATUS_PING_FAIL)
     {
-        (*fail_cnt)++;
+        cmd_ping->fail_cnt++;
     }
 
-    if ((*idx)++ != *ping_cnt)
-    {
-        osDelay(1000);
-    }
+    cmd_ping->req_intv = osKernelGetTickCount();
+    cmd_ping->idx++;
+    cmd_ping->os_tick_tot += tick_cur_gap(cmd_ping->os_tick);
 }
 
-static CLI_EXEC_RESULT cmd_ping(cli_data_t *cli_data)
+static int cmd_ping_get_arg(cli_data_t *cli_data, cmd_ping_t *cmd_ping)
 {
     int len = 0;
-    int idx = 0;
     int opt_idx = 0;
-    int ping_cnt = 5;
-    int seq = 0;
-    int fail_cnt = 0;
-    uint32_t os_tick = 0;
-    uint32_t os_tick_tot = 0;
-    uint32_t net_add = 0;
-    char ip[IP_LEN] = {0, };
     cli_arg_t cli_arg = {0, };
 
     cli_arg.opt.get_ret = 1;
@@ -406,67 +432,116 @@ static CLI_EXEC_RESULT cmd_ping(cli_data_t *cli_data)
     if (len < 0)
     {
         printr("fail to get argument");
-        return EXEC_RESULT_ERR;
+        return -1;
     }
 
     if (check_valid_ip(cli_arg.arg) < 0)
     {
         printr("invalid ip address : %s", cli_arg.arg);
-        return EXEC_RESULT_ERR;
+        return -1;
     }
 
-    strcpy(ip, cli_arg.arg);
+    strcpy(cmd_ping->ip, cli_arg.arg);
     cli_arg.cli_get.opt = cli_cmd[CMD_PING].opt[opt_idx++];
     if (cli_get_opt(cli_data, &cli_arg) > 0)
     {
-        ping_cnt = atoi(cli_arg.arg);
+        cmd_ping->ping_cnt = atoi(cli_arg.arg);
+    }
+    else
+    {
+        cmd_ping->ping_cnt = 5;
     }
 
-    if (ping_cnt <= 0 || ping_cnt > 10)
+    if (cmd_ping->ping_cnt <= 0 || cmd_ping->ping_cnt > 10)
     {
-        printr("invalid range arg input : %d", ping_cnt);
-        return EXEC_RESULT_ERR;
+        printr("invalid range arg input : %d", cmd_ping->ping_cnt);
+        return -1;
     }
 
-    net_add = inet_addr(ip);
-    os_tick_tot = osKernelGetTickCount();
-    while(idx != ping_cnt)
+    cmd_ping->net_add = inet_addr(cmd_ping->ip);
+    return 1;
+}
+
+static void cmd_ping_req(cli_data_t *cli_data, cmd_ping_t *cmd_ping)
+{
+    switch (status_get_int(STATUS_INTEGER_PING))
     {
-        switch (status_get_int(STATUS_INTEGER_PING))
+    /* device can send ping */
+    case STATUS_PING_NONE:
+        if (tick_cur_gap(cmd_ping->req_intv) > 1000)
         {
-        case STATUS_PING_NONE:
-            os_tick = osKernelGetTickCount();
+            cmd_ping->os_tick = osKernelGetTickCount();
+            cmd_ping->req_intv = osKernelGetTickCount();
             status_set_int(STATUS_INTEGER_PING, STATUS_PING_WAIT);
-            seq = FreeRTOS_SendPingRequest(net_add, 1, PING_TIMEOUT);
-            break;
-
-        case STATUS_PING_FAIL:
-            printr("icmp fail to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, tick_cur_gap(os_tick));
-            ping_result(STATUS_PING_FAIL, &idx, &ping_cnt, &fail_cnt);
-            break;
-
-        case STATUS_PING_OK:
-            prints("1 bytes to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, tick_cur_gap(os_tick));
-            ping_result(STATUS_PING_OK, &idx, &ping_cnt, &fail_cnt);
-            break;
-
-        case STATUS_PING_WAIT:
-            if (tick_cur_gap(os_tick) > PING_TIMEOUT)
-            {
-                printr("icmp fail to %s: icmp_seq=%d time=%d ms\r\n", ip, seq, tick_cur_gap(os_tick));
-                ping_result(STATUS_PING_FAIL, &idx, &ping_cnt, &fail_cnt);
-            }
-            break;
-        default:
-            break;
+            cmd_ping->seq = FreeRTOS_SendPingRequest(cmd_ping->net_add, 1, PING_TIMEOUT);
         }
+        break;
+    /* ping send fail -> cause of the problem of icmp packet (checksum or data) */
+    case STATUS_PING_FAIL:
+        ping_result(STATUS_PING_FAIL, cmd_ping);
+        printr("icmp fail to %s: icmp_seq=%d time=%d ms\r\n", 
+                cmd_ping->ip, cmd_ping->seq, tick_cur_gap(cmd_ping->os_tick));
+        break;
+    /* icmp packet is received */
+    case STATUS_PING_OK:
+        ping_result(STATUS_PING_OK, cmd_ping);
+        prints("1 bytes to %s: icmp_seq=%d time=%d ms\r\n", 
+                cmd_ping->ip, cmd_ping->seq, tick_cur_gap(cmd_ping->os_tick));
+        break;
+    /* wait to receive icmp packet */
+    case STATUS_PING_WAIT:
+        /* icmp packet received timeout */
+        if (tick_cur_gap(cmd_ping->os_tick) > PING_TIMEOUT)
+        {
+            ping_result(STATUS_PING_FAIL, cmd_ping);
+            printr("icmp fail to %s: icmp_seq=%d time=%d ms\r\n", 
+                    cmd_ping->ip, cmd_ping->seq, tick_cur_gap(cmd_ping->os_tick));
+        }
+        break;
+    default:
+        break;
     }
+}
 
-    prints("--- %s ping statistics ---\r\n", ip);
-    prints("%d packets transmitted, %d received, %d%% packet loss, time %ldms\r\n", 
-        ping_cnt, PING_RECV(ping_cnt, fail_cnt), PIGN_FAIL_PERCENT(ping_cnt, fail_cnt),
-        tick_cur_gap(os_tick_tot));
-    return EXEC_NONE;
+static CLI_EXEC_RESULT cmd_ping(cli_data_t *cli_data)
+{
+    static cmd_ping_t cmd_ping = {0, };
+    CLI_EXEC_RESULT ret = EXEC_WAIT;
+
+    switch (cli_data->work)
+    {
+    /* ping is initial status */
+    case CLI_WORK_NONE:
+        if (cmd_ping_get_arg(cli_data, &cmd_ping) < 0)
+        {
+            return EXEC_RESULT_ERR;
+        }
+        cli_data->work = CLI_WORK_CONTINUE;
+        cmd_ping.req_intv = osKernelGetTickCount();
+        break;
+    /* device has a remained ping count that be sent */
+    case CLI_WORK_CONTINUE:
+        cmd_ping_req(cli_data, &cmd_ping);
+        if (cmd_ping.idx == cmd_ping.ping_cnt)
+        {
+            cli_data->work = CLI_WORK_END;
+        }
+        break;
+
+    /* ping command end or receive CTRL + C */
+    case CLI_WORK_END:
+    case CLI_WORK_STOP: /* CTRL + C */
+        ret = EXEC_RESULT_OK;
+        cli_data->work = CLI_WORK_NONE;
+        prints("--- %s ping statistics ---\r\n", cmd_ping.ip);
+        prints("%d packets transmitted, %d received, %d%% packet loss, time %ldms\r\n", 
+                cmd_ping.idx, PING_RECV(&cmd_ping), 
+                PIGN_FAIL_PERCENT(&cmd_ping), cmd_ping.os_tick_tot);
+        memset(&cmd_ping, 0, sizeof(cmd_ping));
+        status_set_int(STATUS_INTEGER_PING, STATUS_PING_NONE);
+        break;
+    }
+    return ret;
 }
 
 static CLI_EXEC_RESULT cmd_dmesg(cli_data_t *cli_data)
@@ -512,13 +587,13 @@ static CLI_EXEC_RESULT cmd_dmesg(cli_data_t *cli_data)
     }
 
     prints("debug message : %s\r\n", msg);
-    return EXEC_NONE;
+    return EXEC_RESULT_OK;
 }
 
 static CLI_EXEC_RESULT cmd_clear(cli_data_t *cli_data)
 {
     prints("\x1B[2J");
-    return EXEC_NONE;
+    return EXEC_RESULT_OK;
 }
 
 static CLI_EXEC_RESULT cmd_help(cli_data_t *cli_data)
@@ -536,40 +611,56 @@ static CLI_EXEC_RESULT cmd_help(cli_data_t *cli_data)
     }
     prints("===================================================\r\n");
 
-    return EXEC_NONE;
+    return EXEC_RESULT_OK;
 }
 
-static int cli_parser(char *rx)
+static CLI_EXEC_RESULT __cli_work(char *rx, cli_data_t *cli_data)
 {
-    int idx = 0;
-    CLI_EXEC_RESULT exe_cmd = EXEC_RESULT_NO_CMD;
-    char pt_buf[CMD_MAX_LEN] = {0, }; 
-    cli_data_t cli_data = {0, };
+    static int idx = 0;
+    CLI_EXEC_RESULT exe_cmd = EXEC_RESULT_NO_CMD; 
     cli_arg_t cli_arg = {0, };
 
+    /* command is still working */
+    if (cli_data->work != CLI_WORK_NONE)
+    {
+        exe_cmd = cli_cmd[idx].func(cli_data);
+        goto result_out;
+    }
+    else
+    {
+        /*
+         * command is not working, set index zero 
+         * to search command at bottom
+         */
+        idx = 0;
+    }
+
+    /* only input enter */
     if (strlen(rx) == 0)
     {
         exe_cmd = EXEC_NONE;
         goto result_out;
     }
     
+    /* searching command at cli_cmd's member name */
     for (idx = 0; idx < CMD_IDX_MAX; idx++)
     {
         if (cli_cmp_cmd(rx, cli_cmd[idx].name) > 0)
         {
-            cli_data.cmd_str = rx;
+            cli_data->cmd_str = rx;
             cli_arg.opt.get_ret = false;
             cli_arg.cli_get.opt = 'h';
-            if (cli_get_opt(&cli_data, &cli_arg) != 0)
+            /* check user input help option */
+            if (cli_get_opt(cli_data, &cli_arg) != 0)
             {
-                cli_data.out_str = pt_buf;
-                cli_data.out_str_size = sizeof(pt_buf);
-                cli_data.opt_size = cli_cmd[idx].opt_size;
-                strcpy(cli_data.opt, cli_cmd[idx].opt);
-                exe_cmd = cli_cmd[idx].func(&cli_data);
+                /* it hasn't help option */
+                cli_data->opt_size = cli_cmd[idx].opt_size;
+                strcpy(cli_data->opt, cli_cmd[idx].opt);
+                exe_cmd = cli_cmd[idx].func(cli_data);
             }
             else
             {
+                /* it has help option, print help */
                 prints("%s", cli_cmd[idx].help);
                 exe_cmd = EXEC_HELP;
             }
@@ -580,24 +671,24 @@ static int cli_parser(char *rx)
 result_out:
     switch (exe_cmd)
     {
+    /* command execution failed in some reason */
     case EXEC_RESULT_ERR:
         printr("[%s]execution failed : try chat help to use command", cli_cmd[idx].name);
-        return -1;
-
+        return exe_cmd;
+    /* can't find any command at cli_cmd's member name */
     case EXEC_RESULT_NO_CMD:
         printr("unkwon command : %s", rx);
-        return -1;
-
-    case EXEC_RESULT_OK:
-        prints("%s", cli_data.out_str);
-        return 1;
-    
+        return exe_cmd;
+    /* just returning result */
     case EXEC_HELP:
+    case EXEC_RESULT_OK:
     case EXEC_NONE:
-        return 1;
+    case EXEC_WAIT:
+        return exe_cmd;
+    /* unkown error */
+    default:
+        return EXEC_UNKOWN;
     }
-
-    return -1;
 }
 
 static int cli_esc_work(char esc_chr, cli_work_t *cli_work)
@@ -729,21 +820,50 @@ static void cli_history_insert(cli_work_t *cli_work)
 CLI_STATUS cli_work(char *rx)
 {
     static cli_work_t cli_work = {0, };
+    static cli_data_t cli_data = {0, };
     static int esc_cnt = 0;
     static bool esc_seq = 0;
 
     int len = strlen(rx);
     int idx = 0;
-    int ret = 0;
+    int ret = CLI_NONE;
+
+    switch (cli_data.work)
+    {
+    /* when CTRL + C input. */        
+    case CLI_WORK_STOP: 
+    /* command execution end */
+    case CLI_WORK_END:
+        goto exec_cmd;
+    /* command must need to be work continuously. */
+    case CLI_WORK_CONTINUE: 
+        /* when CTRL + C input. */
+        if (strchr(rx, 0x03))
+        {
+            /* set cli work stop it will make stop command execution */
+            cli_data.work = CLI_WORK_STOP;
+        }
+        goto exec_cmd;
+    
+    default:
+    case CLI_WORK_NONE:
+        break;
+    }
     
     for (idx = 0; idx < len; idx++)
     {
+        /* 
+         * escape sequence like Home, End, right arrow left arrow 
+         * up, down arrow.
+         */
         if (esc_seq)
         {
             esc_cnt++;
+            /* parse escape sequence character */
             switch (esc_cnt)
             {
             case 2:
+                /* check invalid escape sequence format */
                 if (rx[idx] != '[')
                 {
                     esc_cnt = 0;
@@ -753,11 +873,17 @@ CLI_STATUS cli_work(char *rx)
                 break;
 
             case 3:
+                /* if fail to check escape sequence */
                 if (cli_esc_work(rx[idx], &cli_work) > 0)
                 {
                     esc_cnt = 0;
                     esc_seq = false;
                 }
+                /* 
+                 * check the escape sequence's number to get home and end 
+                 * home -> 0x1b, '[', '1', '~'
+                 * end -> 0x1b, '[', '4', '~'
+                 */
                 else if ('0' <= rx[idx] || rx[idx] <= '9')
                 {
                     cli_work.esc_num = rx[idx];
@@ -778,16 +904,14 @@ CLI_STATUS cli_work(char *rx)
                 break;
             }
         }
+        /* enter -> command execute */
         else if (rx[idx] == '\n' || rx[idx] == '\r')
         {
             prints("\r\n");
-            cli_parser(cli_work.rx);
             cli_history_insert(&cli_work);
-            memset(cli_work.rx, 0, sizeof(cli_work.rx));
-            cli_work.rx_cnt = 0;
-            cli_work.cur_pos = 0;
-            ret = CLI_EXEC_CMD;
+            goto exec_cmd;
         }
+        /* delete string */
         else if (rx[idx] == '\b')
         {
             if (cli_work.rx_cnt > 0 && cli_work.cur_pos > 0)
@@ -797,12 +921,14 @@ CLI_STATUS cli_work(char *rx)
             }
             ret = CLI_ESCAPE_SEQ;
         }
+        /* escape sequence detected */
         else if (rx[idx] == '\x1b')
         {
             esc_cnt = 1;
             esc_seq = true;
             ret = CLI_ESCAPE_SEQ;
         }
+        /* put string */
         else
         {
             /* If string length is 512, It will be cause of overflow at cli_history_insert.
@@ -823,26 +949,53 @@ CLI_STATUS cli_work(char *rx)
         }
     }
     return ret;
+exec_cmd:
+    CLI_EXEC_RESULT cli_ret = __cli_work(cli_work.rx, &cli_data);
+    switch (cli_ret)
+    {
+    /* command execution end */
+    case EXEC_RESULT_ERR:
+    case EXEC_RESULT_NO_CMD:
+    case EXEC_HELP:
+    case EXEC_RESULT_OK:
+        ret = CLI_EXEC_CMD;
+        break;
+    /* you input only enter key */
+    case EXEC_NONE:
+        ret = CLI_ENTER;
+        break;
+    /* wait or error, do noting */
+    default:
+    case EXEC_WAIT:
+        ret = CLI_NONE; 
+        break;
+    }
+    memset(cli_work.rx, 0, sizeof(cli_work.rx));
+    cli_work.rx_cnt = 0;
+    cli_work.cur_pos = 0;
+    return ret;
 }
 
 void cli_proc()
 {
     uint8_t rx_buf[UART_TRX_SIZE] = {0, };
 
-    if (uart_read(&uart[UART1_IDX], rx_buf, sizeof(rx_buf)) > 0)
+    uart_read(&uart[UART1_IDX], rx_buf, sizeof(rx_buf));
+    switch (cli_work((char *)rx_buf))
     {
-        switch (cli_work((char *)rx_buf))
-        {
+    /* command is executed */
+    case CLI_EXEC_CMD:
+        uart_send(&uart[UART1_IDX], rx_buf, strlen((char *)rx_buf));
+    /* only enter input */
+    case CLI_ENTER:
+        prints("~# ");
+        break;
 
-        case CLI_EXEC_CMD:
-            uart_send(&uart[UART1_IDX], rx_buf, strlen((char *)rx_buf));
-            prints("~# ");
-            break;
-        case CLI_INPUT:
-        case CLI_ESCAPE_SEQ:
-        case CLI_ERR:
-        default:
-            break;
-        }
+    case CLI_NONE:
+    case CLI_INPUT:
+    case CLI_ESCAPE_SEQ:
+    case CLI_ERR:
+    default:
+        break;
     }
 }
