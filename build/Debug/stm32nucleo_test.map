@@ -5964,6 +5964,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
  .text          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
  .data          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
  .bss           0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
@@ -6319,6 +6320,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
  .text          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
  .data          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
  .bss           0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
@@ -6411,6 +6413,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
  .debug_macro   0x00000000      0x145 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
@@ -6436,6 +6439,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
  .debug_macro   0x00000000       0x12 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
@@ -6656,6 +6660,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
@@ -7084,6 +7089,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
  .text          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
  .data          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
  .bss           0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
@@ -7191,6 +7197,8 @@ Discarded input sections
  .debug_macro   0x00000000       0xc3 CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
  .debug_macro   0x00000000      0x12c CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/usart.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/usart.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/usart.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/usart.c.obj
@@ -7376,8 +7384,10 @@ Discarded input sections
  .debug_macro   0x00000000       0xc3 CMakeFiles/stm32nucleo_test.dir/Core/Src/usart.c.obj
  .debug_macro   0x00000000      0x12c CMakeFiles/stm32nucleo_test.dir/Core/Src/usart.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/Core/Src/usart.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/usart.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/usart.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/Core/Src/usart.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
@@ -7585,6 +7595,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xc3 CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
  .debug_macro   0x00000000      0x12c CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
@@ -8161,6 +8172,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
  .text          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
  .data          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
  .bss           0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
@@ -8253,6 +8265,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xc3 CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
  .debug_macro   0x00000000      0x12c CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
@@ -8329,6 +8342,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x103 CMakeFiles/stm32nucleo_test.dir/Core/Src/lan8742.c.obj
  .debug_macro   0x00000000       0x6a CMakeFiles/stm32nucleo_test.dir/Core/Src/lan8742.c.obj
  .debug_macro   0x00000000      0x1df CMakeFiles/stm32nucleo_test.dir/Core/Src/lan8742.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/status.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/status.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/status.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/status.c.obj
@@ -8513,7 +8527,9 @@ Discarded input sections
  .debug_macro   0x00000000      0x12c CMakeFiles/stm32nucleo_test.dir/Core/Src/status.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/Core/Src/status.c.obj
  .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/status.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/status.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/Core/Src/status.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
@@ -8722,6 +8738,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xc3 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
  .debug_macro   0x00000000      0x12c CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
@@ -8748,6 +8765,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
  .debug_macro   0x00000000       0x12 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
@@ -8956,6 +8974,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xc3 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
  .debug_macro   0x00000000      0x12c CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
@@ -8982,6 +9001,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
  .debug_macro   0x00000000       0x12 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
@@ -9199,6 +9219,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x12c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
  .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
  .debug_macro   0x00000000       0xa8 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
@@ -9223,6 +9244,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x36 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
@@ -9368,7 +9390,7 @@ Discarded input sections
                 0x00000000       0x70 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .debug_rnglists
                 0x00000000       0x4f CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
- .debug_macro   0x00000000      0x70d CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
+ .debug_macro   0x00000000      0x712 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
@@ -9460,6 +9482,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
@@ -9484,11 +9507,12 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .debug_line    0x00000000     0x1107 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
- .debug_str     0x00000000   0x15562c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
+ .debug_str     0x00000000   0x1556bf CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .debug_frame   0x00000000      0x19c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_BitConfig.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
@@ -9610,7 +9634,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
- .debug_macro   0x00000000      0x728 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
+ .debug_macro   0x00000000      0x72d CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
@@ -9702,6 +9726,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
@@ -9726,10 +9751,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .debug_line    0x00000000      0xebc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
- .debug_str     0x00000000   0x155447 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
+ .debug_str     0x00000000   0x1554da CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCP.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
@@ -9853,7 +9879,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
- .debug_macro   0x00000000      0x70e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
+ .debug_macro   0x00000000      0x713 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .debug_macro   0x00000000       0x6e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
@@ -9948,6 +9974,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
@@ -9971,10 +9998,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .debug_line    0x00000000      0xe9f CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
- .debug_str     0x00000000   0x155c4a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
+ .debug_str     0x00000000   0x155cdd CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DHCPv6.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
@@ -10185,6 +10213,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
@@ -10322,6 +10351,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .text          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .data          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .bss           0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
@@ -10329,7 +10359,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
- .debug_macro   0x00000000      0x717 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
+ .debug_macro   0x00000000      0x71c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .debug_macro   0x00000000      0x189 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
@@ -10419,6 +10449,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
@@ -10445,10 +10476,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .debug_line    0x00000000      0xe97 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
- .debug_str     0x00000000   0x155426 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
+ .debug_str     0x00000000   0x1554b9 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
@@ -10570,7 +10602,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
- .debug_macro   0x00000000      0x715 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
+ .debug_macro   0x00000000      0x71a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .debug_macro   0x00000000      0x189 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
@@ -10660,6 +10692,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
@@ -10686,10 +10719,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .debug_line    0x00000000      0xeb2 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
- .debug_str     0x00000000   0x15543f CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
+ .debug_str     0x00000000   0x1554d2 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Callback.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
@@ -10811,7 +10845,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
- .debug_macro   0x00000000      0x705 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
+ .debug_macro   0x00000000      0x70a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .debug_macro   0x00000000      0x189 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
@@ -10901,6 +10935,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
@@ -10927,10 +10962,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .debug_line    0x00000000      0xeb9 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
- .debug_str     0x00000000   0x155446 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
+ .debug_str     0x00000000   0x1554d9 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Networking.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
@@ -11052,7 +11088,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
- .debug_macro   0x00000000      0x719 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
+ .debug_macro   0x00000000      0x71e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .debug_macro   0x00000000      0x189 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
@@ -11142,6 +11178,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
@@ -11168,10 +11205,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .debug_line    0x00000000      0xeb1 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
- .debug_str     0x00000000   0x15543e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
+ .debug_str     0x00000000   0x1554d1 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
@@ -11383,6 +11421,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
@@ -11406,6 +11445,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x36 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
@@ -11659,6 +11699,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
@@ -11683,6 +11724,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
@@ -11900,6 +11942,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
@@ -11923,6 +11966,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x36 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
@@ -12174,6 +12218,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
@@ -12197,6 +12242,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x36 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
@@ -12405,6 +12451,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
@@ -12430,6 +12477,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x36 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
@@ -12644,6 +12692,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
@@ -12667,6 +12716,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x36 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
@@ -12877,6 +12927,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
@@ -13017,6 +13068,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .text          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .data          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .bss           0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
@@ -13024,7 +13076,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
- .debug_macro   0x00000000      0x701 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
+ .debug_macro   0x00000000      0x706 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
@@ -13115,6 +13167,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
@@ -13141,10 +13194,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .debug_line    0x00000000      0xe92 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
- .debug_str     0x00000000   0x155421 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
+ .debug_str     0x00000000   0x1554b4 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
@@ -13268,7 +13322,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
- .debug_macro   0x00000000      0x70a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
+ .debug_macro   0x00000000      0x70f CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
@@ -13359,6 +13413,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
@@ -13386,10 +13441,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .debug_line    0x00000000      0xeb5 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
- .debug_str     0x00000000   0x155463 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
+ .debug_str     0x00000000   0x1554f6 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Sockets.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
@@ -13512,7 +13568,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
- .debug_macro   0x00000000      0x701 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
+ .debug_macro   0x00000000      0x706 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
@@ -13603,6 +13659,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
@@ -13629,10 +13686,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .debug_line    0x00000000      0xe98 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
- .debug_str     0x00000000   0x155427 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
+ .debug_str     0x00000000   0x1554ba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv6_Utils.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
@@ -13755,7 +13813,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
- .debug_macro   0x00000000      0x732 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
+ .debug_macro   0x00000000      0x737 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
@@ -13846,6 +13904,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
@@ -13872,10 +13931,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .debug_line    0x00000000      0xeb9 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
- .debug_str     0x00000000   0x155444 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
+ .debug_str     0x00000000   0x1554d7 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ND.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
@@ -13998,7 +14058,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
- .debug_macro   0x00000000      0x732 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
+ .debug_macro   0x00000000      0x737 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
@@ -14089,6 +14149,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
@@ -14115,10 +14176,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .debug_line    0x00000000      0xeb9 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
- .debug_str     0x00000000   0x155444 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
+ .debug_str     0x00000000   0x1554d7 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_RA.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
@@ -14333,6 +14395,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
@@ -14358,6 +14421,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x36 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
@@ -14619,6 +14683,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
@@ -14643,6 +14708,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
  .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
@@ -14849,6 +14915,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
@@ -14874,6 +14941,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x36 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
@@ -15084,6 +15152,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
@@ -15222,6 +15291,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .text          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .data          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .bss           0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
@@ -15229,7 +15299,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
- .debug_macro   0x00000000      0x741 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
+ .debug_macro   0x00000000      0x746 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
@@ -15322,6 +15392,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
@@ -15346,10 +15417,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .debug_line    0x00000000      0xf0d CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
- .debug_str     0x00000000   0x155494 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
+ .debug_str     0x00000000   0x155527 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv4.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
@@ -15472,7 +15544,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
- .debug_macro   0x00000000      0x741 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
+ .debug_macro   0x00000000      0x746 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
@@ -15565,6 +15637,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
@@ -15589,10 +15662,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .debug_line    0x00000000      0xf0d CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
- .debug_str     0x00000000   0x155494 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
+ .debug_str     0x00000000   0x155527 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP_IPv6.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
@@ -15803,6 +15877,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
@@ -15826,6 +15901,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x36 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
@@ -16036,6 +16112,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
@@ -16059,6 +16136,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x36 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
@@ -16269,6 +16347,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
@@ -16407,6 +16486,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .text          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .data          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .bss           0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
@@ -16414,7 +16494,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
- .debug_macro   0x00000000      0x741 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
+ .debug_macro   0x00000000      0x746 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
@@ -16507,6 +16587,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
@@ -16531,10 +16612,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .debug_line    0x00000000      0xf19 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
- .debug_str     0x00000000   0x1554a0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
+ .debug_str     0x00000000   0x155533 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv6.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
@@ -16745,6 +16827,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
@@ -16768,6 +16851,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x36 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
@@ -16980,6 +17064,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
@@ -17118,6 +17203,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .text          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .data          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .bss           0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
@@ -17125,7 +17211,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
- .debug_macro   0x00000000      0x754 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
+ .debug_macro   0x00000000      0x759 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
@@ -17218,6 +17304,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
@@ -17242,10 +17329,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .debug_line    0x00000000      0xf28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
- .debug_str     0x00000000   0x1554ad CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
+ .debug_str     0x00000000   0x155540 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv6.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
@@ -17454,6 +17542,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
@@ -17479,6 +17568,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x36 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
@@ -17687,6 +17777,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
@@ -17827,6 +17918,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .text          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .data          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .bss           0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
@@ -17834,7 +17926,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
- .debug_macro   0x00000000      0x70f CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
+ .debug_macro   0x00000000      0x714 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
@@ -17925,6 +18017,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
@@ -17951,10 +18044,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .debug_line    0x00000000      0xeb4 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
- .debug_str     0x00000000   0x155441 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
+ .debug_str     0x00000000   0x1554d4 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv6.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
@@ -18163,6 +18257,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
@@ -18302,6 +18397,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .text          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .data          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .bss           0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
@@ -18309,7 +18405,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
- .debug_macro   0x00000000      0x707 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
+ .debug_macro   0x00000000      0x70c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
@@ -18399,6 +18495,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
@@ -18425,10 +18522,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .debug_line    0x00000000      0xe96 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
- .debug_str     0x00000000   0x155425 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
+ .debug_str     0x00000000   0x1554b8 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Tiny_TCP.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
@@ -18641,6 +18739,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
@@ -18662,6 +18761,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x36 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
@@ -18874,6 +18974,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
@@ -19010,6 +19111,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .text          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .data          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .bss           0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
@@ -19017,7 +19119,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
- .debug_macro   0x00000000      0x738 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
+ .debug_macro   0x00000000      0x73d CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
@@ -19112,6 +19214,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
@@ -19134,10 +19237,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .debug_line    0x00000000      0xea7 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
- .debug_str     0x00000000   0x155434 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
+ .debug_str     0x00000000   0x1554c7 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv6.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
@@ -19354,6 +19458,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
@@ -19491,6 +19596,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .text          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .data          0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .bss           0x00000000        0x0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
@@ -19498,7 +19604,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x28 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
- .debug_macro   0x00000000      0x70b CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
+ .debug_macro   0x00000000      0x710 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .debug_macro   0x00000000      0xaba CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
@@ -19590,6 +19696,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
@@ -19614,10 +19721,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x46 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .debug_macro   0x00000000       0x9a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .debug_line    0x00000000      0xeb1 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
- .debug_str     0x00000000   0x155440 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
+ .debug_str     0x00000000   0x1554d3 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .comment       0x00000000       0x44 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
  .ARM.attributes
                 0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
  .group         0x00000000        0xc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
@@ -19830,6 +19938,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x20 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
  .debug_macro   0x00000000       0x4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
  .debug_macro   0x00000000       0x3a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
  .debug_macro   0x00000000      0x290 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
@@ -24355,7 +24464,7 @@ LOAD linker stubs
  .debug_rnglists
                 0x000031e1       0x13 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-isattyr.o)
 
-.debug_macro    0x00000000    0x49c2c
+.debug_macro    0x00000000    0x49ceb
  .debug_macro   0x00000000      0x2b5 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32h5xx.c.obj
  .debug_macro   0x000002b5      0xaba cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32h5xx.c.obj
  .debug_macro   0x00000d6f       0x22 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32h5xx.c.obj
@@ -24476,112 +24585,113 @@ LOAD linker stubs
  .debug_macro   0x00036920       0xa8 cmake/stm32cubemx/CMakeFiles/RTOS2.dir/__/__/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
  .debug_macro   0x000369c8       0x22 cmake/stm32cubemx/CMakeFiles/RTOS2.dir/__/__/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
  .debug_macro   0x000369ea       0x74 cmake/stm32cubemx/CMakeFiles/RTOS2.dir/__/__/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .debug_macro   0x00036a5e      0x7ed CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003724b       0x1c CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00037267       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00037277       0x1c CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00037293       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x000372a9      0x170 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00037419       0x22 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003743b       0x4c CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00037487      0x195 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003761c       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003762c       0x3a CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00037666      0x290 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x000378f6      0x145 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00037a3b      0x1a1 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00037bdc       0xc2 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00037c9e       0xc1 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00037d5f       0x64 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00037dc3      0x14c CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00037f0f       0x26 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00037f35       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00037f45       0xc7 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003800c       0x28 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00038034       0x3a CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003806e       0x97 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00038105       0xee CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x000381f3       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00038209       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003821f       0x36 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00038255       0x46 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003829b       0x9a CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00038335       0x12 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00038347       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003835d       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003836d       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003837d       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003838d       0x1c CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x000383a9       0x52 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x000383fb       0x22 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003841d       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003842d       0x52 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003847f       0xc1 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00038540       0x1c CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x0003855c       0x3d CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x00038599       0x35 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
- .debug_macro   0x000385ce      0x36c CMakeFiles/stm32nucleo_test.dir/Core/Src/gpio.c.obj
- .debug_macro   0x0003893a      0x741 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
- .debug_macro   0x0003907b       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
- .debug_macro   0x00039091       0x2e CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
- .debug_macro   0x000390bf       0x1c CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
- .debug_macro   0x000390db       0x28 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
- .debug_macro   0x00039103      0x732 CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
- .debug_macro   0x00039835      0x464 CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
- .debug_macro   0x00039c99       0x95 CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
- .debug_macro   0x00039d2e      0x36c CMakeFiles/stm32nucleo_test.dir/Core/Src/icache.c.obj
- .debug_macro   0x0003a09a      0x36c CMakeFiles/stm32nucleo_test.dir/Core/Src/rng.c.obj
- .debug_macro   0x0003a406      0x4da CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
- .debug_macro   0x0003a8e0      0x43d CMakeFiles/stm32nucleo_test.dir/Core/Src/usart.c.obj
- .debug_macro   0x0003ad1d      0x716 CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
- .debug_macro   0x0003b433      0x362 CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_hal_msp.c.obj
- .debug_macro   0x0003b795      0x2ae CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_hal_timebase_tim.c.obj
- .debug_macro   0x0003ba43       0xf0 CMakeFiles/stm32nucleo_test.dir/Core/Src/sysmem.c.obj
- .debug_macro   0x0003bb33       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/sysmem.c.obj
- .debug_macro   0x0003bb43      0x23c CMakeFiles/stm32nucleo_test.dir/Core/Src/sysmem.c.obj
- .debug_macro   0x0003bd7f      0x265 CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
- .debug_macro   0x0003bfe4       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
- .debug_macro   0x0003bff4       0xcf CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
- .debug_macro   0x0003c0c3      0x12c CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
- .debug_macro   0x0003c1ef      0x242 CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
- .debug_macro   0x0003c431       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
- .debug_macro   0x0003c441      0x18a CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
- .debug_macro   0x0003c5cb       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
- .debug_macro   0x0003c5e1       0xce CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
- .debug_macro   0x0003c6af      0x7de CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
- .debug_macro   0x0003ce8d       0x78 CMakeFiles/stm32nucleo_test.dir/Core/Src/lan8742.c.obj
- .debug_macro   0x0003cf05      0x45e CMakeFiles/stm32nucleo_test.dir/Core/Src/lan8742.c.obj
- .debug_macro   0x0003d363      0x447 CMakeFiles/stm32nucleo_test.dir/Core/Src/status.c.obj
- .debug_macro   0x0003d7aa      0x71f CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
- .debug_macro   0x0003dec9       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
- .debug_macro   0x0003dedf      0x71b CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
- .debug_macro   0x0003e5fa       0x22 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
- .debug_macro   0x0003e61c      0x74a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
- .debug_macro   0x0003ed66      0x747 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
- .debug_macro   0x0003f4ad      0x726 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
- .debug_macro   0x0003fbd3       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
- .debug_macro   0x0003fbe9      0x78e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
- .debug_macro   0x00040377      0x755 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
- .debug_macro   0x00040acc      0x7a0 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
- .debug_macro   0x0004126c      0x711 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
- .debug_macro   0x0004197d      0x719 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
- .debug_macro   0x00042096      0x701 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
- .debug_macro   0x00042797      0x769 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
- .debug_macro   0x00042f00      0x773 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
- .debug_macro   0x00043673      0x6fb CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
- .debug_macro   0x00043d6e      0x745 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
- .debug_macro   0x000444b3      0x72d CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
- .debug_macro   0x00044be0      0x741 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
- .debug_macro   0x00045321      0x741 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
- .debug_macro   0x00045a62      0x741 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
- .debug_macro   0x000461a3      0x754 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
- .debug_macro   0x000468f7      0x713 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
- .debug_macro   0x0004700a      0x70f CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
- .debug_macro   0x00047719      0x743 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
- .debug_macro   0x00047e5c      0x725 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
- .debug_macro   0x00048581      0x738 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
- .debug_macro   0x00048cb9      0x737 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
- .debug_macro   0x000493f0      0x83c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
+ .debug_macro   0x00036a5e      0x7f2 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00037250       0x1c CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x0003726c       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x0003727c       0x1c CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00037298       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x000372ae      0x170 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x0003741e       0x22 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00037440       0x4c CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x0003748c      0x195 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00037621       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00037631       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00037641       0x3a CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x0003767b      0x290 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x0003790b      0x145 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00037a50      0x1a1 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00037bf1       0xc2 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00037cb3       0xc1 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00037d74       0x64 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00037dd8      0x14c CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00037f24       0x26 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00037f4a       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00037f5a       0xc7 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00038021       0x28 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00038049       0x3a CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00038083       0x97 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x0003811a       0xee CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00038208       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x0003821e       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00038234       0x36 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x0003826a       0x46 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x000382b0       0x9a CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x0003834a       0x12 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x0003835c       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00038372       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00038382       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00038392       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x000383a2       0x1c CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x000383be       0x52 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00038410       0x22 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00038432       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00038442       0x52 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00038494       0xc1 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00038555       0x1c CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x00038571       0x3d CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x000385ae       0x35 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+ .debug_macro   0x000385e3      0x36c CMakeFiles/stm32nucleo_test.dir/Core/Src/gpio.c.obj
+ .debug_macro   0x0003894f      0x746 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
+ .debug_macro   0x00039095       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
+ .debug_macro   0x000390ab       0x2e CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
+ .debug_macro   0x000390d9       0x1c CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
+ .debug_macro   0x000390f5       0x28 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
+ .debug_macro   0x0003911d      0x737 CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
+ .debug_macro   0x00039854      0x464 CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
+ .debug_macro   0x00039cb8       0x95 CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
+ .debug_macro   0x00039d4d      0x36c CMakeFiles/stm32nucleo_test.dir/Core/Src/icache.c.obj
+ .debug_macro   0x0003a0b9      0x36c CMakeFiles/stm32nucleo_test.dir/Core/Src/rng.c.obj
+ .debug_macro   0x0003a425      0x4df CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
+ .debug_macro   0x0003a904      0x442 CMakeFiles/stm32nucleo_test.dir/Core/Src/usart.c.obj
+ .debug_macro   0x0003ad46      0x71b CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
+ .debug_macro   0x0003b461      0x362 CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_hal_msp.c.obj
+ .debug_macro   0x0003b7c3      0x2ae CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_hal_timebase_tim.c.obj
+ .debug_macro   0x0003ba71       0xf0 CMakeFiles/stm32nucleo_test.dir/Core/Src/sysmem.c.obj
+ .debug_macro   0x0003bb61       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/sysmem.c.obj
+ .debug_macro   0x0003bb71      0x23c CMakeFiles/stm32nucleo_test.dir/Core/Src/sysmem.c.obj
+ .debug_macro   0x0003bdad      0x265 CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
+ .debug_macro   0x0003c012       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
+ .debug_macro   0x0003c022       0xcf CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
+ .debug_macro   0x0003c0f1      0x12c CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
+ .debug_macro   0x0003c21d      0x242 CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
+ .debug_macro   0x0003c45f       0x10 CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
+ .debug_macro   0x0003c46f      0x18a CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
+ .debug_macro   0x0003c5f9       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
+ .debug_macro   0x0003c60f       0xce CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
+ .debug_macro   0x0003c6dd      0x7e3 CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
+ .debug_macro   0x0003cec0       0x78 CMakeFiles/stm32nucleo_test.dir/Core/Src/lan8742.c.obj
+ .debug_macro   0x0003cf38      0x45e CMakeFiles/stm32nucleo_test.dir/Core/Src/lan8742.c.obj
+ .debug_macro   0x0003d396      0x44c CMakeFiles/stm32nucleo_test.dir/Core/Src/status.c.obj
+ .debug_macro   0x0003d7e2      0x724 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
+ .debug_macro   0x0003df06       0x16 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
+ .debug_macro   0x0003df1c      0x720 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
+ .debug_macro   0x0003e63c       0x22 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
+ .debug_macro   0x0003e65e      0x74f CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
+ .debug_macro   0x0003edad      0x74c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
+ .debug_macro   0x0003f4f9      0x72b CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
+ .debug_macro   0x0003fc24       0x16 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
+ .debug_macro   0x0003fc3a      0x793 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
+ .debug_macro   0x000403cd      0x75a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
+ .debug_macro   0x00040b27      0x7a5 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
+ .debug_macro   0x000412cc      0x716 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
+ .debug_macro   0x000419e2      0x71e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
+ .debug_macro   0x00042100      0x706 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
+ .debug_macro   0x00042806      0x76e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
+ .debug_macro   0x00042f74      0x778 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
+ .debug_macro   0x000436ec      0x700 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
+ .debug_macro   0x00043dec      0x74a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
+ .debug_macro   0x00044536      0x732 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
+ .debug_macro   0x00044c68      0x746 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
+ .debug_macro   0x000453ae      0x746 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
+ .debug_macro   0x00045af4      0x746 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
+ .debug_macro   0x0004623a      0x759 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
+ .debug_macro   0x00046993      0x718 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
+ .debug_macro   0x000470ab      0x714 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
+ .debug_macro   0x000477bf      0x748 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
+ .debug_macro   0x00047f07      0x72a CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
+ .debug_macro   0x00048631      0x73d CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
+ .debug_macro   0x00048d6e      0x73c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
+ .debug_macro   0x000494aa      0x841 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
 
 .debug_line     0x00000000    0x5cbc2
  .debug_line    0x00000000      0x9a9 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32h5xx.c.obj
@@ -24710,7 +24820,7 @@ LOAD linker stubs
  .debug_line    0x0005c6f7      0x2af C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-fstatr.o)
  .debug_line    0x0005c9a6      0x21c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-isattyr.o)
 
-.debug_str      0x00000000   0x1747df
+.debug_str      0x00000000   0x174872
  .debug_str     0x00000000   0x148937 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32h5xx.c.obj
                              0x148c65 (size before relaxing)
  .debug_str     0x00148937     0x163a cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32H5xx_HAL_Driver/Src/stm32h5xx_hal_tim.c.obj
@@ -24765,201 +24875,201 @@ LOAD linker stubs
                                0x9a7f (size before relaxing)
  .debug_str     0x0015ea00     0x1f31 cmake/stm32cubemx/CMakeFiles/RTOS2.dir/__/__/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
                              0x15238b (size before relaxing)
- .debug_str     0x00160931     0x6425 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
-                             0x156c25 (size before relaxing)
- .debug_str     0x00166d56       0x39 CMakeFiles/stm32nucleo_test.dir/Core/Src/gpio.c.obj
+ .debug_str     0x00160931     0x64b8 CMakeFiles/stm32nucleo_test.dir/Core/Src/main.c.obj
+                             0x156cb8 (size before relaxing)
+ .debug_str     0x00166de9       0x39 CMakeFiles/stm32nucleo_test.dir/Core/Src/gpio.c.obj
                              0x149193 (size before relaxing)
- .debug_str     0x00166d8f      0x561 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
-                             0x15639a (size before relaxing)
- .debug_str     0x001672f0     0x28f2 CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
-                             0x159592 (size before relaxing)
- .debug_str     0x00169be2       0x3b CMakeFiles/stm32nucleo_test.dir/Core/Src/icache.c.obj
+ .debug_str     0x00166e22      0x561 CMakeFiles/stm32nucleo_test.dir/Core/Src/app_freertos.c.obj
+                             0x15642d (size before relaxing)
+ .debug_str     0x00167383     0x28f2 CMakeFiles/stm32nucleo_test.dir/Core/Src/eth.c.obj
+                             0x159625 (size before relaxing)
+ .debug_str     0x00169c75       0x3b CMakeFiles/stm32nucleo_test.dir/Core/Src/icache.c.obj
                              0x148fe1 (size before relaxing)
- .debug_str     0x00169c1d       0x56 CMakeFiles/stm32nucleo_test.dir/Core/Src/rng.c.obj
+ .debug_str     0x00169cb0       0x56 CMakeFiles/stm32nucleo_test.dir/Core/Src/rng.c.obj
                              0x1497eb (size before relaxing)
- .debug_str     0x00169c73      0x159 CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
-                             0x14ff86 (size before relaxing)
- .debug_str     0x00169dcc      0x15d CMakeFiles/stm32nucleo_test.dir/Core/Src/usart.c.obj
-                             0x15042a (size before relaxing)
- .debug_str     0x00169f29      0x108 CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
-                             0x15680d (size before relaxing)
- .debug_str     0x0016a031       0x46 CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_hal_msp.c.obj
+ .debug_str     0x00169d06      0x159 CMakeFiles/stm32nucleo_test.dir/Core/Src/rtc.c.obj
+                             0x150019 (size before relaxing)
+ .debug_str     0x00169e5f      0x15d CMakeFiles/stm32nucleo_test.dir/Core/Src/usart.c.obj
+                             0x1504bd (size before relaxing)
+ .debug_str     0x00169fbc      0x108 CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_it.c.obj
+                             0x1568a0 (size before relaxing)
+ .debug_str     0x0016a0c4       0x46 CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_hal_msp.c.obj
                              0x149693 (size before relaxing)
- .debug_str     0x0016a077       0x75 CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_hal_timebase_tim.c.obj
+ .debug_str     0x0016a10a       0x75 CMakeFiles/stm32nucleo_test.dir/Core/Src/stm32h5xx_hal_timebase_tim.c.obj
                              0x149792 (size before relaxing)
- .debug_str     0x0016a0ec      0x382 CMakeFiles/stm32nucleo_test.dir/Core/Src/sysmem.c.obj
+ .debug_str     0x0016a17f      0x382 CMakeFiles/stm32nucleo_test.dir/Core/Src/sysmem.c.obj
                                0x5af6 (size before relaxing)
- .debug_str     0x0016a46e     0x112a CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
+ .debug_str     0x0016a501     0x112a CMakeFiles/stm32nucleo_test.dir/Core/Src/syscalls.c.obj
                                0x9383 (size before relaxing)
- .debug_str     0x0016b598       0x5b CMakeFiles/stm32nucleo_test.dir/startup_stm32h563xx.s.obj
+ .debug_str     0x0016b62b       0x5b CMakeFiles/stm32nucleo_test.dir/startup_stm32h563xx.s.obj
                                  0x90 (size before relaxing)
- .debug_str     0x0016b5f3      0x50c CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
-                             0x157122 (size before relaxing)
- .debug_str     0x0016baff      0x128 CMakeFiles/stm32nucleo_test.dir/Core/Src/lan8742.c.obj
+ .debug_str     0x0016b686      0x50c CMakeFiles/stm32nucleo_test.dir/Core/Src/cli.c.obj
+                             0x1571b5 (size before relaxing)
+ .debug_str     0x0016bb92      0x128 CMakeFiles/stm32nucleo_test.dir/Core/Src/lan8742.c.obj
                                0x5c2c (size before relaxing)
- .debug_str     0x0016bc27       0x53 CMakeFiles/stm32nucleo_test.dir/Core/Src/status.c.obj
-                             0x14ed01 (size before relaxing)
- .debug_str     0x0016bc7a      0xa74 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
-                             0x1567ca (size before relaxing)
- .debug_str     0x0016c6ee      0x1ed CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
-                             0x15687e (size before relaxing)
- .debug_str     0x0016c8db      0xb5f CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
-                             0x156711 (size before relaxing)
- .debug_str     0x0016d43a       0xbc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
-                             0x1555a5 (size before relaxing)
- .debug_str     0x0016d4f6      0x198 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
-                             0x155d61 (size before relaxing)
- .debug_str     0x0016d68e      0xd4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
-                             0x157e87 (size before relaxing)
- .debug_str     0x0016e3da      0x1d7 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
-                             0x1567f9 (size before relaxing)
- .debug_str     0x0016e5b1      0x854 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
-                             0x157299 (size before relaxing)
- .debug_str     0x0016ee05      0x128 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
-                             0x155e89 (size before relaxing)
- .debug_str     0x0016ef2d      0x16f CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
-                             0x155e0b (size before relaxing)
- .debug_str     0x0016f09c       0x6b CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
-                             0x1558be (size before relaxing)
- .debug_str     0x0016f107      0x267 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
-                             0x156bec (size before relaxing)
- .debug_str     0x0016f36e      0xe85 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
-                             0x157cdf (size before relaxing)
- .debug_str     0x001701f3      0x125 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
-                             0x15568c (size before relaxing)
- .debug_str     0x00170318      0x365 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
-                             0x156b6e (size before relaxing)
- .debug_str     0x0017067d      0x1ce CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
-                             0x156a00 (size before relaxing)
- .debug_str     0x0017084b      0x1fe CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
-                             0x156a21 (size before relaxing)
- .debug_str     0x00170a49       0xe4 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
-                             0x156824 (size before relaxing)
- .debug_str     0x00170b2d      0x26e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
-                             0x156bd7 (size before relaxing)
- .debug_str     0x00170d9b       0xb1 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
-                             0x1569c2 (size before relaxing)
- .debug_str     0x00170e4c       0x7e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
-                             0x156386 (size before relaxing)
- .debug_str     0x00170eca       0x62 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
-                             0x1563ce (size before relaxing)
- .debug_str     0x00170f2c      0x61d CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
-                             0x156127 (size before relaxing)
- .debug_str     0x00171549       0xac CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
-                             0x155c03 (size before relaxing)
- .debug_str     0x001715f5       0xb9 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
-                             0x1568b0 (size before relaxing)
- .debug_str     0x001716ae      0x3f8 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
-                             0x1561ce (size before relaxing)
- .debug_str     0x00171aa6      0xe05 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
-                             0x15951e (size before relaxing)
- .debug_str     0x001728ab      0x1a6 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-atoi.o)
+ .debug_str     0x0016bcba       0x53 CMakeFiles/stm32nucleo_test.dir/Core/Src/status.c.obj
+                             0x14ed94 (size before relaxing)
+ .debug_str     0x0016bd0d      0xa74 CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_client.c.obj
+                             0x15685d (size before relaxing)
+ .debug_str     0x0016c781      0x1ed CMakeFiles/stm32nucleo_test.dir/Core/Src/tcp_server.c.obj
+                             0x156911 (size before relaxing)
+ .debug_str     0x0016c96e      0xb5f CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.c.obj
+                             0x1567a4 (size before relaxing)
+ .debug_str     0x0016d4cd       0xbc CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.c.obj
+                             0x155638 (size before relaxing)
+ .debug_str     0x0016d589      0x198 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.c.obj
+                             0x155df4 (size before relaxing)
+ .debug_str     0x0016d721      0xd4c CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.c.obj
+                             0x157f1a (size before relaxing)
+ .debug_str     0x0016e46d      0x1d7 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.c.obj
+                             0x15688c (size before relaxing)
+ .debug_str     0x0016e644      0x854 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.c.obj
+                             0x15732c (size before relaxing)
+ .debug_str     0x0016ee98      0x128 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.c.obj
+                             0x155f1c (size before relaxing)
+ .debug_str     0x0016efc0      0x16f CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.c.obj
+                             0x155e9e (size before relaxing)
+ .debug_str     0x0016f12f       0x6b CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.c.obj
+                             0x155951 (size before relaxing)
+ .debug_str     0x0016f19a      0x267 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.c.obj
+                             0x156c7f (size before relaxing)
+ .debug_str     0x0016f401      0xe85 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.c.obj
+                             0x157d72 (size before relaxing)
+ .debug_str     0x00170286      0x125 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.c.obj
+                             0x15571f (size before relaxing)
+ .debug_str     0x001703ab      0x365 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.c.obj
+                             0x156c01 (size before relaxing)
+ .debug_str     0x00170710      0x1ce CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.c.obj
+                             0x156a93 (size before relaxing)
+ .debug_str     0x001708de      0x1fe CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.c.obj
+                             0x156ab4 (size before relaxing)
+ .debug_str     0x00170adc       0xe4 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.c.obj
+                             0x1568b7 (size before relaxing)
+ .debug_str     0x00170bc0      0x26e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.c.obj
+                             0x156c6a (size before relaxing)
+ .debug_str     0x00170e2e       0xb1 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.c.obj
+                             0x156a55 (size before relaxing)
+ .debug_str     0x00170edf       0x7e CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.c.obj
+                             0x156419 (size before relaxing)
+ .debug_str     0x00170f5d       0x62 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.c.obj
+                             0x156461 (size before relaxing)
+ .debug_str     0x00170fbf      0x61d CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.c.obj
+                             0x1561ba (size before relaxing)
+ .debug_str     0x001715dc       0xac CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.c.obj
+                             0x155c96 (size before relaxing)
+ .debug_str     0x00171688       0xb9 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.c.obj
+                             0x156943 (size before relaxing)
+ .debug_str     0x00171741      0x3f8 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_1.c.obj
+                             0x156261 (size before relaxing)
+ .debug_str     0x00171b39      0xe05 CMakeFiles/stm32nucleo_test.dir/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/STM32/NetworkInterface.c.obj
+                             0x1595b1 (size before relaxing)
+ .debug_str     0x0017293e      0x1a6 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-atoi.o)
                                 0x53d (size before relaxing)
- .debug_str     0x00172a51      0x21b C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strtol.o)
+ .debug_str     0x00172ae4      0x21b C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strtol.o)
                                 0x7ba (size before relaxing)
- .debug_str     0x00172c6c       0x71 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strtoul.o)
+ .debug_str     0x00172cff       0x71 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strtoul.o)
                                 0x7b7 (size before relaxing)
- .debug_str     0x00172cdd       0x59 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-ctype_.o)
+ .debug_str     0x00172d70       0x59 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-ctype_.o)
                                 0x212 (size before relaxing)
- .debug_str     0x00172d36      0x28e C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-findfp.o)
+ .debug_str     0x00172dc9      0x28e C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-findfp.o)
                                 0x7bc (size before relaxing)
- .debug_str     0x00172fc4       0x58 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-fwalk.o)
+ .debug_str     0x00173057       0x58 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-fwalk.o)
                                 0x549 (size before relaxing)
- .debug_str     0x0017301c       0x74 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-snprintf.o)
+ .debug_str     0x001730af       0x74 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-snprintf.o)
                                 0x587 (size before relaxing)
- .debug_str     0x00173090       0x65 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-sprintf.o)
+ .debug_str     0x00173123       0x65 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-sprintf.o)
                                 0x578 (size before relaxing)
- .debug_str     0x001730f5       0x96 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-stdio.o)
+ .debug_str     0x00173188       0x96 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-stdio.o)
                                 0x5a6 (size before relaxing)
- .debug_str     0x0017318b       0x69 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-vsnprintf.o)
+ .debug_str     0x0017321e       0x69 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-vsnprintf.o)
                                 0x58a (size before relaxing)
- .debug_str     0x001731f4       0x5a C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-memcmp.o)
+ .debug_str     0x00173287       0x5a C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-memcmp.o)
                                 0x219 (size before relaxing)
- .debug_str     0x0017324e       0x6d C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-memmove.o)
+ .debug_str     0x001732e1       0x6d C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-memmove.o)
                                 0x234 (size before relaxing)
- .debug_str     0x001732bb       0x5a C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-memset.o)
+ .debug_str     0x0017334e       0x5a C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-memset.o)
                                 0x219 (size before relaxing)
- .debug_str     0x00173315       0x5a C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strchr.o)
+ .debug_str     0x001733a8       0x5a C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strchr.o)
                                 0x212 (size before relaxing)
- .debug_str     0x0017336f       0x71 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strncpy.o)
+ .debug_str     0x00173402       0x71 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strncpy.o)
                                 0x237 (size before relaxing)
- .debug_str     0x001733e0       0x5b C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strnlen.o)
+ .debug_str     0x00173473       0x5b C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strnlen.o)
                                 0x221 (size before relaxing)
- .debug_str     0x0017343b       0x7a C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strtok.o)
+ .debug_str     0x001734ce       0x7a C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strtok.o)
                                 0x567 (size before relaxing)
- .debug_str     0x001734b5       0x80 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strtok_r.o)
+ .debug_str     0x00173548       0x80 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strtok_r.o)
                                 0x24b (size before relaxing)
- .debug_str     0x00173535       0x5a C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strstr.o)
+ .debug_str     0x001735c8       0x5a C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strstr.o)
                                 0x219 (size before relaxing)
- .debug_str     0x0017358f       0x59 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-closer.o)
+ .debug_str     0x00173622       0x59 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-closer.o)
                                 0x52f (size before relaxing)
- .debug_str     0x001735e8       0x70 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-reent.o)
+ .debug_str     0x0017367b       0x70 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-reent.o)
                                 0x558 (size before relaxing)
- .debug_str     0x00173658       0x59 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-impure.o)
+ .debug_str     0x001736eb       0x59 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-impure.o)
                                 0x539 (size before relaxing)
- .debug_str     0x001736b1       0x59 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-lseekr.o)
+ .debug_str     0x00173744       0x59 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-lseekr.o)
                                 0x53d (size before relaxing)
- .debug_str     0x0017370a       0x58 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-readr.o)
+ .debug_str     0x0017379d       0x58 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-readr.o)
                                 0x53d (size before relaxing)
- .debug_str     0x00173762       0x59 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-writer.o)
+ .debug_str     0x001737f5       0x59 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-writer.o)
                                 0x53f (size before relaxing)
- .debug_str     0x001737bb       0x58 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-errno.o)
+ .debug_str     0x0017384e       0x58 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-errno.o)
                                 0x533 (size before relaxing)
- .debug_str     0x00173813       0xb6 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-init.o)
+ .debug_str     0x001738a6       0xb6 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-init.o)
                                 0x27a (size before relaxing)
- .debug_str     0x001738c9      0x1d7 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-lock.o)
+ .debug_str     0x0017395c      0x1d7 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-lock.o)
                                 0x38c (size before relaxing)
- .debug_str     0x00173aa0       0x68 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strcmp.o)
+ .debug_str     0x00173b33       0x68 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strcmp.o)
                                  0xf6 (size before relaxing)
- .debug_str     0x00173b08       0x5f C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strcpy.o)
+ .debug_str     0x00173b9b       0x5f C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strcpy.o)
                                 0x217 (size before relaxing)
- .debug_str     0x00173b67       0x6e C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+ .debug_str     0x00173bfa       0x6e C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
                                 0x237 (size before relaxing)
- .debug_str     0x00173bd5       0x69 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strlen.o)
+ .debug_str     0x00173c68       0x69 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-strlen.o)
                                  0xf7 (size before relaxing)
- .debug_str     0x00173c3e       0x7d C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-assert.o)
+ .debug_str     0x00173cd1       0x7d C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-assert.o)
                                 0x572 (size before relaxing)
- .debug_str     0x00173cbb       0xd3 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-freer.o)
+ .debug_str     0x00173d4e       0xd3 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-freer.o)
                                 0x5b9 (size before relaxing)
- .debug_str     0x00173d8e       0x66 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-malloc.o)
+ .debug_str     0x00173e21       0x66 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-malloc.o)
                                 0x55e (size before relaxing)
- .debug_str     0x00173df4       0xac C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-mallocr.o)
+ .debug_str     0x00173e87       0xac C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-mallocr.o)
                                 0x61a (size before relaxing)
- .debug_str     0x00173ea0       0x59 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-mlock.o)
+ .debug_str     0x00173f33       0x59 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-mlock.o)
                                 0x5bb (size before relaxing)
- .debug_str     0x00173ef9      0x14b C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
+ .debug_str     0x00173f8c      0x14b C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
                                 0x882 (size before relaxing)
- .debug_str     0x00174044       0xb3 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-nano-vfprintf_i.o)
+ .debug_str     0x001740d7       0xb3 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-nano-vfprintf_i.o)
                                 0x818 (size before relaxing)
- .debug_str     0x001740f7       0x8c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-fflush.o)
+ .debug_str     0x0017418a       0x8c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-fflush.o)
                                 0x604 (size before relaxing)
- .debug_str     0x00174183       0x71 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-fprintf.o)
+ .debug_str     0x00174216       0x71 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-fprintf.o)
                                 0x577 (size before relaxing)
- .debug_str     0x001741f4       0x58 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-sbrkr.o)
+ .debug_str     0x00174287       0x58 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-sbrkr.o)
                                 0x542 (size before relaxing)
- .debug_str     0x0017424c       0x64 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-memchr-stub.o)
+ .debug_str     0x001742df       0x64 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-memchr-stub.o)
                                 0x233 (size before relaxing)
- .debug_str     0x001742b0       0x5f C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-abort.o)
+ .debug_str     0x00174343       0x5f C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-abort.o)
                                 0x21c (size before relaxing)
- .debug_str     0x0017430f       0x88 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-reallocr.o)
+ .debug_str     0x001743a2       0x88 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-reallocr.o)
                                 0x5af (size before relaxing)
- .debug_str     0x00174397       0xad C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-nano-vfprintf.o)
+ .debug_str     0x0017442a       0xad C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-nano-vfprintf.o)
                                 0x8ea (size before relaxing)
- .debug_str     0x00174444       0x5f C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-wbuf.o)
+ .debug_str     0x001744d7       0x5f C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-wbuf.o)
                                 0x56f (size before relaxing)
- .debug_str     0x001744a3       0x66 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-wsetup.o)
+ .debug_str     0x00174536       0x66 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-wsetup.o)
                                 0x56a (size before relaxing)
- .debug_str     0x00174509       0xc0 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-signal.o)
+ .debug_str     0x0017459c       0xc0 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-signal.o)
                                 0x5c0 (size before relaxing)
- .debug_str     0x001745c9       0x62 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-signalr.o)
+ .debug_str     0x0017465c       0x62 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-signalr.o)
                                 0x555 (size before relaxing)
- .debug_str     0x0017462b       0x69 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-msizer.o)
+ .debug_str     0x001746be       0x69 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-msizer.o)
                                 0x582 (size before relaxing)
- .debug_str     0x00174694       0x92 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-makebuf.o)
+ .debug_str     0x00174727       0x92 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-makebuf.o)
                                 0x6cc (size before relaxing)
- .debug_str     0x00174726       0x5f C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-fstatr.o)
+ .debug_str     0x001747b9       0x5f C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-fstatr.o)
                                 0x681 (size before relaxing)
- .debug_str     0x00174785       0x5a C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-isattyr.o)
+ .debug_str     0x00174818       0x5a C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libg_nano.a(libc_a-isattyr.o)
                                 0x539 (size before relaxing)
 
 .comment        0x00000000       0x43

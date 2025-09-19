@@ -109,7 +109,7 @@ static void tcp_client_check_connect(tcp_client_t *cl)
 static void tcp_client_connect(tcp_client_t *cl)
 {
     /* check if connect timeout is expired */
-    if (check_expired(cl->conn_intv, CLIENT_CONNECT_TIMEOUT))
+    if (check_not_expired(cl->conn_intv, CLIENT_CONNECT_TIMEOUT))
     {
         return;
     }
