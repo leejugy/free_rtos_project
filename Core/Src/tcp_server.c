@@ -195,7 +195,7 @@ static int tcp_server_accept(tcp_server_t *sv)
         tcp_server_init(sv);
     }
 
-    if (tick_cur_gap(sv->accept_intv) < ACCEPT_INTERVAL)
+    if (check_expired(sv->accept_intv, ACCEPT_INTERVAL))
     {
         return -1;
     }

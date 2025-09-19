@@ -61,6 +61,9 @@ static inline uint32_t tick_cur_gap(uint32_t old_tick)
 {
     return osKernelGetTickCount() - old_tick;
 }
+
+#define check_expired(old_tick, goal_tick) (tick_cur_gap(old_tick) > goal_tick)
+#define check_not_expired(old_tick, goal_tick) (tick_cur_gap(old_tick) <= goal_tick)
 /* USER CODE END PD */
 
 /* Exported macro -------------------------------------------------------------*/
